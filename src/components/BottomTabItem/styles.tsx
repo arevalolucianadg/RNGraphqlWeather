@@ -22,6 +22,6 @@ interface TabLabelProps {
 export const TabLabel = styled.Text<TabLabelProps>`
   color: ${props =>
     props.active ? props.theme.colors.primary : props.theme.colors.gray3};
-  font-weight: ${props =>
+  font-family: ${props =>
     props.active ? global.font.weightSemiBold : global.font.weightMedium};
 `;

@@ -6,8 +6,6 @@ export const global = {
   },
 
   font: {
-    familyPrimary: '"Work Sans", sans-serif',
-
     sizeBase:    '1rem',
     sizeH1:      '1.7rem',
     sizeH2:      '1.5rem',
@@ -17,11 +15,11 @@ export const global = {
     sizeSmall:   '0.875rem',
     sizeCaption: '0.8rem',
 
-    weightLight:    '300',
-    weightRegular:  '400',
-    weightMedium:   '500',
-    weightSemiBold: '600',
-    weightBold:     '700',
+    weightLight:    'WorkSans-Light',
+    weightRegular:  'WorkSans-Regular',
+    weightMedium:   'WorkSans-Medium',
+    weightSemiBold: 'WorkSans-SemiBold',
+    weightBold:     'WorkSans-Bold',
   },
   spacing: {
     base: '16px',
