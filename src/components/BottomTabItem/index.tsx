@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 
-import {TabItem, TabIcon, TabLabel} from './styles';
+import {TabItem, TabIcon, TabLabel} from './BottomTabItem.styles';
 
 interface BottomTabItemProps {
   icon: JSX.Element;

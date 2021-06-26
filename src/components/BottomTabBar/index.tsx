@@ -5,7 +5,7 @@ import useBottomTab from '../../hooks/useBottomTab';
 import BottomTabItem from '../BottomTabItem';
 import tabs from './tabs';
 
-import {BottomTabBarWrapper} from './styles';
+import {BottomTabBarWrapper} from './BottomTabBar.styles';
 
 
 const BottomTabBar = ({state, navigation}: BottomTabBarProps) => {
