@@ -1,13 +1,17 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {Home, Search, Settings} from '../screens';
+import HomeRoutes from './HomeRoutes';
+import {BottomTabBar} from '../components';
+import {Search, Settings} from '../screens';
 
 const Tab = createBottomTabNavigator();
 
 const router = () => (
-  <Tab.Navigator initialRouteName="Home">
-    <Tab.Screen name="Home" component={Home} />
+  <Tab.Navigator
+    initialRouteName="Home"
+    tabBar={(props) => <BottomTabBar {...props} />}>
+    <Tab.Screen name="Home" component={HomeRoutes} />
     <Tab.Screen name="Search" component={Search} />
     <Tab.Screen name="Settings" component={Settings} />
   </Tab.Navigator>
