@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import {global} from '../../styles/GlobalStyles';
+
 export const TabItem = styled.View`
   display: flex;
   align-items: center;
@@ -18,6 +20,8 @@ interface TabLabelProps {
   active?: boolean;
 }
 export const TabLabel = styled.Text<TabLabelProps>`
-  color: ${props => (props.active ? '#504ED3' : '#828282')};
-  font-weight: ${props => (props.active ? 600 : 500)};
+  color: ${props =>
+    props.active ? props.theme.colors.primary : props.theme.colors.gray3};
+  font-weight: ${props =>
+    props.active ? global.font.weightSemiBold : global.font.weightMedium};
 `;

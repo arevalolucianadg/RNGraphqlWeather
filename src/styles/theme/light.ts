@@ -1,0 +1,19 @@
+export default {
+  themeTitle: 'light',
+
+  colors: {
+    primary: '#504ED3',
+
+    red:    '#EB5757',
+    yellow: '#F2C94C',
+
+    gray1: '#333333',
+    gray2: '#4F4F4F',
+    gray3: '#828282',
+    gray4: '#BDBDBD',
+    gray5: '#E0E0E0',
+    gray6: '#F2F2F2',
+  },
+
+  boxShadow: 'rgba(0, 0, 0, 0.1)',
+};
