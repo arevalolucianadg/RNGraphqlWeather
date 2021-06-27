@@ -13,6 +13,8 @@ export default {
     gray4: '#BDBDBD',
     gray5: '#E0E0E0',
     gray6: '#F2F2F2',
+
+    background: '#131419',
   },
 
   boxShadow: 'rgba(0, 0, 0, 0.1)',
