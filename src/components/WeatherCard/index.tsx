@@ -1,22 +1,32 @@
-import React, {useEffect, useState} from 'react';
-import {Image, ListRenderItemInfo, View} from 'react-native';
+import React from 'react';
+import {ListRenderItemInfo, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {HomeCityProps} from '../../screens/Home';
-import { CityName, Info, WeatherCardWrapper, CityTemp, CitySummaryTitle, WeatherIcon } from './WeatherCard.styles';
+import {
+  CityName,
+  Info,
+  WeatherCardWrapper,
+  CityTemp,
+  CitySummaryTitle,
+  WeatherIcon,
+} from './WeatherCard.styles';
 
 import ICON from '../../assets/png';
 
 interface WeatherCardProps {
   city: ListRenderItemInfo<HomeCityProps>;
-  onPress: () => void;
 }
 
-const WeatherCard = ({city: {item}, onPress}: WeatherCardProps) => {
+const WeatherCard = ({city: {item}}: WeatherCardProps) => {
   const {id, isFavorite, name, summaryIcon, summaryTitle, temperature} = item;
 
+  const navigation = useNavigation();
 
   return (
-    <WeatherCardWrapper isFavorite={isFavorite} onPress={onPress}>
+    <WeatherCardWrapper
+      isFavorite={isFavorite}
+      onPress={() => navigation.navigate('WeatherDetail', {cityId: id})}>
       <View>
         <CityName isFavorite={isFavorite}>{name}</CityName>
         <Info>
@@ -26,7 +36,7 @@ const WeatherCard = ({city: {item}, onPress}: WeatherCardProps) => {
           </CitySummaryTitle>
         </Info>
       </View>
-        <WeatherIcon source={ICON[`icon${summaryIcon}`]} />
+      <WeatherIcon source={ICON[`icon${summaryIcon}`]} />
     </WeatherCardWrapper>
   );
 };

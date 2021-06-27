@@ -1,10 +1,10 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Home} from '../screens';
-import WeatherDetail from '../screens/WeatherDetail/styles';
+import {Home, WeatherDetail} from '../screens';
+import { RootStackParamList } from './RootParams';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const HomeRoutes = () => (
   <Stack.Navigator headerMode="none">

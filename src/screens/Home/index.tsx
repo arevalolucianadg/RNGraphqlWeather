@@ -76,15 +76,14 @@ const Home = () => {
             data={citiesInfo}
             style={{flex: 1}}
             keyExtractor={city => city.id}
-            renderItem={city => <WeatherCard city={city} onPress={() => {}} />}
+            renderItem={city => <WeatherCard city={city} />}
             showsVerticalScrollIndicator={false}
-            
-            ListHeaderComponent={(
+            ListHeaderComponent={
               <TitleWrapper>
                 <TitleHome>Weather</TitleHome>
                 <TitleHome primary>Today</TitleHome>
               </TitleWrapper>
-            )}
+            }
           />
         </CitiesList>
       </HomeWrapper>

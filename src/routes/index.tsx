@@ -4,8 +4,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeRoutes from './HomeRoutes';
 import {BottomTabBar} from '../components';
 import {Search, Settings} from '../screens';
+import { RootTabParamList } from './RootParams';
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const router = () => (
   <Tab.Navigator
