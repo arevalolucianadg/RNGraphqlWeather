@@ -1,11 +1,9 @@
 import React from 'react';
 import {FlatList, Text} from 'react-native';
 
-import LayoutBase from '../../components/LayoutBase';
+import {LayoutBase, LoadingView, WeatherCard} from '../../components';
 import {TitleWrapper, TitleHome, CitiesList} from './styles';
-import WeatherCard from '../../components/WeatherCard/index';
 import useWeather from '../../hooks/useWeather';
-import LoadingView from '../../components/LoadingView/index';
 
 export interface HomeCityProps {
   id: string;
