@@ -7,5 +7,5 @@ export const BottomTabBarWrapper = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: ${global.spacing.base} 0;
+  padding: 10px 0;
 `;

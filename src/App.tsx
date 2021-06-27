@@ -11,8 +11,9 @@ import {dark, light} from './styles/theme';
 import {LOAD_STORYBOOK} from '@env';
 
 const App = () => {
+
   return (
-    <ThemeProvider theme={dark}>
+    <ThemeProvider theme={light}>
       <NavigationContainer ref={navigationRef}>
         <Router />
       </NavigationContainer>
@@ -20,4 +21,4 @@ const App = () => {
   );
 };
 
-export default !!LOAD_STORYBOOK === true ? StorybookUI : App;
+export default LOAD_STORYBOOK === 'true' ? StorybookUI : App;

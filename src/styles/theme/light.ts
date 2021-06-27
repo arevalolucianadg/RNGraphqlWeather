@@ -17,6 +17,7 @@ export default {
 
     background: '#FFFFFF',
     paper:      '#F7F7F7',
+    text:       '#333333',
 
     inactiveIcon: '#828282',
   },

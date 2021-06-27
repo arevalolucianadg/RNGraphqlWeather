@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {ThemeContext} from 'styled-components/native';
 
-import { LayoutBg } from './LayoutBase.styles';
+import { LayoutBg, LayoutSafe } from './LayoutBase.styles';
 
 
 interface LayoutBaseProps {
@@ -15,14 +15,14 @@ const LayoutBase = ({children}: LayoutBaseProps) => {
   const isLightTheme = colors.background === '#FFFFFF';
 
   return (
-    <LayoutBg bounces={false}>
-      <SafeAreaView>
+    <LayoutBg>
+      <LayoutSafe>
         <StatusBar
           backgroundColor={colors.background}
           barStyle={isLightTheme ? 'dark-content' : 'light-content'}
         />
         {children}
-      </SafeAreaView>
+      </LayoutSafe>
     </LayoutBg>
   );
 };

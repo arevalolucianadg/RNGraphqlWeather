@@ -11,9 +11,9 @@ export const TabIcon = styled.View`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 14px;
+  height: 16px;
   margin-bottom: 2px;
-  width: 14px;
+  width: 16px;
 `;
 
 interface TabLabelProps {

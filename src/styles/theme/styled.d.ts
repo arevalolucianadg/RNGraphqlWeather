@@ -20,6 +20,7 @@ declare module 'styled-components' {
 
       background: string;
       paper:      string;
+      text:       string;
 
       inactiveIcon: string;
     };
