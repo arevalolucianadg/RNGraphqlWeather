@@ -20,4 +20,4 @@ const App = () => {
   );
 };
 
-export default LOAD_STORYBOOK === 'true' ? StorybookUI : App;
+export default LOAD_STORYBOOK === true ? StorybookUI : App;

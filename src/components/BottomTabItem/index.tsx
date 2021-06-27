@@ -3,7 +3,7 @@ import {TouchableOpacity} from 'react-native';
 
 import {TabItem, TabIcon, TabLabel} from './BottomTabItem.styles';
 
-interface BottomTabItemProps {
+export interface BottomTabItemProps {
   icon: JSX.Element;
   isActive: boolean;
   label: string;
