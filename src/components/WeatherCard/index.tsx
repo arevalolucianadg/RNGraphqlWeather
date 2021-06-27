@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ListRenderItemInfo, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import {HomeCityProps} from '../../screens/Home';
 import {
   CityName,
   Info,
@@ -13,13 +12,17 @@ import {
 } from './WeatherCard.styles';
 
 import ICON from '../../assets/png';
+import { WeatherInfo } from '../../graphql/interfaces';
 
 interface WeatherCardProps {
-  city: ListRenderItemInfo<HomeCityProps>;
+  city: ListRenderItemInfo<WeatherInfo>;
 }
 
 const WeatherCard = ({city: {item}}: WeatherCardProps) => {
-  const {id, isFavorite, name, summaryIcon, summaryTitle, temperature} = item;
+  
+  const [isFavorite, setIsFavorite] = useState(false);
+  
+  const {id, name, weather: {summary, temperature}} = item;
 
   const navigation = useNavigation();
 
@@ -30,13 +33,13 @@ const WeatherCard = ({city: {item}}: WeatherCardProps) => {
       <View>
         <CityName isFavorite={isFavorite}>{name}</CityName>
         <Info>
-          <CityTemp isFavorite={isFavorite}>{temperature}</CityTemp>
+          <CityTemp isFavorite={isFavorite}>{temperature.actual}</CityTemp>
           <CitySummaryTitle isFavorite={isFavorite}>
-            {summaryTitle}
+            {summary.title}
           </CitySummaryTitle>
         </Info>
       </View>
-      <WeatherIcon source={ICON[`icon${summaryIcon}`]} />
+      <WeatherIcon source={ICON[`icon${summary.icon}`]} />
     </WeatherCardWrapper>
   );
 };

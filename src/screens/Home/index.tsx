@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
-import {FlatList} from 'react-native';
+import React from 'react';
+import {FlatList, Text} from 'react-native';
 
 import LayoutBase from '../../components/LayoutBase';
-import {TitleWrapper, TitleHome, CitiesList, HomeWrapper} from './styles';
+import {TitleWrapper, TitleHome, CitiesList} from './styles';
 import WeatherCard from '../../components/WeatherCard/index';
+import useWeather from '../../hooks/useWeather';
+import LoadingView from '../../components/LoadingView/index';
 
 export interface HomeCityProps {
   id: string;
@@ -14,79 +16,46 @@ export interface HomeCityProps {
   temperature: string;
 }
 
-const CITIES_WEATHER: HomeCityProps[] = [
-  {
-    id: '2643743',
-    isFavorite: true,
-    name: 'Buenos Aires',
-    summaryIcon: '13d',
-    summaryTitle: 'Cloudy',
-    temperature: '14°',
-  },
-  {
-    id: '2643744',
-    isFavorite: false,
-    name: 'Dubai',
-    summaryIcon: '01n',
-    summaryTitle: 'Cloudy',
-    temperature: '14°',
-  },
-  {
-    id: '2643745',
-    isFavorite: false,
-    name: 'Londres',
-    summaryIcon: '09d',
-    summaryTitle: 'Cloudy',
-    temperature: '14°',
-  },
-  {
-    id: '2643746',
-    isFavorite: false,
-    name: 'París',
-    summaryIcon: '11d',
-    summaryTitle: 'Cloudy',
-    temperature: '14°',
-  },
-  {
-    id: '2643747',
-    isFavorite: false,
-    name: 'Sydney',
-    summaryIcon: '02n',
-    summaryTitle: 'Cloudy',
-    temperature: '14°',
-  },
-  {
-    id: '2643748',
-    isFavorite: false,
-    name: 'Tokyo',
-    summaryIcon: '10n',
-    summaryTitle: 'Cloudy',
-    temperature: '14°',
-  },
-];
-
 const Home = () => {
-  const [citiesInfo, setCitiesInfo] = useState<HomeCityProps[]>(CITIES_WEATHER);
+  const variables = {
+    id: [
+      '3435910',
+      '2988507',
+      '292223',
+      '2147714',
+      '1850144',
+      '1261481',
+      '3451190',
+      '2643743',
+    ],
+    config: {
+      units: 'metric',
+    },
+  };
+
+  const {data, loading, error} = useWeather({variables, type: 'INFO'});
+
+  if (loading) return <LoadingView />;
+  if (error) return <Text>Ocurrió un error.</Text>;
+
 
   return (
     <LayoutBase>
-      <HomeWrapper>
-        <CitiesList>
-          <FlatList
-            data={citiesInfo}
-            style={{flex: 1}}
-            keyExtractor={city => city.id}
-            renderItem={city => <WeatherCard city={city} />}
-            showsVerticalScrollIndicator={false}
-            ListHeaderComponent={
-              <TitleWrapper>
-                <TitleHome>Weather</TitleHome>
-                <TitleHome primary>Today</TitleHome>
-              </TitleWrapper>
-            }
-          />
-        </CitiesList>
-      </HomeWrapper>
+      <CitiesList>
+        <FlatList
+          data={data?.getCityById}
+          style={{flex: 1}}
+          keyExtractor={city => city.id}
+          renderItem={city => <WeatherCard city={city} />}
+          showsVerticalScrollIndicator={false}
+          ListHeaderComponent={
+            <TitleWrapper>
+              <TitleHome>Weather</TitleHome>
+              <TitleHome primary>Today</TitleHome>
+            </TitleWrapper>
+          }
+        />
+      </CitiesList>
     </LayoutBase>
   );
 };
