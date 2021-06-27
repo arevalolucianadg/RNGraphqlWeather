@@ -2,7 +2,7 @@ export interface CitiesInfo {
   getCityById: WeatherInfo[] | null;
 }
 
-export interface CitiesInfoVars {
+export interface QueryVars {
   id: string[];
   config: Config;
 }
@@ -29,4 +29,40 @@ export interface Summary {
 
 export interface Temperature {
   actual: number;
+}
+
+export interface CityInfo {
+  getCityById: CityDetail[] | null;
+}
+
+export interface CityDetail {
+  id: string;
+  name: string;
+  country: string;
+  weather: WeatherDetail;
+}
+
+export interface WeatherDetail {
+  summary: Summary;
+  temperature: TemperatureDetail;
+  wind: Wind;
+  clouds: Clouds;
+  timestamp: number;
+}
+
+export interface TemperatureDetail {
+  actual: number;
+  feelsLike: number;
+  min: number;
+  max: number;
+}
+
+export interface Wind {
+  speed: number;
+}
+
+export interface Clouds {
+  all: number;
+  visibility: number;
+  humidity: number;
 }

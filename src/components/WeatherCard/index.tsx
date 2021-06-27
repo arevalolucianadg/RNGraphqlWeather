@@ -11,7 +11,7 @@ import {
   WeatherIcon,
 } from './WeatherCard.styles';
 
-import ICON from '../../assets/png';
+import ICON from '../../assets/png/weatherIcons';
 import { WeatherInfo } from '../../graphql/interfaces';
 
 interface WeatherCardProps {

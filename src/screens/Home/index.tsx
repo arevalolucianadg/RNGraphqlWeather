@@ -4,6 +4,7 @@ import {FlatList, Text} from 'react-native';
 import {LayoutBase, LoadingView, WeatherCard} from '../../components';
 import {TitleWrapper, TitleHome, CitiesList} from './styles';
 import useWeather from '../../hooks/useWeather';
+import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
 
 export interface HomeCityProps {
   id: string;
@@ -36,24 +37,25 @@ const Home = () => {
   if (loading) return <LoadingView />;
   if (error) return <Text>Ocurrió un error.</Text>;
 
-
   return (
     <LayoutBase>
-      <CitiesList>
-        <FlatList
-          data={data?.getCityById}
-          style={{flex: 1}}
-          keyExtractor={city => city.id}
-          renderItem={city => <WeatherCard city={city} />}
-          showsVerticalScrollIndicator={false}
-          ListHeaderComponent={
-            <TitleWrapper>
-              <TitleHome>Weather</TitleHome>
-              <TitleHome primary>Today</TitleHome>
-            </TitleWrapper>
-          }
-        />
-      </CitiesList>
+      <LayoutSpacing>
+        <CitiesList>
+          <FlatList
+            data={data?.getCityById}
+            style={{flex: 1}}
+            keyExtractor={city => city.id}
+            renderItem={city => <WeatherCard city={city} />}
+            showsVerticalScrollIndicator={false}
+            ListHeaderComponent={
+              <TitleWrapper>
+                <TitleHome>Weather</TitleHome>
+                <TitleHome primary>Today</TitleHome>
+              </TitleWrapper>
+            }
+          />
+        </CitiesList>
+      </LayoutSpacing>
     </LayoutBase>
   );
 };

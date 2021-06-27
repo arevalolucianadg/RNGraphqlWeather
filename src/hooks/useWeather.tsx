@@ -1,24 +1,34 @@
 import {useQuery} from '@apollo/client';
 
-import {GET_WEATHER_INFO} from '../graphql/requests';
-import {CitiesInfo, CitiesInfoVars} from '../graphql/interfaces';
+import {GET_WEATHER_INFO, GET_WEATHER_DETAIL} from '../graphql/requests';
+import { CitiesInfo, QueryVars, CityInfo } from '../graphql/interfaces';
 
 interface useWeatherProps {
-  variables: CitiesInfoVars;
+  variables: QueryVars;
   type: 'INFO' | 'DETAIL';
 }
 
 const useWeather = ({variables, type}: useWeatherProps) => {
+  
   switch (type) {
     case 'INFO':
-      const {data, loading, error} = useQuery<CitiesInfo, CitiesInfoVars>(
-        GET_WEATHER_INFO,
-        {variables},
-      );
-      return {data, loading, error};
+      const {
+        data: dataInfo,
+        loading: loadingInfo,
+        error: errorInfo,
+      } = useQuery<CitiesInfo, QueryVars>(GET_WEATHER_INFO, {variables});
+      return {data: dataInfo, loading: loadingInfo, error: errorInfo};
+
+    case 'DETAIL':
+      const {
+        data: dataDetail,
+        loading: loadingDetail,
+        error: errorDetail,
+      } = useQuery<CityInfo, QueryVars>(GET_WEATHER_DETAIL, {variables});
+      return {data: dataDetail, loading: loadingDetail, error: errorDetail};
 
     default:
-      return {data: null, loading: false, error: null}
+      return {data: null, loading: false, error: null};
   }
 };
 

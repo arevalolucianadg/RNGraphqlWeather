@@ -2,8 +2,7 @@ import React, {useContext} from 'react';
 import {StatusBar} from 'react-native';
 import {ThemeContext} from 'styled-components/native';
 
-import { LayoutBg, LayoutSafe } from './LayoutBase.styles';
-
+import {LayoutSafe} from './LayoutBase.styles';
 
 interface LayoutBaseProps {
   children: JSX.Element;
@@ -15,15 +14,13 @@ const LayoutBase = ({children}: LayoutBaseProps) => {
   const isLightTheme = colors.background === '#FFFFFF';
 
   return (
-    <LayoutBg>
-      <LayoutSafe>
-        <StatusBar
-          backgroundColor={colors.background}
-          barStyle={isLightTheme ? 'dark-content' : 'light-content'}
-        />
-        {children}
-      </LayoutSafe>
-    </LayoutBg>
+    <LayoutSafe>
+      <StatusBar
+        backgroundColor={colors.background}
+        barStyle={isLightTheme ? 'dark-content' : 'light-content'}
+      />
+      {children}
+    </LayoutSafe>
   );
 };
 
