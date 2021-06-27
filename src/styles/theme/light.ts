@@ -13,8 +13,12 @@ export default {
     gray4: '#BDBDBD',
     gray5: '#E0E0E0',
     gray6: '#F2F2F2',
+    white: '#FFFFFF',
 
     background: '#FFFFFF',
+    paper:      '#F7F7F7',
+
+    inactiveIcon: '#828282',
   },
 
   boxShadow: 'rgba(0, 0, 0, 0.1)',

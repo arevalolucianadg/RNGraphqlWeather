@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prestorybook": "rnstl",
     "storybook:dev": "start-storybook -p 7007",
-    "storybook": "npm run prestorybook && npm run storybook:dev",
+    "storybook": "adb reverse tcp:7007 tcp:7007 && npm run prestorybook && npm run storybook:dev",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

@@ -6,13 +6,13 @@ import {ThemeProvider} from 'styled-components';
 
 import Router from './routes';
 import {navigationRef} from './routes/RootNavigation';
-import {light} from './styles/theme';
+import {dark, light} from './styles/theme';
 
 import {LOAD_STORYBOOK} from '@env';
 
 const App = () => {
   return (
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={dark}>
       <NavigationContainer ref={navigationRef}>
         <Router />
       </NavigationContainer>
@@ -20,4 +20,4 @@ const App = () => {
   );
 };
 
-export default LOAD_STORYBOOK === true ? StorybookUI : App;
+export default !!LOAD_STORYBOOK === true ? StorybookUI : App;

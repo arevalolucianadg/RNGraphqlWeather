@@ -16,8 +16,12 @@ declare module 'styled-components' {
       gray4: string;
       gray5: string;
       gray6: string;
+      white: string;
 
       background: string;
+      paper:      string;
+
+      inactiveIcon: string;
     };
 
     boxShadow: string;

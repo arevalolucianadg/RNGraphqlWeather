@@ -18,7 +18,7 @@ const BottomTabBar = ({state, navigation}: BottomTabBarProps) => {
         return (
           <BottomTabItem 
             key={`${tab.routeName}-${idx}`}
-            icon={isFocused(tab.routeName) ? tab.activeIcon : tab.inactiveIcon}
+            icon={tab.component}
             isActive={isFocused(tab.routeName)}
             label={tab.label}
             onPress={() => handlePressTab(tab.routeName, idx)}

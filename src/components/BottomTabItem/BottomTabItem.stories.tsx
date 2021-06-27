@@ -2,14 +2,12 @@ import React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import {action} from '@storybook/addon-actions';
 
-import HomeActiveIcon from '../../assets/svg/bottomTabIcons/home-active-icon.svg';
-import HomeInactiveIcon from '../../assets/svg/bottomTabIcons/home-inactive-icon.svg';
+import HomeIcon from '../../assets/svg/bottomTabIcons/home-icon.svg';
 import BottomTabItem from './';
 import StylesDecorator from '../../../storybook/decorators';
 
 export const Tab = {
-  activeIcon: <HomeActiveIcon height="100%" width="100%" />,
-  inactiveIcon: <HomeInactiveIcon height="100%" width="100%" />,
+  component: HomeIcon,
   label: 'Home',
 };
 
@@ -23,7 +21,7 @@ storiesOf('BottomTab Item', module)
     <BottomTabItem
       label={Tab.label}
       isActive={false}
-      icon={Tab.inactiveIcon}
+      icon={Tab.component}
       onPress={actions.onPress}
     />
   ))
@@ -31,7 +29,7 @@ storiesOf('BottomTab Item', module)
     <BottomTabItem
       label={Tab.label}
       isActive={true}
-      icon={Tab.activeIcon}
+      icon={Tab.component}
       onPress={actions.onPress}
     />
   ));
