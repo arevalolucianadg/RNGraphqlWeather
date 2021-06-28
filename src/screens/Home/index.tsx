@@ -1,10 +1,12 @@
 import React from 'react';
 import {FlatList, Text} from 'react-native';
+import {useQuery} from '@apollo/client';
 
 import {LayoutBase, LoadingView, WeatherCard} from '../../components';
-import {TitleWrapper, TitleHome, CitiesList} from './styles';
-import useWeather from '../../hooks/useWeather';
 import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
+import {TitleWrapper, TitleHome, CitiesList} from './styles';
+import {GET_WEATHER_INFO} from '../../graphql/requests';
+import {CitiesInfo, QueryVars} from '../../graphql/interfaces';
 
 export interface HomeCityProps {
   id: string;
@@ -32,7 +34,10 @@ const Home = () => {
     },
   };
 
-  const {data, loading, error} = useWeather({variables, type: 'INFO'});
+  const {data, loading, error} = useQuery<CitiesInfo, QueryVars>(
+    GET_WEATHER_INFO,
+    {variables},
+  );
 
   if (loading) return <LoadingView />;
   if (error) return <Text>Ocurrió un error.</Text>;
