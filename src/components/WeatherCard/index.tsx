@@ -33,7 +33,7 @@ const WeatherCard = ({city: {item}}: WeatherCardProps) => {
       <View>
         <CityName isFavorite={isFavorite}>{name}</CityName>
         <Info>
-          <CityTemp isFavorite={isFavorite}>{temperature.actual}</CityTemp>
+          <CityTemp isFavorite={isFavorite}>{temperature.actual.toFixed(1)}°</CityTemp>
           <CitySummaryTitle isFavorite={isFavorite}>
             {summary.title}
           </CitySummaryTitle>
