@@ -1,21 +1,16 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import HomeRoutes from './HomeRoutes';
-import {BottomTabBar} from '../components';
-import {Search, Settings} from '../screens';
-import { RootTabParamList } from './RootParams';
+import {WeatherDetail} from '../screens';
+import HomeTabs from './HomeRoutes';
 
-const Tab = createBottomTabNavigator<RootTabParamList>();
+const Stack = createStackNavigator();
 
 const router = () => (
-  <Tab.Navigator
-    initialRouteName="Home"
-    tabBar={(props) => <BottomTabBar {...props} />}>
-    <Tab.Screen name="Home" component={HomeRoutes} />
-    <Tab.Screen name="Search" component={Search} />
-    <Tab.Screen name="Settings" component={Settings} />
-  </Tab.Navigator>
+  <Stack.Navigator headerMode="none">
+    <Stack.Screen name="Home" component={HomeTabs} />
+    <Stack.Screen component={WeatherDetail} name="WeatherDetail" />
+  </Stack.Navigator>
 );
 
 export default router;
