@@ -5,4 +5,5 @@ export {default as LayoutBase} from './LayoutBase';
 export {default as LoadingView} from './LoadingView';
 export {default as NoResults} from './NoResults';
 export {default as SearchBar} from './SearchBar';
+export {default as Switch} from './Switch';
 export {default as WeatherCard} from './WeatherCard';
