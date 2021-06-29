@@ -6,8 +6,9 @@ import {
   Heading,
   LayoutBase,
   LoadingView,
-  WeatherCard,
   NoResults,
+  SearchBar,
+  WeatherCard,
 } from '../../components';
 import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
 import {
@@ -17,7 +18,6 @@ import {
   ResultValue,
   ResultText,
 } from './styles';
-import SearchBar from '../../components/SearchBar';
 
 const Search = () => {
   const {
