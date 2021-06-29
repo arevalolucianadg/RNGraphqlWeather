@@ -1,12 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {Keyboard, View} from 'react-native';
-import {useLazyQuery} from '@apollo/client';
+import React, {useEffect} from 'react';
+import {View} from 'react-native';
 
-import {
-  CityByNameInfo,
-  ByNameQueryVars,
-} from '../../graphql/interfaces';
-import {GET_CITY_BY_NAME} from '../../graphql/requests';
+import useSearch from '../../hooks/useSearch';
 import {
   Heading,
   LayoutBase,
@@ -16,80 +11,29 @@ import {
 } from '../../components';
 import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
 import {
-  SearchBar,
-  SearchButton,
-  SearchInput,
   TitleWrapper,
   ResultsView,
   ResultTitle,
   ResultValue,
   ResultText,
 } from './styles';
-
-import SearchIcon from '../../assets/svg/bottomTabIcons/search-icon.svg';
-import {useIsFocused} from '@react-navigation/native';
+import SearchBar from '../../components/SearchBar';
 
 const Search = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const [lastSearches, setLastSearches] = useState<string[]>([]);
-  const [variables, setVariables] = useState({
-    name: '',
-    config: {
-      units: 'metric',
-    },
-  });
-  const [isFocus, setIsFocus] = useState(false);
-  const [results, setResults] = useState<CityByNameInfo | undefined>(undefined);
-
-  const screenFocused = useIsFocused();
-
-  const handleSearch = (inputValue: string) => {
-    setSearchValue(inputValue);
-    setIsFocus(true);
-  };
-
-  const [loadData, {data, loading, error}] = useLazyQuery<
-    CityByNameInfo,
-    ByNameQueryVars
-  >(GET_CITY_BY_NAME, {variables, fetchPolicy: 'no-cache'});
-
-  const handleSubmit = () => {
-    setVariables({
-      ...variables,
-      name: searchValue,
-    });
-
-    loadData();
-
-    Keyboard.dismiss();
-    setLastSearches([...lastSearches, searchValue]);
-    setSearchValue('');
-    setIsFocus(false);
-  };
-
-  const getLastSearch = (lastSearches: string[]) => {
-    const lastPosition = lastSearches.length - 1;
-
-    return lastSearches[lastPosition];
-  };
+  const {
+    error,
+    isFocus,
+    lastSearches,
+    loading,
+    results,
+    searchValue,
+    getLastSearch,
+    handleSearch,
+    handleSubmit,
+    setIsFocus,
+  } = useSearch();
 
   if (error) return;
-
-  useEffect(() => {
-    if (!loading && data) {
-      setResults(data);
-    }
-  }, [loading, data]);
-
-
-  const removeResults = () => {
-    setResults(undefined);
-  }
-
-  useEffect(() => {
-    screenFocused && removeResults();
-    console.log('S', screenFocused);
-  }, [screenFocused])
 
   return (
     <LayoutBase>
@@ -98,21 +42,13 @@ const Search = () => {
           <TitleWrapper>
             <Heading>Search</Heading>
           </TitleWrapper>
-
-          <SearchBar isFocus={isFocus}>
-            <SearchInput
-              autoFocus
-              keyboardType="web-search"
-              onChangeText={handleSearch}
-              onFocus={() => setIsFocus(true)}
-              onSubmitEditing={handleSubmit}
-              placeholder="Country name"
-              value={searchValue}
-            />
-            <SearchButton onPress={handleSubmit}>
-              <SearchIcon height="100%" width="100%" fill="#fff" />
-            </SearchButton>
-          </SearchBar>
+          <SearchBar
+            isFocus={isFocus}
+            searchValue={searchValue}
+            handleSearch={handleSearch}
+            handleSubmit={handleSubmit}
+            setIsFocus={setIsFocus}
+          />
         </View>
         <ResultsView>
           {loading && <LoadingView />}
