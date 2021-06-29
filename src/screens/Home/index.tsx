@@ -2,11 +2,11 @@ import React from 'react';
 import {FlatList, Text} from 'react-native';
 import {useQuery} from '@apollo/client';
 
-import {LayoutBase, LoadingView, WeatherCard} from '../../components';
-import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
-import {TitleWrapper, TitleHome, CitiesList} from './styles';
 import {GET_WEATHER_INFO} from '../../graphql/requests';
 import {CitiesInfo, QueryVars} from '../../graphql/interfaces';
+import {Heading, LayoutBase, LoadingView, WeatherCard} from '../../components';
+import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
+import {TitleWrapper, CitiesList} from './styles';
 
 export interface HomeCityProps {
   id: string;
@@ -50,12 +50,12 @@ const Home = () => {
             data={data?.getCityById}
             style={{flex: 1}}
             keyExtractor={city => city.id}
-            renderItem={city => <WeatherCard city={city} />}
+            renderItem={city => <WeatherCard city={city.item} />}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={
               <TitleWrapper>
-                <TitleHome>Weather</TitleHome>
-                <TitleHome primary>Today</TitleHome>
+                <Heading>Weather</Heading>
+                <Heading primary>Today</Heading>
               </TitleWrapper>
             }
           />

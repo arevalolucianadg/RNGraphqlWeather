@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ListRenderItemInfo, View} from 'react-native';
+import {View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import {
@@ -12,17 +12,17 @@ import {
 } from './WeatherCard.styles';
 
 import ICON from '../../assets/png/weatherIcons';
-import { WeatherInfo } from '../../graphql/interfaces';
+import {WeatherInfo} from '../../graphql/interfaces';
 
 interface WeatherCardProps {
-  city: ListRenderItemInfo<WeatherInfo>;
+  city: WeatherInfo | null;
 }
 
-const WeatherCard = ({city: {item}}: WeatherCardProps) => {
-  
+const WeatherCard = ({city}: WeatherCardProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
-  
-  const {id, name, weather: {summary, temperature}} = item;
+
+  if (!city) return <View></View>;
+  const {id, name, weather: {summary, temperature}} = city;
 
   const navigation = useNavigation();
 
@@ -33,7 +33,9 @@ const WeatherCard = ({city: {item}}: WeatherCardProps) => {
       <View>
         <CityName isFavorite={isFavorite}>{name}</CityName>
         <Info>
-          <CityTemp isFavorite={isFavorite}>{temperature.actual.toFixed(1)}°</CityTemp>
+          <CityTemp isFavorite={isFavorite}>
+            {temperature.actual.toFixed(1)}°
+          </CityTemp>
           <CitySummaryTitle isFavorite={isFavorite}>
             {summary.title}
           </CitySummaryTitle>
