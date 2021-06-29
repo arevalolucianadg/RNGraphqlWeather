@@ -3,7 +3,7 @@ export interface CitiesInfo {
 }
 
 export interface QueryVars {
-  id: string[];
+  id: string[] | string;
   config: Config;
 }
 
@@ -65,4 +65,13 @@ export interface Clouds {
   all: number;
   visibility: number;
   humidity: number;
+}
+
+export interface CityByNameInfo {
+  getCityByName: WeatherInfo | null;
+}
+
+export interface ByNameQueryVars {
+  name: string;
+  config: Config;
 }

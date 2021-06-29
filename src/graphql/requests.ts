@@ -48,3 +48,21 @@ export const GET_WEATHER_DETAIL = gql`
     }
   }
 `;
+
+export const GET_CITY_BY_NAME = gql`
+  query getCityByName($name: String!, $config: ConfigInput) {
+    getCityByName(name: $name, config: $config) {
+      id
+      name
+      weather {
+        summary {
+          icon
+          title
+        }
+        temperature {
+          actual
+        }
+      }
+    }
+  }
+`;
