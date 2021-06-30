@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {FlatList, Text} from 'react-native';
 import {useQuery} from '@apollo/client';
 
+import { AppContext } from '../../Context/AppContext/AppContext';
 import {GET_WEATHER_INFO} from '../../graphql/requests';
 import {CitiesInfo, QueryVars} from '../../graphql/interfaces';
 import {Heading, LayoutBase, LoadingView, WeatherCard} from '../../components';
 import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
 import {TitleWrapper, CitiesList} from './styles';
+import { INITIAL_CITIES } from '../../utils/constants';
 
 export interface HomeCityProps {
   id: string;
@@ -18,17 +20,10 @@ export interface HomeCityProps {
 }
 
 const Home = () => {
+  const {cities} = useContext(AppContext);
+  
   const variables = {
-    id: [
-      '3435910',
-      '2988507',
-      '292223',
-      '2147714',
-      '1850144',
-      '1261481',
-      '3451190',
-      '2643743',
-    ],
+    id: cities,
     config: {
       units: 'metric',
     },

@@ -1,11 +1,9 @@
 import {useState} from 'react';
+import { ISwitchSelectorOption } from '../types/switch';
 
-import {ISwitchSelectorOption} from '../types/switch';
 
 const useSwitchFormatTemp = () => {
-  const [formatTemp, setFormatTemp] = useState<
-    string | number | ISwitchSelectorOption
-  >('metric');
+  const [formatTemp, setFormatTemp] = useState<string | number | ISwitchSelectorOption>('metric');
 
   interface TempOptionsProps {
     label: string;

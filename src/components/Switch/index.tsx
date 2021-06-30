@@ -6,16 +6,17 @@ import {ISwitchSelectorOption} from '../../types/switch';
 import {global} from '../../styles/GlobalStyles';
 
 interface SwitchProps {
+  initial?: number;
   options: ISwitchSelectorOption[];
-  onPress: (value: string | number | ISwitchSelectorOption) => void;
+  onPress: (value: string) => void;
 }
 
-const Switch = ({options, onPress}: SwitchProps) => {
+const Switch = ({initial, options, onPress}: SwitchProps) => {
   const {colors} = useContext(ThemeContext);
 
   return (
     <SwitchSelector
-      initial={0}
+      initial={initial ? initial : 0}
       options={options}
       borderColor={colors.primary}
       buttonColor={colors.primary}

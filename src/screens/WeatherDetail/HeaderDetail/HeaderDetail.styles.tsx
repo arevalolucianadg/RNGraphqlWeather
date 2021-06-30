@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { global } from '../../../styles/GlobalStyles';
+import {global} from '../../../styles/GlobalStyles';
 
 export const TopBar = styled.View`
   display: flex;
@@ -35,8 +35,18 @@ export const DateInfo = styled.Text`
   text-transform: uppercase;
 `;
 
-export const ActionButton = styled.TouchableOpacity`
-  background-color: ${props => props.theme.colors.yellow};
+interface ActionButtonProps {
+  isFavorite: boolean;
+  isSaved: boolean;
+}
+
+export const ActionButton = styled.TouchableOpacity<ActionButtonProps>`
+  background-color: ${props =>
+    props.isSaved
+      ? props.isFavorite
+        ? props.theme.colors.yellow
+        : props.theme.colors.gray6
+      : props.theme.colors.primary};
   border-radius: 36px;
   height: 40px;
   padding: 6px;

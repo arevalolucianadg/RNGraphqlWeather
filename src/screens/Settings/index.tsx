@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View} from 'react-native';
 
 import useSwitchTheme from '../../hooks/useSwitchTheme';
@@ -13,9 +13,10 @@ import {
   SettingItem,
 } from './styles';
 
+
 const Settings = () => {
   const {tempOptions, toggleFormatTemp} = useSwitchFormatTemp();
-  const {themeOptions, toggleTheme} = useSwitchTheme();
+  const {initialTheme, themeOptions, toggleTheme} = useSwitchTheme();
 
   return (
     <LayoutBase>
@@ -37,7 +38,7 @@ const Settings = () => {
               <SettingTitle>Other</SettingTitle>
               <SettingRow>
                 <SettingItem>Dark Mode</SettingItem>
-                <Switch options={themeOptions} onPress={toggleTheme} />
+                <Switch initial={initialTheme} options={themeOptions} onPress={toggleTheme} />
               </SettingRow>
             </SettingGroup>
           </View>

@@ -1,16 +1,16 @@
-import React, {useContext, useState} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {ThemeContext} from 'styled-components';
 
-import {ISwitchSelectorOption} from '../types/switch';
 import LightSvg from '../assets/svg/sun.svg';
 import DarkSvg from '../assets/svg/moon.svg';
+import {AppContext} from '../Context/AppContext/AppContext';
+import {saveStorage, getStorage} from '../utils/asyncStorage';
 
 const useSwitchTheme = () => {
   const {colors} = useContext(ThemeContext);
+  const {theme, handleTheme} = useContext(AppContext);
 
-  const [theme, setTheme] = useState<string | number | ISwitchSelectorOption>(
-    'light',
-  );
+  const KEY_THEME_STORE = '@theme';
 
   const themeOptions = [
     {
@@ -37,11 +37,15 @@ const useSwitchTheme = () => {
     },
   ];
 
-  const toggleTheme = (value: string | number | ISwitchSelectorOption) => {
-    setTheme(value);
+  const initialTheme = theme === 'light' ? 0 : 1;
+
+  const toggleTheme = (value: string) => {
+    handleTheme(value);
+    saveStorage({key: KEY_THEME_STORE, item: value});
   };
 
   return {
+    initialTheme,
     themeOptions,
     toggleTheme,
   };
