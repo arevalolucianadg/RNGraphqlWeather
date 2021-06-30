@@ -23,7 +23,7 @@ import {saveStorage} from '../../../utils/asyncStorage';
 const HeaderDetail = ({city}: {city: CityDetail}) => {
   const navigation = useNavigation();
   const {colors} = useContext(ThemeContext);
-  const {cities, addCity} = useContext(AppContext);
+  const {cities, theme, addCity} = useContext(AppContext);
   const [isFavorite, setIsFavorite] = useState(false);
 
   const isSavedCity = cities.includes(city.id);
@@ -44,7 +44,7 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
   return (
     <TopBar>
       <BackButton onPress={() => navigation.goBack()}>
-        <BackArrow height="100%" width="100%" fill={colors.primary} />
+        <BackArrow height="100%" width="100%" fill={theme === 'light' ? colors.primary : colors.white} />
       </BackButton>
       <TopBarContent>
         <View>

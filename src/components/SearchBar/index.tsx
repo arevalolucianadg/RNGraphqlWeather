@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
-import useSearch from '../../hooks/useSearch';
 import {SearchBarWrapper, SearchButton, SearchInput} from './SearchBar.styles';
 import SearchIcon from '../../assets/svg/bottomTabIcons/search-icon.svg';
+import { AppContext } from '../../Context/AppContext/AppContext';
+import { ThemeContext } from 'styled-components';
 
 interface SearchBarProps {
   isFocus: boolean;
@@ -19,6 +20,10 @@ const SearchBar = ({
   handleSubmit,
   setIsFocus,
 }: SearchBarProps) => {
+
+  const {theme} = useContext(AppContext);
+  const {colors} = useContext(ThemeContext);
+
   return (
     <SearchBarWrapper isFocus={isFocus}>
       <SearchInput
@@ -28,6 +33,7 @@ const SearchBar = ({
         onFocus={() => setIsFocus(true)}
         onSubmitEditing={handleSubmit}
         placeholder="Country name"
+        placeholderTextColor={theme === 'light' ? colors.gray2 : colors.gray5}
         value={searchValue}
       />
       <SearchButton onPress={handleSubmit}>

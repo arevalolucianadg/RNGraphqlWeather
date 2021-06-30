@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import {global} from '../../../styles/GlobalStyles';
+import {isLightText} from '../../../utils/theme';
 
 export const TopBar = styled.View`
   display: flex;
@@ -23,13 +24,15 @@ export const TopBarContent = styled.View`
 `;
 
 export const CityName = styled.Text`
-  color: ${props => props.theme.colors.primary};
+  color: ${props =>
+    isLightText(props) ? props.theme.colors.primary : props.theme.colors.white};
   font-family: ${global.font.weightSemiBold};
   font-size: 22px;
 `;
 
 export const DateInfo = styled.Text`
-  color: ${props => props.theme.colors.gray3};
+  color: ${props =>
+    isLightText(props) ? props.theme.colors.gray3 : props.theme.colors.gray4};
   font-family: ${global.font.weightRegular};
   font-size: 14px;
   text-transform: uppercase;

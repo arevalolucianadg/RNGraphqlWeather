@@ -1,5 +1,6 @@
-import styled, {css} from 'styled-components/native';
+import styled from 'styled-components/native';
 import {global} from '../../styles/GlobalStyles';
+import {isLightText} from '../../utils/theme';
 
 export const TitleWrapper = styled.View`
   margin-bottom: 40px;
@@ -25,6 +26,7 @@ export const SettingTitle = styled.Text`
 `;
 
 export const SettingItem = styled.Text`
+  color: ${props => props.theme.colors.text};
   font-family: ${global.font.weightMedium};
   font-size: 18px;
 `;

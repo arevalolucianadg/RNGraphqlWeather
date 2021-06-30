@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import {global} from '../../../styles/GlobalStyles';
+import {isLightText} from '../../../utils/theme';
 
 export const StatusWrapper = styled.View`
   margin: 24px 0;
@@ -11,11 +12,15 @@ export const StatusMain = styled.View`
 `;
 
 export const Temp = styled.Text`
+  color: ${props =>
+    isLightText(props) ? props.theme.colors.gray1 : props.theme.colors.white};
   font-family: ${global.font.weightBold};
   font-size: 48px;
   margin-bottom: -10px;
 `;
 export const Title = styled.Text`
+  color: ${props =>
+    isLightText(props) ? props.theme.colors.gray1 : props.theme.colors.white};
   font-family: ${global.font.weightLight};
   font-size: 18px;
 `;
