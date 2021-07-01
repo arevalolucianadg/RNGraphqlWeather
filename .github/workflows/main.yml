@@ -1,0 +1,22 @@
+name: Build Android
+on:
+  push:
+    branches: [master]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install NPM dependencies
+        run: yarn
+        
+      - name: Build Android release
+        run: cd android && ./gradlew bundleRelease
+        
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: appRelease
+          path: android/app/build/outputs/bundle/release/app.aab
