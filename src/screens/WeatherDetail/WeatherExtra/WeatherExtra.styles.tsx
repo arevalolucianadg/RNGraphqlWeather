@@ -7,10 +7,13 @@ export const WeatherExtraWrapper = styled.View`
   border-top-right-radius: ${global.border.Radius};
   display: flex;
   flex: 1;
-  flex-direction: row;
+  padding: 32px 16px 0;
+`;
+
+export const ExtraItems = styled.View`
+flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 32px 16px 0;
 `;
 
 export const ExtraItem = styled.View`

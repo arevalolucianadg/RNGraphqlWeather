@@ -35,6 +35,7 @@ const WeatherDetail = ({route}: WeatherDetailProps) => {
   );
 
   if (loading) return <LoadingView />;
+  // TODO: mejorar vista de error
   if (error) return <Text>Ocurrió un error.</Text>;
 
   if (!data) return null;
