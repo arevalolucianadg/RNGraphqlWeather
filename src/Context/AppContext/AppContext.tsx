@@ -17,9 +17,9 @@ export const AppProvider = ({children}: AppProviderProps) => {
     const citiesStored = await getCitiesStored();
     const favCitiesStored = await getFavCities();
 
-    handleTheme(themeStored);
-    updateCities(citiesStored);
-    updateFavorites(favCitiesStored);
+    themeStored && handleTheme(themeStored);
+    citiesStored && updateCities(citiesStored);
+    favCitiesStored && updateFavorites(favCitiesStored);
   };
 
   useEffect(() => {
