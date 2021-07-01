@@ -19,7 +19,7 @@ import BackArrow from '../../../assets/svg/left-arrow.svg';
 import FavoriteStar from '../../../assets/svg/favorite-star.svg';
 import AddSvg from '../../../assets/svg/add.svg';
 import {saveStorage} from '../../../utils/asyncStorage';
-import {KEY_CITIES_STORE, KEY_FAV_CITIES_STORE} from '../../../utils/constants';
+import { FAV_CITIES_STORE, CITIES_STORE } from '../../../utils/constants';
 
 const HeaderDetail = ({city}: {city: CityDetail}) => {
   const navigation = useNavigation();
@@ -41,28 +41,33 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
     if (!isSavedCity) {
       addCity(cityId);
       saveStorage({
-        key: KEY_CITIES_STORE,
+        key: CITIES_STORE,
         item: [...cities, cityId],
       });
+      return;
     }
 
     if (!isFavoriteCity) {
       addFavoriteCity(cityId);
       saveStorage({
-        key: KEY_FAV_CITIES_STORE,
-        item: [...cities, cityId],
+        key: FAV_CITIES_STORE,
+        item: [...favoriteCities, cityId],
       });
+      return;
     } else {
       const filtered = favoriteCities.filter(
         (favCity: string) => favCity !== city.id,
       );
       updateFavorites(filtered);
       saveStorage({
-        key: KEY_FAV_CITIES_STORE,
+        key: FAV_CITIES_STORE,
         item: filtered,
       });
+      return;
     }
   };
+
+  console.log('WD', isFavoriteCity);
 
   return (
     <TopBar>

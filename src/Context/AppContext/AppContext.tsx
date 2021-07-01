@@ -5,7 +5,7 @@ import INITIAL_STATE from './initialState';
 
 import {AppContextProps, AppProviderProps} from './interfaces';
 import {ISwitchSelectorOption} from '../../types/switch';
-import {getThemeStored, getCitiesStored} from './utils';
+import { getThemeStored, getCitiesStored, getFavCities } from './utils';
 
 export const AppContext = createContext({} as AppContextProps);
 
@@ -15,9 +15,11 @@ export const AppProvider = ({children}: AppProviderProps) => {
   const getDataFromStorage = async () => {
     const themeStored = await getThemeStored();
     const citiesStored = await getCitiesStored();
+    const favCitiesStored = await getFavCities();
 
     handleTheme(themeStored);
     updateCities(citiesStored);
+    updateFavorites(favCitiesStored);
   };
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {View} from 'react-native';
 
 import useSearch from '../../hooks/useSearch';
@@ -33,7 +33,7 @@ const Search = () => {
     setIsFocus,
   } = useSearch();
 
-  if (error) return;
+  if (error) return <View></View>;
 
   return (
     <LayoutBase>
@@ -58,7 +58,7 @@ const Search = () => {
                 <ResultText>Last search</ResultText>
                 <ResultValue>{getLastSearch(lastSearches)}</ResultValue>
               </ResultTitle>
-              <WeatherCard city={results.getCityByName} />
+              <WeatherCard isFavorite={false} city={results.getCityByName} />
             </>
           )}
           {!loading && results?.getCityByName === null && <NoResults />}

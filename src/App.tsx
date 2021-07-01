@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React, {useContext} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {ThemeProvider} from 'styled-components';
+import {ThemeProvider} from 'styled-components/native';
 import {ApolloProvider} from '@apollo/client';
 
 import Router from './routes';
