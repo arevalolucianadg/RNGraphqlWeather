@@ -22,5 +22,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: appRelease
-          path: android/app/build/outputs/bundle/release/app.aab
+          name: app-release.aab
+          path: android/app/build/outputs/bundle/release/
