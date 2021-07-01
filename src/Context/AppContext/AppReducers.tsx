@@ -21,6 +21,16 @@ export const AppReducer = (
         ...state,
         cities: action.payload,
       };
+    case 'ADD_FAVORITE':
+      return {
+        ...state,
+        favoriteCities: [...state.favoriteCities, action.payload.cityId],
+      };
+    case 'UPDATE_FAVORITES':
+      return {
+        ...state,
+        favoriteCities: action.payload,
+      };
     default:
       return state;
   }

@@ -11,3 +11,4 @@ export const INITIAL_CITIES = [
 
 export const KEY_THEME_STORE = '@theme';
 export const KEY_CITIES_STORE = '@cities';
+export const KEY_FAV_CITIES_STORE = '@favcities';

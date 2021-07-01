@@ -16,10 +16,10 @@ import {WeatherInfo} from '../../graphql/interfaces';
 
 interface WeatherCardProps {
   city: WeatherInfo | null;
+  isFavorite: boolean;
 }
 
-const WeatherCard = ({city}: WeatherCardProps) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const WeatherCard = ({city, isFavorite}: WeatherCardProps) => {
 
   if (!city) return <View></View>;
   const {id, name, weather: {summary, temperature}} = city;

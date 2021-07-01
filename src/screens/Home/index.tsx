@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
-import {FlatList, Text} from 'react-native';
+import {FlatList, ListRenderItemInfo, Text} from 'react-native';
 import {useQuery} from '@apollo/client';
 
 import { AppContext } from '../../Context/AppContext/AppContext';
 import {GET_WEATHER_INFO} from '../../graphql/requests';
-import {CitiesInfo, QueryVars} from '../../graphql/interfaces';
+import {CitiesInfo, QueryVars, WeatherInfo} from '../../graphql/interfaces';
 import {Heading, LayoutBase, LoadingView, WeatherCard} from '../../components';
 import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
 import {TitleWrapper, CitiesList} from './styles';
@@ -20,7 +20,11 @@ export interface HomeCityProps {
 }
 
 const Home = () => {
-  const {cities} = useContext(AppContext);
+  const {cities, favoriteCities} = useContext(AppContext);
+
+  const isFavorite = (city: ListRenderItemInfo<WeatherInfo>) => {
+    return favoriteCities.includes(city.item.id);
+  }
   
   const variables = {
     id: cities,
@@ -45,7 +49,7 @@ const Home = () => {
             data={data?.getCityById}
             style={{flex: 1}}
             keyExtractor={city => city.id}
-            renderItem={city => <WeatherCard city={city.item} />}
+            renderItem={city => <WeatherCard city={city.item} isFavorite={isFavorite(city)} />}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={
               <TitleWrapper>

@@ -47,13 +47,31 @@ export const AppProvider = ({children}: AppProviderProps) => {
     });
   };
 
+  const addFavoriteCity = (cityId: string) => {
+    dispatch({
+      type: 'ADD_FAVORITE',
+      payload: {
+        cityId
+      }
+    })
+  }
+
+  const updateFavorites = (favCities: string[]) => {
+    dispatch({
+      type: 'UPDATE_FAVORITES',
+      payload: favCities,
+    });
+  };
+
   return (
     <AppContext.Provider
       value={{
         ...state,
         addCity,
+        addFavoriteCity,
         handleTheme,
         updateCities,
+        updateFavorites,
       }}>
       {children}
     </AppContext.Provider>

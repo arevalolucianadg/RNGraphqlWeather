@@ -19,32 +19,59 @@ import BackArrow from '../../../assets/svg/left-arrow.svg';
 import FavoriteStar from '../../../assets/svg/favorite-star.svg';
 import AddSvg from '../../../assets/svg/add.svg';
 import {saveStorage} from '../../../utils/asyncStorage';
+import {KEY_CITIES_STORE, KEY_FAV_CITIES_STORE} from '../../../utils/constants';
 
 const HeaderDetail = ({city}: {city: CityDetail}) => {
   const navigation = useNavigation();
   const {colors} = useContext(ThemeContext);
-  const {cities, theme, addCity} = useContext(AppContext);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const {
+    cities,
+    favoriteCities,
+    theme,
+    addCity,
+    addFavoriteCity,
+    updateFavorites,
+  } = useContext(AppContext);
 
   const isSavedCity = cities.includes(city.id);
+  const isFavoriteCity = favoriteCities.includes(city.id);
   const date = formatUnixToDate(city.weather.timestamp);
 
   const handleActions = (cityId: string) => {
     if (!isSavedCity) {
       addCity(cityId);
       saveStorage({
-        key: '@cities',
+        key: KEY_CITIES_STORE,
+        item: [...cities, cityId],
+      });
+    }
+
+    if (!isFavoriteCity) {
+      addFavoriteCity(cityId);
+      saveStorage({
+        key: KEY_FAV_CITIES_STORE,
         item: [...cities, cityId],
       });
     } else {
-      // TODO: implement Favorite
+      const filtered = favoriteCities.filter(
+        (favCity: string) => favCity !== city.id,
+      );
+      updateFavorites(filtered);
+      saveStorage({
+        key: KEY_FAV_CITIES_STORE,
+        item: filtered,
+      });
     }
   };
 
   return (
     <TopBar>
       <BackButton onPress={() => navigation.goBack()}>
-        <BackArrow height="100%" width="100%" fill={theme === 'light' ? colors.primary : colors.white} />
+        <BackArrow
+          height="100%"
+          width="100%"
+          fill={theme === 'light' ? colors.primary : colors.white}
+        />
       </BackButton>
       <TopBarContent>
         <View>
@@ -56,7 +83,7 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
         <ActionButton
           onPress={() => handleActions(city.id)}
           isSaved={isSavedCity}
-          isFavorite={isFavorite}>
+          isFavorite={isFavoriteCity}>
           {!isSavedCity && (
             <AddSvg height="100%" width="100%" fill={colors.white} />
           )}
@@ -64,7 +91,7 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
             <FavoriteStar
               height="100%"
               width="100%"
-              fill={isFavorite ? colors.white : colors.gray4}
+              fill={isFavoriteCity ? colors.white : colors.gray4}
             />
           )}
         </ActionButton>
