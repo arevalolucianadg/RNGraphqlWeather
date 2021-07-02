@@ -5,6 +5,7 @@ const initialState: AppStateProps = {
   theme: 'light',
   cities: INITIAL_CITIES,
   favoriteCities: [],
+  temperatureUnit: 'metric',
 };
 
 export default initialState;

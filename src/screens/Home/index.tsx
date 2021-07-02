@@ -20,7 +20,7 @@ export interface HomeCityProps {
 }
 
 const Home = () => {
-  const {cities, favoriteCities} = useContext(AppContext);
+  const {cities, favoriteCities, temperatureUnit} = useContext(AppContext);
 
   const isFavorite = (city: ListRenderItemInfo<WeatherInfo>) => {
     return favoriteCities.includes(city.item.id);
@@ -29,7 +29,7 @@ const Home = () => {
   const variables = {
     id: cities,
     config: {
-      units: 'metric',
+      units: temperatureUnit,
     },
   };
 

@@ -67,8 +67,6 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
     }
   };
 
-  console.log('WD', isFavoriteCity);
-
   return (
     <TopBar>
       <BackButton onPress={() => navigation.goBack()}>

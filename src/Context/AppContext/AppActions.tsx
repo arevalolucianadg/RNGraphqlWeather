@@ -6,3 +6,4 @@ export type AppAction =
   | {type: 'UPDATE_CITIES'; payload: string[];}
   | {type: 'ADD_FAVORITE'; payload: {cityId: string};}
   | {type: 'UPDATE_FAVORITES'; payload: string[];}
+  | {type: 'TOGGLE_TEMP_UNIT'; payload: string | number | ISwitchSelectorOption;}

@@ -31,6 +31,11 @@ export const AppReducer = (
         ...state,
         favoriteCities: action.payload,
       };
+    case 'TOGGLE_TEMP_UNIT':
+      return {
+        ...state,
+        temperatureUnit: action.payload,
+      };
     default:
       return state;
   }

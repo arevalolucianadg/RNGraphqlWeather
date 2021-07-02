@@ -1,16 +1,15 @@
-import React, {useEffect, useContext} from 'react';
+import React, {useContext} from 'react';
 import {ThemeContext} from 'styled-components';
 
 import LightSvg from '../assets/svg/sun.svg';
 import DarkSvg from '../assets/svg/moon.svg';
 import {AppContext} from '../Context/AppContext/AppContext';
-import {saveStorage, getStorage} from '../utils/asyncStorage';
+import {saveStorage} from '../utils/asyncStorage';
+import { KEY_THEME_STORE } from '../utils/constants';
 
 const useSwitchTheme = () => {
   const {colors} = useContext(ThemeContext);
   const {theme, handleTheme} = useContext(AppContext);
-
-  const KEY_THEME_STORE = '@theme';
 
   const themeOptions = [
     {

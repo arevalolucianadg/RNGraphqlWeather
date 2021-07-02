@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {View} from 'react-native';
 
 import useSwitchTheme from '../../hooks/useSwitchTheme';
@@ -15,7 +15,7 @@ import {
 
 
 const Settings = () => {
-  const {tempOptions, toggleFormatTemp} = useSwitchFormatTemp();
+  const {initialTemp, tempOptions, toggleFormatTemp} = useSwitchFormatTemp();
   const {initialTheme, themeOptions, toggleTheme} = useSwitchTheme();
 
   return (
@@ -31,7 +31,7 @@ const Settings = () => {
               <SettingTitle>Weather</SettingTitle>
               <SettingRow>
                 <SettingItem>Temperature</SettingItem>
-                <Switch options={tempOptions} onPress={toggleFormatTemp} />
+                <Switch initial={initialTemp} options={tempOptions} onPress={toggleFormatTemp} />
               </SettingRow>
             </SettingGroup>
             <SettingGroup>

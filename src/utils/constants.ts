@@ -12,3 +12,4 @@ export const INITIAL_CITIES = [
 export const KEY_THEME_STORE = '@theme';
 export const CITIES_STORE = '@cities';
 export const FAV_CITIES_STORE = '@favcities';
+export const TEMPERATURE_UNIT = '@tempunit';

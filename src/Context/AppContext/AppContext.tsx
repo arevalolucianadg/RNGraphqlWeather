@@ -5,7 +5,7 @@ import INITIAL_STATE from './initialState';
 
 import {AppContextProps, AppProviderProps} from './interfaces';
 import {ISwitchSelectorOption} from '../../types/switch';
-import { getThemeStored, getCitiesStored, getFavCities } from './utils';
+import {getThemeStored, getCitiesStored, getFavCities, getTempUnit} from './utils';
 
 export const AppContext = createContext({} as AppContextProps);
 
@@ -16,10 +16,12 @@ export const AppProvider = ({children}: AppProviderProps) => {
     const themeStored = await getThemeStored();
     const citiesStored = await getCitiesStored();
     const favCitiesStored = await getFavCities();
+    const tempUnitStored = await getTempUnit();
 
     themeStored && handleTheme(themeStored);
     citiesStored && updateCities(citiesStored);
     favCitiesStored && updateFavorites(favCitiesStored);
+    tempUnitStored && toggleTempUnit(tempUnitStored);
   };
 
   useEffect(() => {
@@ -53,15 +55,24 @@ export const AppProvider = ({children}: AppProviderProps) => {
     dispatch({
       type: 'ADD_FAVORITE',
       payload: {
-        cityId
-      }
-    })
-  }
+        cityId,
+      },
+    });
+  };
 
   const updateFavorites = (favCities: string[]) => {
     dispatch({
       type: 'UPDATE_FAVORITES',
       payload: favCities,
+    });
+  };
+
+  const toggleTempUnit = (
+    tempUnit: string | number | ISwitchSelectorOption,
+  ) => {
+    dispatch({
+      type: 'TOGGLE_TEMP_UNIT',
+      payload: tempUnit,
     });
   };
 
@@ -74,6 +85,7 @@ export const AppProvider = ({children}: AppProviderProps) => {
         handleTheme,
         updateCities,
         updateFavorites,
+        toggleTempUnit,
       }}>
       {children}
     </AppContext.Provider>

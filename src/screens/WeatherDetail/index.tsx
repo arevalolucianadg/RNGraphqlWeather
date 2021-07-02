@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Text} from 'react-native';
 import {useQuery} from '@apollo/client';
 import {RouteProp} from '@react-navigation/native';
@@ -13,6 +13,7 @@ import HeaderDetail from './HeaderDetail';
 import WeatherStatus from './WeatherStatus';
 import WeatherExtra from './WeatherExtra';
 import {Spacing} from './WeatherDetail.styles';
+import { AppContext } from '../../Context/AppContext/AppContext';
 
 interface WeatherDetailProps {
   navigation: StackNavigationProp<RootStackParamList, 'WeatherDetail'>;
@@ -21,11 +22,12 @@ interface WeatherDetailProps {
 
 const WeatherDetail = ({route}: WeatherDetailProps) => {
   const cityID = route.params.cityId;
+  const {temperatureUnit} = useContext(AppContext);
 
   const variables = {
     id: [cityID],
     config: {
-      units: 'metric',
+      units: temperatureUnit,
     },
   };
 

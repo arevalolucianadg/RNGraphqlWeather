@@ -1,3 +1,4 @@
+import { ISwitchSelectorOption } from '../types/switch';
 export interface CitiesInfo {
   getCityById: WeatherInfo[] | null;
 }
@@ -8,7 +9,7 @@ export interface QueryVars {
 }
 
 export interface Config {
-  units: string;
+  units: string | number | ISwitchSelectorOption;
 }
 
 export interface WeatherInfo {
