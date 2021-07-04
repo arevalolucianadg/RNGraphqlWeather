@@ -3,12 +3,18 @@
 App React Native para Android
 
 ### Tabla de contenido
+- [Descargar APK](#descargar-apk)
 - [Antes de comenzar](#antes-de-comenzar)
   - [Configuración de entorno](#configuración-de-entorno)
   - [Crear .env](#crear-env)
 - [Scripts disponibles](#scripts-disponibles)
 - [Tecnologías utilizadas](#tecnologías-utilizadas)
 - [API GraphQL](#api-graphql)
+
+## Descargar APK
+**OWeather - Google Drive**
+[app-release.apk](https://drive.google.com/file/d/1cNFdNbOlaZzgbZwUrPx2T9GuuAObmfKh/view?usp=sharing)
+***
 
 ## Antes de comenzar
 
@@ -58,6 +64,13 @@ API_URL=https://graphql-weather-api.herokuapp.com/
 ```bash
 cd android
 ./gradlew bundleRelease
+```
+
+**Generar AAB release**
+
+```bash
+cd android
+./gradlew assembleRelease
 ```
 
 ***
