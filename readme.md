@@ -13,7 +13,7 @@ App React Native para Android
 
 ## Descargar APK
 **OWeather - Google Drive**
-[app-release.apk](https://drive.google.com/file/d/1cNFdNbOlaZzgbZwUrPx2T9GuuAObmfKh/view?usp=sharing)
+[OWeatherApp-release.apk](https://drive.google.com/file/d/1iSDXiRRP6nd85zNPNytCT7xjaUhJF79O/view?usp=sharing)
 ***
 
 ## Antes de comenzar
