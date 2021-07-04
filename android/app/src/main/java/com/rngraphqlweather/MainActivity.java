@@ -1,4 +1,4 @@
-package com.arevalolucianadv.rngraphqlweather;
+package com.rngraphqlweather;
 
 import com.facebook.react.ReactActivity;
 
