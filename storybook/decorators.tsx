@@ -1,6 +1,5 @@
-import React from 'react';
-import {ThemeProvider} from 'styled-components';
-import styled from 'styled-components/native';
+import React, { FunctionComponent } from 'react';
+import styled, { ThemeProvider } from 'styled-components/native';
 
 import {light} from '../src/styles/theme';
 
@@ -11,9 +10,9 @@ const StoryWrapper = styled.View`
   justify-content: center;
 `;
 
-const StylesDecorator = storyFn => (
+const StylesDecorator: FunctionComponent = ({ children }) => (
   <ThemeProvider theme={light}>
-    <StoryWrapper>{storyFn()}</StoryWrapper>
+    <StoryWrapper>{ children }</StoryWrapper>
   </ThemeProvider>
 );
 

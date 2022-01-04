@@ -3,13 +3,13 @@
 //
 // https://github.com/elderfo/react-native-storybook-loader.git
 
-function loadStories() {
+function loadStories(): void {
   require('../src/components/BottomTabItem/BottomTabItem.stories');
 }
 
-const stories = ['../src/components/BottomTabItem/BottomTabItem.stories'];
+const stories: string[] = ['../src/components/BottomTabItem/BottomTabItem.stories'];
 
-module.exports = {
+export {
   loadStories,
   stories,
 };
