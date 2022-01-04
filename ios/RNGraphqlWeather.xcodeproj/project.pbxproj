@@ -11,12 +11,14 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		FFF8285D7DA44971BDAA907B /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B47AC8249EF843FA95C2D0C1 /* WorkSans-Bold.ttf */; };
 		1C0FA2D42CC541BE8C3CB5AD /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBDA8C07DE244BEA767D591 /* WorkSans-Light.ttf */; };
-		E7A9C56AA881441BBBFDD1B1 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA65E0B4876C41DDB3FC7590 /* WorkSans-Medium.ttf */; };
-		CBD474C4A92E48FEB62A3D12 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA55BB85D7C34907A4CBFA69 /* WorkSans-Regular.ttf */; };
+		4471EF01F4EA24C42684677B /* libPods-RNGraphqlWeather-RNGraphqlWeatherTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B977DCBB4010B290B468FA21 /* libPods-RNGraphqlWeather-RNGraphqlWeatherTests.a */; };
 		55CCCD3D7A774FD0B19A8E86 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521E870D27E24CCCA7CF0C30 /* WorkSans-SemiBold.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		BEBEC996258FCAABA880A145 /* libPods-RNGraphqlWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6A3A5C0A41CD98B5AC2E6B /* libPods-RNGraphqlWeather.a */; };
+		CBD474C4A92E48FEB62A3D12 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA55BB85D7C34907A4CBFA69 /* WorkSans-Regular.ttf */; };
+		E7A9C56AA881441BBBFDD1B1 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA65E0B4876C41DDB3FC7590 /* WorkSans-Medium.ttf */; };
+		FFF8285D7DA44971BDAA907B /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B47AC8249EF843FA95C2D0C1 /* WorkSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,19 +35,25 @@
 		00E356EE1AD99517003FC87E /* RNGraphqlWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNGraphqlWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RNGraphqlWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNGraphqlWeatherTests.m; sourceTree = "<group>"; };
+		05238137899855A32A85BA05 /* Pods-RNGraphqlWeather-RNGraphqlWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNGraphqlWeather-RNGraphqlWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-RNGraphqlWeather-RNGraphqlWeatherTests/Pods-RNGraphqlWeather-RNGraphqlWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* RNGraphqlWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNGraphqlWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RNGraphqlWeather/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RNGraphqlWeather/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RNGraphqlWeather/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RNGraphqlWeather/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RNGraphqlWeather/main.m; sourceTree = "<group>"; };
+		44620030936366CF2F6C546A /* Pods-RNGraphqlWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNGraphqlWeather.release.xcconfig"; path = "Target Support Files/Pods-RNGraphqlWeather/Pods-RNGraphqlWeather.release.xcconfig"; sourceTree = "<group>"; };
+		521E870D27E24CCCA7CF0C30 /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-SemiBold.ttf"; path = "../src/assets/fonts/WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNGraphqlWeather/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B47AC8249EF843FA95C2D0C1 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Bold.ttf"; path = "../src/assets/fonts/WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		B977DCBB4010B290B468FA21 /* libPods-RNGraphqlWeather-RNGraphqlWeatherTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNGraphqlWeather-RNGraphqlWeatherTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA65E0B4876C41DDB3FC7590 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Medium.ttf"; path = "../src/assets/fonts/WorkSans-Medium.ttf"; sourceTree = "<group>"; };
+		CEBDA8C07DE244BEA767D591 /* WorkSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Light.ttf"; path = "../src/assets/fonts/WorkSans-Light.ttf"; sourceTree = "<group>"; };
+		DF6A3A5C0A41CD98B5AC2E6B /* libPods-RNGraphqlWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNGraphqlWeather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E397B88FE09C8C94F5BEF92E /* Pods-RNGraphqlWeather-RNGraphqlWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNGraphqlWeather-RNGraphqlWeatherTests.release.xcconfig"; path = "Target Support Files/Pods-RNGraphqlWeather-RNGraphqlWeatherTests/Pods-RNGraphqlWeather-RNGraphqlWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		B47AC8249EF843FA95C2D0C1 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; name = "WorkSans-Bold.ttf"; path = "../src/assets/fonts/WorkSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CEBDA8C07DE244BEA767D591 /* WorkSans-Light.ttf */ = {isa = PBXFileReference; name = "WorkSans-Light.ttf"; path = "../src/assets/fonts/WorkSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BA65E0B4876C41DDB3FC7590 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; name = "WorkSans-Medium.ttf"; path = "../src/assets/fonts/WorkSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FA55BB85D7C34907A4CBFA69 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; name = "WorkSans-Regular.ttf"; path = "../src/assets/fonts/WorkSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		521E870D27E24CCCA7CF0C30 /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "WorkSans-SemiBold.ttf"; path = "../src/assets/fonts/WorkSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA55BB85D7C34907A4CBFA69 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Regular.ttf"; path = "../src/assets/fonts/WorkSans-Regular.ttf"; sourceTree = "<group>"; };
+		FFDE59E058AAF792EA2AD17C /* Pods-RNGraphqlWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNGraphqlWeather.debug.xcconfig"; path = "Target Support Files/Pods-RNGraphqlWeather/Pods-RNGraphqlWeather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4471EF01F4EA24C42684677B /* libPods-RNGraphqlWeather-RNGraphqlWeatherTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEBEC996258FCAABA880A145 /* libPods-RNGraphqlWeather.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,12 +106,39 @@
 			name = RNGraphqlWeather;
 			sourceTree = "<group>";
 		};
+		26C43F83CF983EBDFA7710DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE59E058AAF792EA2AD17C /* Pods-RNGraphqlWeather.debug.xcconfig */,
+				44620030936366CF2F6C546A /* Pods-RNGraphqlWeather.release.xcconfig */,
+				05238137899855A32A85BA05 /* Pods-RNGraphqlWeather-RNGraphqlWeatherTests.debug.xcconfig */,
+				E397B88FE09C8C94F5BEF92E /* Pods-RNGraphqlWeather-RNGraphqlWeatherTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				DF6A3A5C0A41CD98B5AC2E6B /* libPods-RNGraphqlWeather.a */,
+				B977DCBB4010B290B468FA21 /* libPods-RNGraphqlWeather-RNGraphqlWeatherTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		524A7E9FDD2843D7B935B9F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B47AC8249EF843FA95C2D0C1 /* WorkSans-Bold.ttf */,
+				CEBDA8C07DE244BEA767D591 /* WorkSans-Light.ttf */,
+				BA65E0B4876C41DDB3FC7590 /* WorkSans-Medium.ttf */,
+				FA55BB85D7C34907A4CBFA69 /* WorkSans-Regular.ttf */,
+				521E870D27E24CCCA7CF0C30 /* WorkSans-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -120,6 +157,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				524A7E9FDD2843D7B935B9F1 /* Resources */,
+				26C43F83CF983EBDFA7710DC /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -135,19 +173,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		524A7E9FDD2843D7B935B9F1 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				B47AC8249EF843FA95C2D0C1 /* WorkSans-Bold.ttf */,
-				CEBDA8C07DE244BEA767D591 /* WorkSans-Light.ttf */,
-				BA65E0B4876C41DDB3FC7590 /* WorkSans-Medium.ttf */,
-				FA55BB85D7C34907A4CBFA69 /* WorkSans-Regular.ttf */,
-				521E870D27E24CCCA7CF0C30 /* WorkSans-SemiBold.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RNGraphqlWeatherTests" */;
 			buildPhases = (
+				2D8747F2DE5671F933DA4CFE /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				4F83D3C15B56457F2E59A656 /* [CP] Embed Pods Frameworks */,
+				460F350EFF5678A3A2D59CBB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,11 +201,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RNGraphqlWeather" */;
 			buildPhases = (
+				BCA39DF0269884EAD33C52A0 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				A717198640C22262EA45CD00 /* [CP] Embed Pods Frameworks */,
+				5D7FBE0E33F0008C950B68AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,6 +294,118 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
+		2D8747F2DE5671F933DA4CFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNGraphqlWeather-RNGraphqlWeatherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		460F350EFF5678A3A2D59CBB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather-RNGraphqlWeatherTests/Pods-RNGraphqlWeather-RNGraphqlWeatherTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather-RNGraphqlWeatherTests/Pods-RNGraphqlWeather-RNGraphqlWeatherTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather-RNGraphqlWeatherTests/Pods-RNGraphqlWeather-RNGraphqlWeatherTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F83D3C15B56457F2E59A656 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather-RNGraphqlWeatherTests/Pods-RNGraphqlWeather-RNGraphqlWeatherTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather-RNGraphqlWeatherTests/Pods-RNGraphqlWeather-RNGraphqlWeatherTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather-RNGraphqlWeatherTests/Pods-RNGraphqlWeather-RNGraphqlWeatherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D7FBE0E33F0008C950B68AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather/Pods-RNGraphqlWeather-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather/Pods-RNGraphqlWeather-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather/Pods-RNGraphqlWeather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A717198640C22262EA45CD00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather/Pods-RNGraphqlWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather/Pods-RNGraphqlWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNGraphqlWeather/Pods-RNGraphqlWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCA39DF0269884EAD33C52A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNGraphqlWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +458,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05238137899855A32A85BA05 /* Pods-RNGraphqlWeather-RNGraphqlWeatherTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -341,6 +485,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E397B88FE09C8C94F5BEF92E /* Pods-RNGraphqlWeather-RNGraphqlWeatherTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -364,6 +509,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFDE59E058AAF792EA2AD17C /* Pods-RNGraphqlWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -389,6 +535,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44620030936366CF2F6C546A /* Pods-RNGraphqlWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -443,6 +590,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -507,6 +655,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
