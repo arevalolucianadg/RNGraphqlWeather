@@ -14,7 +14,15 @@
     "prestorybook": "rnstl",
     "storybook:dev": "start-storybook -p 7007",
     "storybook": "adb reverse tcp:7007 tcp:7007 && npm run prestorybook && npm run storybook:dev",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "typescript": "tsc",
+    "pre-commit": "npm-run-all --parallel  test:coverage lint typescript",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit"
+    }
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
@@ -59,9 +67,11 @@
     "babel-jest": "^27.4.5",
     "babel-loader": "^8.2.3",
     "eslint": "^8.6.0",
+    "husky": "^7.0.4",
     "jest": "^27.4.5",
     "jest-styled-components": "^7.0.8",
     "metro-react-native-babel-preset": "^0.66.2",
+    "npm-run-all": "^4.1.5",
     "react-dom": "17.0.2",
     "react-native-dotenv": "^3.3.1",
     "react-native-storybook-loader": "^2.0.4",
