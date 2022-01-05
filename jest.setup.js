@@ -1,4 +1,3 @@
-import React from 'react'
 import 'react-native-gesture-handler/jestSetup';
 import 'jest-styled-components';
 
