@@ -1,26 +1,25 @@
-import React, {useContext} from 'react';
-import {Text} from 'react-native';
+import React, {FunctionComponent, useContext} from 'react';
 import {useQuery} from '@apollo/client';
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {Text} from 'react-native';
 
-import {RootStackParamList} from '../../routes/RootParams';
 import {LayoutBase, LoadingView} from '../../components';
-
-import {GET_WEATHER_DETAIL} from '../../graphql/requests';
-import {CityInfo, QueryVars} from '../../graphql/interfaces';
-import HeaderDetail from './HeaderDetail';
-import WeatherStatus from './WeatherStatus';
-import WeatherExtra from './WeatherExtra';
-import {Spacing} from './WeatherDetail.styles';
 import { AppContext } from '../../Context/AppContext/AppContext';
+import {CityInfo, QueryVars} from '../../graphql/interfaces';
+import {GET_WEATHER_DETAIL} from '../../graphql/requests';
+import {RootStackParamList} from '../../routes/RootParams';
+import HeaderDetail from './HeaderDetail';
+import {Spacing} from './WeatherDetail.styles';
+import WeatherExtra from './WeatherExtra';
+import WeatherStatus from './WeatherStatus';
 
 interface WeatherDetailProps {
   navigation: StackNavigationProp<RootStackParamList, 'WeatherDetail'>;
   route: RouteProp<RootStackParamList, 'WeatherDetail'>;
 }
 
-const WeatherDetail = ({route}: WeatherDetailProps) => {
+const WeatherDetail: FunctionComponent<WeatherDetailProps> = ({route}) => {
   const cityID = route.params.cityId;
   const {temperatureUnit} = useContext(AppContext);
 
