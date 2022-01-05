@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import {global} from '../../styles/GlobalStyles';
+import {global} from '../../styles/global-styles';
 
 export const TabItem = styled.View`
   display: flex;

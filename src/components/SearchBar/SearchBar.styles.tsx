@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {global} from '../../styles/GlobalStyles';
+import {global} from '../../styles/global-styles';
 
 interface SearchBarProps {
   isFocus: boolean;

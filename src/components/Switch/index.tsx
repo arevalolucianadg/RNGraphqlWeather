@@ -3,7 +3,7 @@ import SwitchSelector from 'react-native-switch-selector';
 import {ThemeContext} from 'styled-components/native';
 
 import {ISwitchSelectorOption} from '../../types/switch';
-import {global} from '../../styles/GlobalStyles';
+import {global} from '../../styles/global-styles';
 
 interface SwitchProps {
   initial?: number;
