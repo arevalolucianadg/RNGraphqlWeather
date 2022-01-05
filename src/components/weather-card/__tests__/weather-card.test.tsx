@@ -2,8 +2,8 @@ import React from 'react';
 import {render} from '@testing-library/react-native';
 import {ThemeProvider} from 'styled-components/native';
 
-import WeatherCard from './';
-import {light} from '../../styles/theme';
+import WeatherCard from '..';
+import {light} from '../../../styles/theme';
 
 const mockedDispatch = jest.fn();
 jest.mock('@react-navigation/native', () => {
@@ -17,7 +17,7 @@ jest.mock('@react-navigation/native', () => {
   };
 });
 
-describe('Weather Card', () => {
+describe('weather card component', () => {
   const city = {
     id: '2267057',
     name: 'Lisbon',
@@ -32,7 +32,7 @@ describe('Weather Card', () => {
     },
   };
 
-  it('Renderiza correctamente', () => {
+  it('should render a snapshot', () => {
     const {toJSON} = render(
       <ThemeProvider theme={light}>
         <WeatherCard isFavorite={false} city={city} />
@@ -41,12 +41,12 @@ describe('Weather Card', () => {
     expect(toJSON()).toMatchSnapshot();
   });
 
-  it('Muestra el nombre de la ciudad', () => {
+  it('should render the city name', () => {
     const WeatherName = render(
       <ThemeProvider theme={light}>
         <WeatherCard isFavorite={false} city={city} />
       </ThemeProvider>,
     );
-    expect(WeatherName.getByText(city.name)).toBeTruthy;
+    expect(WeatherName.getByText(city.name)).toBe(true);
   });
 });

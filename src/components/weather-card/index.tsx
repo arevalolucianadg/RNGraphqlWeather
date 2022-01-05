@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
+import React, { FunctionComponent } from 'react';
 import {useNavigation} from '@react-navigation/native';
+import {View} from 'react-native';
 
+import ICON from '../../assets/png/weatherIcons';
+import {WeatherInfo} from '../../graphql/interfaces';
 import {
   CityName,
   Info,
@@ -9,26 +11,30 @@ import {
   CityTemp,
   CitySummaryTitle,
   WeatherIcon,
-} from './WeatherCard.styles';
+} from './styles';
 
-import ICON from '../../assets/png/weatherIcons';
-import {WeatherInfo} from '../../graphql/interfaces';
-
+/**
+ * Types
+ */
 interface WeatherCardProps {
   city: WeatherInfo | null;
   isFavorite: boolean;
 }
 
-const WeatherCard = ({city, isFavorite}: WeatherCardProps) => {
+const WeatherCard: FunctionComponent<WeatherCardProps> = ({city, isFavorite}) => {
+  const navigation = useNavigation();
 
-  if (!city) return <View></View>;
+  if (!city) {
+    return <View />
+  };
+
   const {id, name, weather: {summary, temperature}} = city;
 
-  const navigation = useNavigation();
 
   return (
     <WeatherCardWrapper
       isFavorite={isFavorite}
+      // TODO: remove navigation
       onPress={() => navigation.navigate('WeatherDetail', {cityId: id})}>
       <View>
         <CityName isFavorite={isFavorite}>{name}</CityName>

@@ -16,6 +16,7 @@
     "plugin:@typescript-eslint/recommended",
     "airbnb-base",
     "airbnb-base/rules/strict",
+    "plugin:jest/all",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
@@ -110,6 +111,9 @@
     ],
     "@typescript-eslint/no-unused-vars": "error",
     "no-unused-vars": "off",
+
+    // Jest
+    "jest/prefer-expect-assertions": "off",
 
     // Unicorn
     "unicorn/no-abusive-eslint-disable": "error",

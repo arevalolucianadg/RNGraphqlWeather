@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Weather Card Renderiza correctamente 1`] = `
+exports[`weather card component should render a snapshot 1`] = `
 <View
   accessible={true}
   collapsable={false}
