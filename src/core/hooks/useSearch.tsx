@@ -3,10 +3,10 @@ import {useIsFocused} from '@react-navigation/native';
 import {useLazyQuery} from '@apollo/client';
 import {Keyboard} from 'react-native';
 
-import {ByNameQueryVars, CityByNameInfo} from '../graphql/interfaces';
-import {GET_CITY_BY_NAME} from '../graphql/requests';
-import {getLastSearch} from '../utils/search';
-import { AppContext } from '../Context/AppContext/AppContext';
+import {ByNameQueryVars, CityByNameInfo} from '../../graphql/interfaces';
+import {GET_CITY_BY_NAME} from '../../graphql/requests';
+import {getLastSearch} from '../../utils/search';
+import { AppContext } from '../../Context/AppContext/AppContext';
 
 const useSearch = () => {
   const {temperatureUnit} = useContext(AppContext);

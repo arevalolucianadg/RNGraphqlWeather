@@ -1,8 +1,8 @@
 import {useContext} from 'react';
 
-import { AppContext } from '../Context/AppContext/AppContext';
-import { saveStorage } from '../utils/async-storage';
-import { KEY_TEMPERATURE_UNIT } from '../utils/constants';
+import { AppContext } from '../../Context/AppContext/AppContext';
+import { saveStorage } from '../../utils/async-storage';
+import { KEY_TEMPERATURE_UNIT } from '../../utils/constants';
 
 
 const useSwitchFormatTemp = () => {

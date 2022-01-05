@@ -10,7 +10,7 @@ import {
   WeatherCard,
 } from '../../components';
 import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
-import useSearch from '../../hooks/useSearch';
+import useSearch from '../../core/hooks/useSearch';
 import {
   TitleWrapper,
   ResultsView,

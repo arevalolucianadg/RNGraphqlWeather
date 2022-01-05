@@ -3,8 +3,8 @@ import {View} from 'react-native';
 
 import {LayoutBase, Heading, Switch} from '../../components';
 import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
-import useSwitchFormatTemp from '../../hooks/useSwitchFormatTemp';
-import useSwitchTheme from '../../hooks/useSwitchTheme';
+import useSwitchTheme from '../../core/hooks/use-switch-theme';
+import useSwitchFormatTemp from '../../core/hooks/useSwitchFormatTemp';
 import {
   SettingGroup,
   TitleWrapper,
