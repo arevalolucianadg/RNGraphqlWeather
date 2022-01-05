@@ -1,10 +1,10 @@
-import React, {useContext} from 'react';
+import React, {FunctionComponent, useContext} from 'react';
 import {ActivityIndicator} from 'react-native';
 import {ThemeContext} from 'styled-components';
 
-import {LoadingWrapper} from './LoadingView.styles';
+import {LoadingWrapper} from './styles';
 
-const LoadingView = () => {
+const LoadingView: FunctionComponent = () => {
   const {colors} = useContext(ThemeContext);
 
   return (

@@ -3,7 +3,7 @@ export {default as BottomTabItem} from './BottomTabItem';
 export {default as Button} from './Button';
 export {default as Heading} from './Heading';
 export {default as LayoutBase} from './LayoutBase';
-export {default as LoadingView} from './LoadingView';
+export {default as LoadingView} from './loading-view';
 export {default as NoResults} from './no-results';
 export {default as SearchBar} from './search-bar';
 export {default as Switch} from './switch';
