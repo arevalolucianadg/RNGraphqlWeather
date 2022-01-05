@@ -9,7 +9,7 @@ import {
   SearchBar,
   WeatherCard,
 } from '../../components';
-import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
+import {LayoutSpacing} from '../../components/layout-base/styles';
 import useSearch from '../../core/hooks/use-search';
 import {
   TitleWrapper,

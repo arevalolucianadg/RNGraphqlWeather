@@ -3,7 +3,7 @@ import {useQuery} from '@apollo/client';
 import {FlatList, ListRenderItemInfo, RefreshControl, Text} from 'react-native';
 
 import {Heading, LayoutBase, LoadingView, WeatherCard} from '../../components';
-import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
+import {LayoutSpacing} from '../../components/layout-base/styles';
 import {AppContext} from '../../Context/AppContext/AppContext';
 import {CitiesInfo, QueryVars, WeatherInfo} from '../../graphql/interfaces';
 import {GET_WEATHER_INFO} from '../../graphql/requests';
