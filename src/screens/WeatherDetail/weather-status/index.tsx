@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import {View} from 'react-native';
 
+import ICON from '../../../assets/png/weatherIcons';
+import {CityDetail} from '../../../graphql/interfaces';
 import {
   Item,
   ItemTitle,
@@ -11,11 +13,9 @@ import {
   Temp,
   Title,
   WeatherIcon,
-} from './WeatherStatus.styles';
-import {CityDetail} from '../../../graphql/interfaces';
-import ICON from '../../../assets/png/weatherIcons';
+} from './styles';
 
-const WeatherStatus = ({city}: {city: CityDetail}) => {
+const WeatherStatus: FunctionComponent<{city: CityDetail}> = ({city}) => {
   const {summary, temperature} = city.weather;
 
   return (

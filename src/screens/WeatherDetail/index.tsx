@@ -10,9 +10,9 @@ import {CityInfo, QueryVars} from '../../graphql/interfaces';
 import {GET_WEATHER_DETAIL} from '../../graphql/requests';
 import {RootStackParamList} from '../../routes/RootParams';
 import HeaderDetail from './HeaderDetail';
+import WeatherStatus from './weather-status';
 import {Spacing} from './WeatherDetail.styles';
 import WeatherExtra from './WeatherExtra';
-import WeatherStatus from './WeatherStatus';
 
 interface WeatherDetailProps {
   navigation: StackNavigationProp<RootStackParamList, 'WeatherDetail'>;
