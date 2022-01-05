@@ -1,15 +1,15 @@
-import React, {useContext} from 'react';
+import React, {FunctionComponent, useContext} from 'react';
 import {ThemeContext} from 'styled-components/native';
 
+import CloseSvg from '../../assets/svg/close.svg';
 import {
   NoResultsIcon,
   NoResultsText,
   NoResultsTitle,
   NoResultsWrapper,
-} from './NoResults.styles';
-import CloseSvg from '../../assets/svg/close.svg';
+} from './styles';
 
-const NoResults = () => {
+const NoResults: FunctionComponent = () => {
   const {colors} = useContext(ThemeContext);
 
   return (

@@ -4,7 +4,7 @@ export {default as Button} from './Button';
 export {default as Heading} from './Heading';
 export {default as LayoutBase} from './LayoutBase';
 export {default as LoadingView} from './LoadingView';
-export {default as NoResults} from './NoResults';
+export {default as NoResults} from './no-results';
 export {default as SearchBar} from './search-bar';
 export {default as Switch} from './switch';
 export {default as WeatherCard} from './weather-card';
