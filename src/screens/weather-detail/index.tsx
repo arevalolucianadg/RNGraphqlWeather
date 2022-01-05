@@ -9,7 +9,7 @@ import { AppContext } from '../../Context/AppContext/AppContext';
 import {CityInfo, QueryVars} from '../../graphql/interfaces';
 import {GET_WEATHER_DETAIL} from '../../graphql/requests';
 import {RootStackParamList} from '../../routes/RootParams';
-import HeaderDetail from './HeaderDetail';
+import HeaderDetail from './header-detail';
 import {Spacing} from './styles';
 import WeatherExtra from './weather-extra';
 import WeatherStatus from './weather-status';

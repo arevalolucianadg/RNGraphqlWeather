@@ -1,8 +1,16 @@
-import React, {useContext, useState} from 'react';
-import {ThemeContext} from 'styled-components/native';
+import React, {FunctionComponent, useContext} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {View} from 'react-native';
+import {ThemeContext} from 'styled-components/native';
 
+import AddSvg from '../../../assets/svg/add.svg';
+import FavoriteStar from '../../../assets/svg/favorite-star.svg';
+import BackArrow from '../../../assets/svg/left-arrow.svg';
+import {AppContext} from '../../../Context/AppContext/AppContext';
+import {CityDetail} from '../../../graphql/interfaces';
+import {saveStorage} from '../../../utils/async-storage';
+import { KEY_FAV_CITIES_STORE, KEY_CITIES_STORE } from '../../../utils/constants';
+import {formatUnixToDate} from '../../../utils/weather-details';
 import {
   TopBar,
   BackButton,
@@ -10,18 +18,9 @@ import {
   CityName,
   DateInfo,
   ActionButton,
-} from './HeaderDetail.styles';
-import {AppContext} from '../../../Context/AppContext/AppContext';
-import {CityDetail} from '../../../graphql/interfaces';
-import {formatUnixToDate} from '../../../utils/weather-details';
+} from './styles';
 
-import BackArrow from '../../../assets/svg/left-arrow.svg';
-import FavoriteStar from '../../../assets/svg/favorite-star.svg';
-import AddSvg from '../../../assets/svg/add.svg';
-import {saveStorage} from '../../../utils/async-storage';
-import { KEY_FAV_CITIES_STORE, KEY_CITIES_STORE } from '../../../utils/constants';
-
-const HeaderDetail = ({city}: {city: CityDetail}) => {
+const HeaderDetail: FunctionComponent<{city: CityDetail}> = ({city}) => {
   const navigation = useNavigation();
   const {colors} = useContext(ThemeContext);
   const {
@@ -37,7 +36,7 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
   const isFavoriteCity = favoriteCities.includes(city.id);
   const date = formatUnixToDate(city.weather.timestamp);
 
-  const handleActions = (cityId: string) => {
+  const handleActions = (cityId: string): void => {
     if (!isSavedCity) {
       addCity(cityId);
       saveStorage({
@@ -53,18 +52,16 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
         key: KEY_FAV_CITIES_STORE,
         item: [...favoriteCities, cityId],
       });
-      return;
-    } else {
-      const filtered = favoriteCities.filter(
-        (favCity: string) => favCity !== city.id,
-      );
-      updateFavorites(filtered);
-      saveStorage({
-        key: KEY_FAV_CITIES_STORE,
-        item: filtered,
-      });
-      return;
     }
+
+    const filtered = favoriteCities.filter(
+      (favCity: string) => favCity !== city.id,
+    );
+    updateFavorites(filtered);
+    saveStorage({
+      key: KEY_FAV_CITIES_STORE,
+      item: filtered,
+    });
   };
 
   return (

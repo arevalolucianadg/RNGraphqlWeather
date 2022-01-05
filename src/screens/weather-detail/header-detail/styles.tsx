@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import styled from 'styled-components/native';
 import {global} from '../../../styles/global-styles';
 import {isLightText} from '../../../utils/theme';
