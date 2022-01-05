@@ -10,7 +10,7 @@ import {
   ItemValue,
   WeatherExtraWrapper,
 } from './WeatherExtra.styles';
-import {saveStorage} from '../../../utils/asyncStorage';
+import {saveStorage} from '../../../utils/async-storage';
 import {KEY_CITIES_STORE} from '../../../utils/constants';
 
 const WeatherExtra = ({city}: {city: CityDetail}) => {

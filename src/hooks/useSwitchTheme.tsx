@@ -4,7 +4,7 @@ import {ThemeContext} from 'styled-components';
 import LightSvg from '../assets/svg/sun.svg';
 import DarkSvg from '../assets/svg/moon.svg';
 import {AppContext} from '../Context/AppContext/AppContext';
-import {saveStorage} from '../utils/asyncStorage';
+import {saveStorage} from '../utils/async-storage';
 import { KEY_THEME_STORE } from '../utils/constants';
 
 const useSwitchTheme = () => {

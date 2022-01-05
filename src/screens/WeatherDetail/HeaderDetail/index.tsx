@@ -13,13 +13,13 @@ import {
 } from './HeaderDetail.styles';
 import {AppContext} from '../../../Context/AppContext/AppContext';
 import {CityDetail} from '../../../graphql/interfaces';
-import {formatUnixToDate} from '../../../utils/weatherDetails';
+import {formatUnixToDate} from '../../../utils/weather-details';
 
 import BackArrow from '../../../assets/svg/left-arrow.svg';
 import FavoriteStar from '../../../assets/svg/favorite-star.svg';
 import AddSvg from '../../../assets/svg/add.svg';
-import {saveStorage} from '../../../utils/asyncStorage';
-import { FAV_CITIES_STORE, CITIES_STORE } from '../../../utils/constants';
+import {saveStorage} from '../../../utils/async-storage';
+import { KEY_FAV_CITIES_STORE, KEY_CITIES_STORE } from '../../../utils/constants';
 
 const HeaderDetail = ({city}: {city: CityDetail}) => {
   const navigation = useNavigation();
@@ -41,7 +41,7 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
     if (!isSavedCity) {
       addCity(cityId);
       saveStorage({
-        key: CITIES_STORE,
+        key: KEY_CITIES_STORE,
         item: [...cities, cityId],
       });
       return;
@@ -50,7 +50,7 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
     if (!isFavoriteCity) {
       addFavoriteCity(cityId);
       saveStorage({
-        key: FAV_CITIES_STORE,
+        key: KEY_FAV_CITIES_STORE,
         item: [...favoriteCities, cityId],
       });
       return;
@@ -60,7 +60,7 @@ const HeaderDetail = ({city}: {city: CityDetail}) => {
       );
       updateFavorites(filtered);
       saveStorage({
-        key: FAV_CITIES_STORE,
+        key: KEY_FAV_CITIES_STORE,
         item: filtered,
       });
       return;

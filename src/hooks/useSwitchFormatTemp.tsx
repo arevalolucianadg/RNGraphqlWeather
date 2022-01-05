@@ -1,8 +1,8 @@
 import {useContext} from 'react';
 
 import { AppContext } from '../Context/AppContext/AppContext';
-import { saveStorage } from '../utils/asyncStorage';
-import { TEMPERATURE_UNIT } from '../utils/constants';
+import { saveStorage } from '../utils/async-storage';
+import { KEY_TEMPERATURE_UNIT } from '../utils/constants';
 
 
 const useSwitchFormatTemp = () => {
@@ -19,7 +19,7 @@ const useSwitchFormatTemp = () => {
   const toggleFormatTemp = (value: string) => {
     toggleTempUnit(value);
     saveStorage({
-      key: TEMPERATURE_UNIT,
+      key: KEY_TEMPERATURE_UNIT,
       item: value,
     })
   };
