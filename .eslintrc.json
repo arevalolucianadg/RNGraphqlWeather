@@ -108,6 +108,8 @@
         "allowHigherOrderFunctions": false
       }
     ],
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-unused-vars": "off",
 
     // Unicorn
     "unicorn/no-abusive-eslint-disable": "error",

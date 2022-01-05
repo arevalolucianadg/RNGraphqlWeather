@@ -1,7 +1,7 @@
 import React from 'react';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 
-import useBottomTab from '../../core/hooks/useBottomTab';
+import useBottomTab from '../../core/hooks/use-bottom-tab';
 import BottomTabItem from '../BottomTabItem';
 import tabs from './tabs';
 
