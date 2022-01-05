@@ -1,10 +1,10 @@
 import React from 'react';
-import {storiesOf} from '@storybook/react-native';
 import {action} from '@storybook/addon-actions';
+import {storiesOf} from '@storybook/react-native';
 
-import HomeIcon from '../../assets/svg/bottomTabIcons/home-icon.svg';
-import BottomTabItem from './';
+import BottomTabItem from '.';
 import StylesDecorator from '../../../storybook/decorators';
+import HomeIcon from '../../assets/svg/bottomTabIcons/home-icon.svg';
 
 export const Tab = {
   component: HomeIcon,

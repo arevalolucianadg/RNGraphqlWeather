@@ -2,7 +2,7 @@ import React from 'react';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 
 import useBottomTab from '../../core/hooks/use-bottom-tab';
-import BottomTabItem from '../BottomTabItem';
+import BottomTabItem from '../bottom-tab-item';
 import tabs from './tabs';
 
 import {BottomTabBarWrapper} from './BottomTabBar.styles';
