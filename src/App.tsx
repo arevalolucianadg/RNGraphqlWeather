@@ -5,7 +5,7 @@ import {ThemeProvider} from 'styled-components/native';
 import {ApolloProvider} from '@apollo/client';
 
 import Router from './routes';
-import {navigationRef} from './routes/RootNavigation';
+import {useRootNavigation} from './routes/root-navigation';
 import apolloConfig from './config/apollo';
 import StorybookUI from '../storybook';
 import {AppContext} from './Context/AppContext/AppContext';
@@ -16,11 +16,12 @@ import GlobalProvider from './Context';
 
 const GlobalState = () => {
   const {theme} = useContext(AppContext);
+  const { navigatorRef } = useRootNavigation();
 
   return (
     <ApolloProvider client={apolloConfig}>
       <ThemeProvider theme={theme === 'light' ? light : dark}>
-        <NavigationContainer ref={navigationRef}>
+        <NavigationContainer ref={navigatorRef}>
           <Router />
         </NavigationContainer>
       </ThemeProvider>

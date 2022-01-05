@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-import { RootTabParamList } from './RootParams';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomTabBar } from '../components';
 import { Home, Search, Settings } from '../screens';
+import { RootTabParamList } from './root-params';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
-const HomeTabs = () => (
+const HomeTabs: FunctionComponent = () => (
   <Tab.Navigator
     initialRouteName="Home"
     tabBar={(props) => <BottomTabBar {...props} />}>
