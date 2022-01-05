@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-import {ButtonText, ButtonWrapper} from './Button.styles';
+import {ButtonText, ButtonWrapper} from './styles';
 
 interface ButtonProps {
   style?: object;
@@ -10,12 +10,10 @@ interface ButtonProps {
   onPress: () => void;
 }
 
-const Button = ({textButton, themeButton, themeText, style, onPress}: ButtonProps) => {
-  return (
-    <ButtonWrapper style={style} themeButton={themeButton} onPress={onPress}>
-      <ButtonText themeText={themeText}>{textButton}</ButtonText>
-    </ButtonWrapper>
-  );
-};
+const Button: FunctionComponent<ButtonProps> = ({textButton, themeButton, themeText, style, onPress}) => (
+  <ButtonWrapper style={style} themeButton={themeButton} onPress={onPress}>
+    <ButtonText themeText={themeText}>{textButton}</ButtonText>
+  </ButtonWrapper>
+);
 
 export default Button;

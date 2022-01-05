@@ -1,6 +1,6 @@
 export {default as BottomTabBar} from './BottomTabBar';
 export {default as BottomTabItem} from './BottomTabItem';
-export {default as Button} from './Button';
+export {default as Button} from './button';
 export {default as Heading} from './heading';
 export {default as LayoutBase} from './layout-base';
 export {default as LoadingView} from './loading-view';

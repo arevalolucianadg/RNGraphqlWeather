@@ -8,7 +8,10 @@ interface ButtonWrapperProps {
 
 export const ButtonWrapper = styled.TouchableOpacity<ButtonWrapperProps>`
   background-color: ${props =>
-    handleBGColor({color: props.themeButton, theme: props.theme})};
+    handleBGColor({
+      color: props.themeButton, 
+      theme: props.theme
+    })};
   border-radius: ${global.border.RadiusMd};
   height: 60px;
   justify-content: center;
@@ -21,7 +24,10 @@ interface ButtonTextProps {
 
 export const ButtonText = styled.Text<ButtonTextProps>`
   color: ${props =>
-    handleTextColor({color: props.themeText, theme: props.theme})};
+    handleTextColor({
+      color: props.themeText, 
+      theme: props.theme
+    })};
   font-family: ${global.font.weightMedium};
   font-size: 16px;
   text-align: center;
