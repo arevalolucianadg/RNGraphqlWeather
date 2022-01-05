@@ -12,7 +12,7 @@ import {RootStackParamList} from '../../routes/RootParams';
 import HeaderDetail from './HeaderDetail';
 import WeatherStatus from './weather-status';
 import {Spacing} from './WeatherDetail.styles';
-import WeatherExtra from './WeatherExtra';
+import WeatherExtra from './weather-extra';
 
 interface WeatherDetailProps {
   navigation: StackNavigationProp<RootStackParamList, 'WeatherDetail'>;

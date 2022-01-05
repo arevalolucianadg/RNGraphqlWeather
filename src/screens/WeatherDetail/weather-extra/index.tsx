@@ -1,26 +1,33 @@
-import React, {useContext} from 'react';
+import React, {FunctionComponent, useContext} from 'react';
 
+import {Button} from '../../../components';
 import {AppContext} from '../../../Context/AppContext/AppContext';
 import {CityDetail} from '../../../graphql/interfaces';
-import {Button} from '../../../components';
+import {saveStorage} from '../../../utils/async-storage';
+import {KEY_CITIES_STORE} from '../../../utils/constants';
 import {
   ExtraItems,
   ExtraItem,
   ItemTitle,
   ItemValue,
   WeatherExtraWrapper,
-} from './WeatherExtra.styles';
-import {saveStorage} from '../../../utils/async-storage';
-import {KEY_CITIES_STORE} from '../../../utils/constants';
+} from './styles';
 
-const WeatherExtra = ({city}: {city: CityDetail}) => {
+/**
+ * Constants
+ */
+const STYLES_BUTTON = {
+  marginBottom: 10
+}
+
+const WeatherExtra: FunctionComponent<{city: CityDetail}> = ({city}) => {
   const {cities, updateCities} = useContext(AppContext);
 
   const {wind, clouds} = city.weather;
   const isSavedCity = cities.includes(city.id);
 
-  const removeCountry = (cityId: string) => {
-    const filtered = cities.filter((city: string) => city !== cityId);
+  const removeCountry = (cityId: string): void => {
+    const filtered = cities.filter((filteredCity: string) => filteredCity !== cityId);
     updateCities(filtered);
     saveStorage({
       key: KEY_CITIES_STORE,
@@ -51,7 +58,7 @@ const WeatherExtra = ({city}: {city: CityDetail}) => {
       {isSavedCity && (
         <Button
           onPress={() => removeCountry(city.id)}
-          style={{marginBottom: 10}}
+          style={STYLES_BUTTON}
           textButton="Remove city"
           themeButton="danger"
         />
