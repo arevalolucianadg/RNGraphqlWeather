@@ -1,5 +1,5 @@
-import {AppAction} from './app-actions';
-import {AppStateProps} from './interfaces';
+import { AppAction } from './app-actions';
+import { AppStateProps } from './interfaces';
 
 export const AppReducer = (
   state: AppStateProps,

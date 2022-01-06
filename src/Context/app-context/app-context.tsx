@@ -1,10 +1,21 @@
-import React, {useEffect, createContext, useReducer, FunctionComponent, useCallback} from 'react';
+import React, {
+  useEffect,
+  createContext,
+  useReducer,
+  FunctionComponent,
+  useCallback,
+} from 'react';
 
-import {ISwitchSelectorOption} from '../../../types/switch';
-import {AppReducer} from './app-reducers';
+import { ISwitchSelectorOption } from '../../../types/switch';
+import { AppReducer } from './app-reducers';
 import INITIAL_STATE from './initial-state';
-import {AppContextProps, AppProviderProps} from './interfaces';
-import {getThemeStored, getCitiesStored, getFavCities, getTempUnit} from './utils';
+import { AppContextProps, AppProviderProps } from './interfaces';
+import {
+  getThemeStored,
+  getCitiesStored,
+  getFavCities,
+  getTempUnit,
+} from './utils';
 
 /**
  * Types
@@ -13,7 +24,9 @@ type ThemeProps = string | number | ISwitchSelectorOption;
 
 export const AppContext = createContext({} as AppContextProps);
 
-export const AppProvider: FunctionComponent<AppProviderProps> = ({children}) => {
+export const AppProvider: FunctionComponent<AppProviderProps> = ({
+  children,
+}) => {
   const [state, dispatch] = useReducer(AppReducer, INITIAL_STATE);
 
   const handleTheme = (theme: ThemeProps): void => {
@@ -55,29 +68,24 @@ export const AppProvider: FunctionComponent<AppProviderProps> = ({children}) => 
     });
   };
 
-  const toggleTempUnit = (
-    tempUnit: ThemeProps,
-  ): void => {
+  const toggleTempUnit = (tempUnit: ThemeProps): void => {
     dispatch({
       type: 'TOGGLE_TEMP_UNIT',
       payload: tempUnit,
     });
   };
 
-  const getDataFromStorage = useCallback(
-    async (): Promise<void> => {
-      const themeStored = await getThemeStored();
-      const citiesStored = await getCitiesStored();
-      const favCitiesStored = await getFavCities();
-      const tempUnitStored = await getTempUnit();
+  const getDataFromStorage = useCallback(async (): Promise<void> => {
+    const themeStored = await getThemeStored();
+    const citiesStored = await getCitiesStored();
+    const favCitiesStored = await getFavCities();
+    const tempUnitStored = await getTempUnit();
 
-      themeStored && handleTheme(themeStored as ThemeProps);
-      citiesStored && updateCities(citiesStored as string[]);
-      favCitiesStored && updateFavorites(favCitiesStored as string[]);
-      tempUnitStored && toggleTempUnit(tempUnitStored as ThemeProps);
-    },
-    [],
-  )
+    themeStored && handleTheme(themeStored as ThemeProps);
+    citiesStored && updateCities(citiesStored as string[]);
+    favCitiesStored && updateFavorites(favCitiesStored as string[]);
+    tempUnitStored && toggleTempUnit(tempUnitStored as ThemeProps);
+  }, []);
 
   useEffect(() => {
     getDataFromStorage();
