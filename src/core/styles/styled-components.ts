@@ -4,7 +4,7 @@ import { Theme } from './types';
 /**
  * Types
  */
-type ThemeContextStyled =
+export type ThemeContextStyled =
   styledComponents.ReactNativeThemedStyledComponentsModule<Theme>;
 
 const {
