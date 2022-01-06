@@ -1,9 +1,9 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
-import {ThemeProvider} from 'styled-components/native';
+import { render } from '@testing-library/react-native';
+import { ThemeProvider } from 'styled-components/native';
 
 import WeatherCard from '..';
-import {light} from '../../../core/styles/theme';
+import { light } from '../../../core/styles/theme';
 
 const mockedDispatch = jest.fn();
 jest.mock('@react-navigation/native', () => {
@@ -33,7 +33,7 @@ describe('weather card component', () => {
   };
 
   it('should render a snapshot', () => {
-    const {toJSON} = render(
+    const { toJSON } = render(
       <ThemeProvider theme={light}>
         <WeatherCard isFavorite={false} city={city} />
       </ThemeProvider>,

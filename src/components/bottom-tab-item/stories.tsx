@@ -1,6 +1,6 @@
 import React from 'react';
-import {action} from '@storybook/addon-actions';
-import {storiesOf} from '@storybook/react-native';
+import { action } from '@storybook/addon-actions';
+import { storiesOf } from '@storybook/react-native';
 
 import BottomTabItem from '.';
 import StylesDecorator from '../../../storybook/decorators';

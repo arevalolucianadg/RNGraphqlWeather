@@ -1,6 +1,5 @@
-import styled, {css} from 'styled-components/native';
-
-import {global} from '../../core/styles/global-styles';
+import { global } from '../../core/styles/global-styles';
+import styled, { css } from '../../core/styles/styled-components';
 
 interface IsFavoriteProps {
   isFavorite: boolean;
