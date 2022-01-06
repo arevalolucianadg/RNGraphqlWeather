@@ -7,7 +7,7 @@ import {LayoutSpacing} from '../../components/layout-base/styles';
 import {AppContext} from '../../context/app-context/app-context';
 import {CitiesInfo, QueryVars, WeatherInfo} from '../../graphql/interfaces';
 import {GET_WEATHER_INFO} from '../../graphql/requests';
-import { wait } from '../../utils/global';
+import { wait } from '../../core/utils/global';
 import {TitleWrapper, CitiesList} from './styles';
 
 /**

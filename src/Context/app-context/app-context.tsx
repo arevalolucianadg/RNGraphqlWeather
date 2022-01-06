@@ -1,6 +1,6 @@
 import React, {useEffect, createContext, useReducer, FunctionComponent, useCallback} from 'react';
 
-import {ISwitchSelectorOption} from '../../types/switch';
+import {ISwitchSelectorOption} from '../../../types/switch';
 import {AppReducer} from './app-reducers';
 import INITIAL_STATE from './initial-state';
 import {AppContextProps, AppProviderProps} from './interfaces';

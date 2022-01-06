@@ -2,9 +2,9 @@ import React, {useContext} from 'react';
 import {ThemeContext} from 'styled-components';
 
 import {AppContext} from '../../../context/app-context/app-context';
-import { ISwitchSelectorOption } from '../../../types/switch';
-import {saveStorage} from '../../../utils/async-storage';
-import { KEY_THEME_STORE } from '../../../utils/constants';
+import { ISwitchSelectorOption } from '../../../../types/switch';
+import {saveStorage} from '../../utils/async-storage';
+import { KEY_THEME_STORE } from '../../utils/constants';
 import DarkSvg from '../assets/svg/moon.svg';
 import LightSvg from '../assets/svg/sun.svg';
 

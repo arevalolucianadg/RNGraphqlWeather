@@ -3,7 +3,7 @@ import {render} from '@testing-library/react-native';
 import {ThemeProvider} from 'styled-components/native';
 
 import WeatherCard from '..';
-import {light} from '../../../styles/theme';
+import {light} from '../../../core/styles/theme';
 
 const mockedDispatch = jest.fn();
 jest.mock('@react-navigation/native', () => {

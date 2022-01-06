@@ -8,9 +8,9 @@ import FavoriteStar from '../../../assets/svg/favorite-star.svg';
 import BackArrow from '../../../assets/svg/left-arrow.svg';
 import {AppContext} from '../../../context/app-context/app-context';
 import {CityDetail} from '../../../graphql/interfaces';
-import {saveStorage} from '../../../utils/async-storage';
-import { KEY_FAV_CITIES_STORE, KEY_CITIES_STORE } from '../../../utils/constants';
-import {formatUnixToDate} from '../../../utils/weather-details';
+import {saveStorage} from '../../../core/utils/async-storage';
+import { KEY_FAV_CITIES_STORE, KEY_CITIES_STORE } from '../../../core/utils/constants';
+import {formatUnixToDate} from '../../../core/utils/weather-details';
 import {
   TopBar,
   BackButton,

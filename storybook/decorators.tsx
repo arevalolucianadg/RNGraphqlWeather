@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled, { ThemeProvider } from 'styled-components/native';
 
-import {light} from '../src/styles/theme';
+import {light} from '../src/core/styles/theme';
 
 const StoryWrapper = styled.View`
   display: flex;
