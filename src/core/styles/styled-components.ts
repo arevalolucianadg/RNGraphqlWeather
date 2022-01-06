@@ -1,10 +1,18 @@
 import * as styledComponents from 'styled-components/native';
+import { Theme } from './types';
+
+/**
+ * Types
+ */
+type ThemeContextStyled =
+  styledComponents.ReactNativeThemedStyledComponentsModule<Theme>;
 
 const {
-  default: styled,
   css,
-  ThemeProvider
-} = styledComponents as styledComponents.ReactNativeThemedStyledComponentsModule<any>;
+  default: styled,
+  ThemeContext,
+  ThemeProvider,
+} = styledComponents as unknown as ThemeContextStyled;
 
-export { css, ThemeProvider };
+export { css, ThemeContext, ThemeProvider };
 export default styled;

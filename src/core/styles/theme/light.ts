@@ -1,10 +1,12 @@
-export default {
+import { Theme } from '../types';
+
+const lightTheme: Theme = {
   themeTitle: 'light',
 
   colors: {
     primary: '#504ED3',
 
-    red:    '#EB5757',
+    red: '#EB5757',
     yellow: '#F2C94C',
 
     gray1: '#333333',
@@ -16,11 +18,13 @@ export default {
     white: '#FFFFFF',
 
     background: '#FFFFFF',
-    paper:      '#F7F7F7',
-    text:       '#333333',
+    paper: '#F7F7F7',
+    text: '#333333',
 
     inactiveIcon: '#828282',
   },
 
   boxShadow: 'rgba(0, 0, 0, 0.1)',
 };
+
+export default lightTheme;
