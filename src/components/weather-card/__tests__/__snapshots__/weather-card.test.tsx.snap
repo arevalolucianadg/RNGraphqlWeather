@@ -94,7 +94,7 @@ exports[`weather card component should render a snapshot 1`] = `
   <Image
     source={
       Object {
-        "testUri": "../../../src/assets/png/weatherIcons/night-cloudy.png",
+        "testUri": "../../../assets/png/weatherIcons/night-cloudy.png",
       }
     }
     style={

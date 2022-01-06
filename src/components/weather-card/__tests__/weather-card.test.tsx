@@ -47,6 +47,7 @@ describe('weather card component', () => {
         <WeatherCard isFavorite={false} city={city} />
       </ThemeProvider>,
     );
-    expect(WeatherName.getByText(city.name)).toBe(true);
+
+    expect(WeatherName.getByText(city.name)).toBeDefined();
   });
 });
