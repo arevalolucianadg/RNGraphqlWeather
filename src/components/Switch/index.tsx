@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useContext } from 'react';
 import SwitchSelector from 'react-native-switch-selector';
-import { ThemeContext } from 'styled-components/native';
-
 import { ISwitchSelectorOption } from '../../../types/switch';
+import { ThemeContext } from '../../core/styles';
+
 import { global } from '../../core/styles/global-styles';
 
 /**

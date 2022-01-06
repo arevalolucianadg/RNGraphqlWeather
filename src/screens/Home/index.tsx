@@ -76,7 +76,11 @@ const Home: FunctionComponent = () => {
             style={STYLES_LIST}
             keyExtractor={city => city.id}
             renderItem={city => (
-              <WeatherCard city={city.item} isFavorite={isFavorite(city)} />
+              <WeatherCard
+                city={city.item}
+                isFavorite={isFavorite(city)}
+                onPress={id => console.log(id)}
+              />
             )}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={

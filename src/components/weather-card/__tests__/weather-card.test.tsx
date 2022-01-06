@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import { ThemeProvider } from 'styled-components/native';
-
 import WeatherCard from '..';
+import { ThemeProvider } from '../../../core/styles';
+
 import { light } from '../../../core/styles/theme';
 
 const mockedDispatch = jest.fn();
@@ -35,7 +35,7 @@ describe('weather card component', () => {
   it('should render a snapshot', () => {
     const { toJSON } = render(
       <ThemeProvider theme={light}>
-        <WeatherCard isFavorite={false} city={city} />
+        <WeatherCard isFavorite={false} city={city} onPress={jest.fn()} />
       </ThemeProvider>,
     );
     expect(toJSON()).toMatchSnapshot();
@@ -44,7 +44,7 @@ describe('weather card component', () => {
   it('should render the city name', () => {
     const WeatherName = render(
       <ThemeProvider theme={light}>
-        <WeatherCard isFavorite={false} city={city} />
+        <WeatherCard isFavorite={false} city={city} onPress={jest.fn()} />
       </ThemeProvider>,
     );
 

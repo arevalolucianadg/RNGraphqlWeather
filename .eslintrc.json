@@ -42,6 +42,24 @@
         "tsx": "never"
       }
     ],
+    "import/no-unresolved": [2, { "ignore": [".svg$"] }],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "styled-components/native",
+            "importNames": [
+              "default",
+              "css",
+              "ThemeContext",
+              "ThemeProvider"
+            ],
+            "message": "Please import it from '/src/core/styles' instead."
+          }
+        ]
+      }
+    ],
 
     // ESLint
     "no-use-before-define": "off",

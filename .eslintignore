@@ -1,2 +1,3 @@
 jest.setup.js
 metro.config.js
+coverage

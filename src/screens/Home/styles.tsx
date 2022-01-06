@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from '../../core/styles/styled-components';
 
 export const HomeWrapper = styled.View`
   flex: 1;

@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 
 import {
   Heading,
@@ -9,7 +9,7 @@ import {
   SearchBar,
   WeatherCard,
 } from '../../components';
-import {LayoutSpacing} from '../../components/layout-base/styles';
+import { LayoutSpacing } from '../../components/layout-base/styles';
 import useSearch from '../../core/hooks/use-search';
 import {
   TitleWrapper,
@@ -58,7 +58,11 @@ const Search: FunctionComponent = () => {
                 <ResultText>Last search</ResultText>
                 <ResultValue>{getLastSearch(lastSearches)}</ResultValue>
               </ResultTitle>
-              <WeatherCard isFavorite={false} city={results.getCityByName} />
+              <WeatherCard
+                isFavorite={false}
+                city={results.getCityByName}
+                onPress={id => console.log(id)}
+              />
             </>
           )}
           {!loading && results?.getCityByName === null && <NoResults />}

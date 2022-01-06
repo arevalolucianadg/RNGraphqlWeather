@@ -1,3 +1,5 @@
+// eslint-disable-next-line jest/no-jest-import
+import 'jest';
 import 'react-native-gesture-handler/jestSetup';
 import 'jest-styled-components';
 

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useContext } from 'react';
-import { ThemeContext } from 'styled-components/native';
-
 import CloseSvg from '../../assets/svg/close.svg';
+import { ThemeContext } from '../../core/styles';
+
 import {
   NoResultsIcon,
   NoResultsText,

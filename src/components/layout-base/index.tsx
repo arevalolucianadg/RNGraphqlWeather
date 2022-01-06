@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactElement, useContext } from 'react';
 import { StatusBar } from 'react-native';
-import { ThemeContext } from 'styled-components/native';
+import { ThemeContext } from '../../core/styles';
 
 import { LayoutSafe } from './styles';
 

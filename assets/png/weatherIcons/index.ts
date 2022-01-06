@@ -1,8 +1,4 @@
-interface iconTypes {
-    [key: string]: number
-}
-
-const icons: iconTypes  = {
+const icons: Record<string, number> = {
   icon01d: require('./day-clear.png'),
   icon01n: require('./night-clear.png'),
   icon02d: require('./day-cloudy.png'),

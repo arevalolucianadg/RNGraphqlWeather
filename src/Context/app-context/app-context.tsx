@@ -101,7 +101,8 @@ export const AppProvider: FunctionComponent<AppProviderProps> = ({
         updateCities,
         updateFavorites,
         toggleTempUnit,
-      }}>
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

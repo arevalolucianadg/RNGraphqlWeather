@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { View } from 'react-native';
 
 import ICON from '../../../assets/png/weatherIcons';
@@ -19,14 +18,14 @@ import {
 interface WeatherCardProps {
   city: WeatherInfo | null;
   isFavorite: boolean;
+  onPress: (cityId: string) => void;
 }
 
 const WeatherCard: FunctionComponent<WeatherCardProps> = ({
   city,
   isFavorite,
+  onPress,
 }) => {
-  const navigation = useNavigation();
-
   if (!city) {
     return <View />;
   }
@@ -38,10 +37,7 @@ const WeatherCard: FunctionComponent<WeatherCardProps> = ({
   } = city;
 
   return (
-    <WeatherCardWrapper
-      isFavorite={isFavorite}
-      // TODO: remove navigation
-      onPress={() => navigation.navigate('WeatherDetail', { cityId: id })}>
+    <WeatherCardWrapper isFavorite={isFavorite} onPress={() => onPress(id)}>
       <View>
         <CityName isFavorite={isFavorite}>{name}</CityName>
         <Info>
