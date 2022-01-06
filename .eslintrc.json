@@ -115,6 +115,7 @@
 
     // Jest
     "jest/prefer-expect-assertions": "off",
+    "jest/require-hook": "off",
 
     // Unicorn
     "unicorn/no-abusive-eslint-disable": "error",
@@ -136,9 +137,37 @@
     },
     "import/resolver": {
       "node": {
-        "paths": ["./src"]
+        "paths": ["./src/*"]
       },
       "babel-module": {}
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "*/**/*.{spec,test}.{ts,tsx}",
+        "*/**/**/*.{spec,test}.{ts,tsx}",
+        "**/__mocks__/*.{ts,tsx}",
+        "**/__tests__/*.{ts,tsx}"
+      ],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "max-statements": "off",
+        "max-nested-callbacks": ["error", { "max": 3 }],
+        "jest/no-hooks": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/ban-ts-ignore": "off",
+        "@typescript-eslint/ban-types": "off"
+      }
+    },
+    {
+      "files": ["types/*.d.ts"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-shadow": "off"
+      }
+    }
+  ] 
 }
