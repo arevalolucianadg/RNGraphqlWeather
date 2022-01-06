@@ -5,7 +5,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {Text} from 'react-native';
 
 import {LayoutBase, LoadingView} from '../../components';
-import { AppContext } from '../../Context/AppContext/AppContext';
+import { AppContext } from '../../context/app-context/app-context';
 import {CityInfo, QueryVars} from '../../graphql/interfaces';
 import {GET_WEATHER_DETAIL} from '../../graphql/requests';
 import {RootStackParamList} from '../../routes/root-params';

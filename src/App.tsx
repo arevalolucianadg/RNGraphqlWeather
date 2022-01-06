@@ -8,11 +8,11 @@ import Router from './routes';
 import {useRootNavigation} from './routes/root-navigation';
 import apolloConfig from './config/apollo';
 import StorybookUI from '../storybook';
-import {AppContext} from './Context/AppContext/AppContext';
+import {AppContext} from './context/app-context/app-context';
 import {dark, light} from './styles/theme';
 
 import {LOAD_STORYBOOK} from '@env';
-import GlobalProvider from './Context';
+import GlobalProvider from './context';
 
 const GlobalState = () => {
   const {theme} = useContext(AppContext);

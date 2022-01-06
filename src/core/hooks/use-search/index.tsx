@@ -3,7 +3,7 @@ import {ApolloError, useLazyQuery} from '@apollo/client';
 import {useIsFocused} from '@react-navigation/native';
 import {Keyboard} from 'react-native';
 
-import { AppContext } from '../../../Context/AppContext/AppContext';
+import { AppContext } from '../../../context/app-context/app-context';
 import {ByNameQueryVars, CityByNameInfo} from '../../../graphql/interfaces';
 import {GET_CITY_BY_NAME} from '../../../graphql/requests';
 import { ISwitchSelectorOption } from '../../../types/switch';

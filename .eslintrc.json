@@ -60,6 +60,7 @@
         "location": "anywhere"
       }
     ],
+    "no-unused-expressions": ["error", { "allowTernary": true,  "allowShortCircuit": true }],
 
     // React
     "react/jsx-filename-extension": ["error", {"extensions": [".tsx"]}],

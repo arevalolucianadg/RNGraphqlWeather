@@ -1,5 +1,5 @@
-import {AppStateProps} from './interfaces';
 import {INITIAL_CITIES} from '../../utils/constants';
+import {AppStateProps} from './interfaces';
 
 const initialState: AppStateProps = {
   theme: 'light',

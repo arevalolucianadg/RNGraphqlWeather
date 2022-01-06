@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import {ISwitchSelectorOption} from '../../types/switch';
 
 export interface AppContextProps {
@@ -15,7 +16,7 @@ export interface AppContextProps {
 }
 
 export interface AppProviderProps {
-  children: JSX.Element;
+  children: ReactElement;
 }
 
 export interface AppStateProps {

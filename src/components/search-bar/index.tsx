@@ -2,7 +2,7 @@ import React, {FunctionComponent, useContext} from 'react';
 import { ThemeContext } from 'styled-components';
 
 import SearchIcon from '../../assets/svg/bottomTabIcons/search-icon.svg';
-import { AppContext } from '../../Context/AppContext/AppContext';
+import { AppContext } from '../../context/app-context/app-context';
 import {SearchBarWrapper, SearchButton, SearchInput} from './styles';
 
 /**

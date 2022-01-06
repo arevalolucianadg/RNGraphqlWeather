@@ -1,12 +1,10 @@
-import React from 'react';
-import {AppProvider} from './AppContext/AppContext';
+import React, { FunctionComponent, ReactElement } from 'react';
+import {AppProvider} from './app-context/app-context';
 
 interface GlobalStateProps {
-  children: JSX.Element;
+  children: ReactElement;
 }
 
-const GlobalProvider = ({children}: GlobalStateProps) => {
-  return <AppProvider>{children}</AppProvider>;
-};
+const GlobalProvider: FunctionComponent<GlobalStateProps> = ({children}) => <AppProvider>{children}</AppProvider>;
 
 export default GlobalProvider;

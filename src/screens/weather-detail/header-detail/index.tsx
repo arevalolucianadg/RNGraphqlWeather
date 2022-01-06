@@ -6,7 +6,7 @@ import {ThemeContext} from 'styled-components/native';
 import AddSvg from '../../../assets/svg/add.svg';
 import FavoriteStar from '../../../assets/svg/favorite-star.svg';
 import BackArrow from '../../../assets/svg/left-arrow.svg';
-import {AppContext} from '../../../Context/AppContext/AppContext';
+import {AppContext} from '../../../context/app-context/app-context';
 import {CityDetail} from '../../../graphql/interfaces';
 import {saveStorage} from '../../../utils/async-storage';
 import { KEY_FAV_CITIES_STORE, KEY_CITIES_STORE } from '../../../utils/constants';

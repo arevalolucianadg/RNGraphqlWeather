@@ -1,4 +1,4 @@
-import {AppAction} from './AppActions';
+import {AppAction} from './app-actions';
 import {AppStateProps} from './interfaces';
 
 export const AppReducer = (
