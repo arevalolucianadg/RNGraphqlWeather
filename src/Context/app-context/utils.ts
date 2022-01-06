@@ -1,5 +1,5 @@
-import {getStorage} from '../../utils/async-storage';
-import { KEY_THEME_STORE, KEY_CITIES_STORE, KEY_FAV_CITIES_STORE, KEY_TEMPERATURE_UNIT } from '../../utils/constants';
+import {getStorage} from '../../core/utils/async-storage';
+import { KEY_THEME_STORE, KEY_CITIES_STORE, KEY_FAV_CITIES_STORE, KEY_TEMPERATURE_UNIT } from '../../core/utils/constants';
 
 export const getThemeStored = async (): Promise<string | [] | undefined> => getStorage(KEY_THEME_STORE);
 

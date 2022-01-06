@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {View} from 'react-native';
 
-import ICON from '../../assets/png/weatherIcons';
+import ICON from '../../../assets/png/weatherIcons';
 import {WeatherInfo} from '../../graphql/interfaces';
 import {
   CityName,

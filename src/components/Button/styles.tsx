@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import {global} from '../../styles/global-styles';
-import {handleBGColor, handleTextColor} from '../../utils/theme';
+import {global} from '../../core/styles/global-styles';
+import {handleBGColor, handleTextColor} from '../../core/utils/theme';
 
 interface ButtonWrapperProps {
   themeButton?: 'primary' | 'secondary' | 'danger' | 'warning' | undefined;

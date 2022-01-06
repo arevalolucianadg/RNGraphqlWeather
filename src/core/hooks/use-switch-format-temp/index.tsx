@@ -1,9 +1,9 @@
 import {useContext} from 'react';
 
 import { AppContext } from '../../../context/app-context/app-context';
-import { ISwitchSelectorOption } from '../../../types/switch';
-import { saveStorage } from '../../../utils/async-storage';
-import { KEY_TEMPERATURE_UNIT } from '../../../utils/constants';
+import { ISwitchSelectorOption } from '../../../../types/switch';
+import { saveStorage } from '../../utils/async-storage';
+import { KEY_TEMPERATURE_UNIT } from '../../utils/constants';
 
 /**
  * Types

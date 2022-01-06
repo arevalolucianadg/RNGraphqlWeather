@@ -11,7 +11,7 @@ import GlobalProvider from './context';
 import {AppContext} from './context/app-context/app-context';
 import Router from './routes';
 import {useRootNavigation} from './routes/root-navigation';
-import {dark, light} from './styles/theme';
+import {dark, light} from './core/styles/theme';
 
 
 const GlobalState: FunctionComponent = () => {
