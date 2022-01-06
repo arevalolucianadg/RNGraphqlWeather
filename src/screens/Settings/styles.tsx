@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
-import {global} from '../../styles/GlobalStyles';
-import {isLightText} from '../../utils/theme';
+import {global} from '../../styles/global-styles';
 
 export const TitleWrapper = styled.View`
   margin-bottom: 40px;

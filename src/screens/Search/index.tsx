@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import {View} from 'react-native';
 
-import useSearch from '../../hooks/useSearch';
 import {
   Heading,
   LayoutBase,
@@ -10,7 +9,8 @@ import {
   SearchBar,
   WeatherCard,
 } from '../../components';
-import {LayoutSpacing} from '../../components/LayoutBase/LayoutBase.styles';
+import {LayoutSpacing} from '../../components/layout-base/styles';
+import useSearch from '../../core/hooks/use-search';
 import {
   TitleWrapper,
   ResultsView,
@@ -19,7 +19,7 @@ import {
   ResultText,
 } from './styles';
 
-const Search = () => {
+const Search: FunctionComponent = () => {
   const {
     error,
     isFocus,
@@ -33,7 +33,7 @@ const Search = () => {
     setIsFocus,
   } = useSearch();
 
-  if (error) return <View></View>;
+  if (error) return <View />;
 
   return (
     <LayoutBase>

@@ -1,4 +1,4 @@
-export {default as Home} from './Home';
-export {default as Search} from './Search';
-export {default as Settings} from './Settings';
-export {default as WeatherDetail} from './WeatherDetail';
+export {default as Home} from './home';
+export {default as Search} from './search';
+export {default as Settings} from './settings';
+export {default as WeatherDetail} from './weather-detail';

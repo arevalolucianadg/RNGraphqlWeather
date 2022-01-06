@@ -1,7 +1,9 @@
+import { ReactElement } from 'react';
+
 export interface ISwitchSelectorOption {
   label: string;
   value: string | number;
-  customIcon?: JSX.Element;
+  customIcon?: ReactElement;
   imageIcon?: string;
   activeColor?: string;
   accessibilityLabel?: string;

@@ -10,6 +10,6 @@ export const INITIAL_CITIES = [
 ];
 
 export const KEY_THEME_STORE = '@theme';
-export const CITIES_STORE = '@cities';
-export const FAV_CITIES_STORE = '@favcities';
-export const TEMPERATURE_UNIT = '@tempunit';
+export const KEY_CITIES_STORE = '@cities';
+export const KEY_FAV_CITIES_STORE = '@favcities';
+export const KEY_TEMPERATURE_UNIT = '@tempunit';

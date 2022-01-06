@@ -6,7 +6,7 @@ module.exports = {
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js'],
-  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect', './src/jest/jestSetup.js'],
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect', './jest.setup.js'],
   transformIgnorePatterns: [
     'node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)',
   ],

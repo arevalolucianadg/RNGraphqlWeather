@@ -1,4 +1,5 @@
 import { ISwitchSelectorOption } from '../types/switch';
+
 export interface CitiesInfo {
   getCityById: WeatherInfo[] | null;
 }
