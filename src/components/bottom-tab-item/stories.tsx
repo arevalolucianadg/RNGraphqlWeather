@@ -1,9 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';
+import { Text } from 'react-native';
 
 import BottomTabItem from '.';
-import HomeIcon from '../../assets/svg/bottomTabIcons/home-icon.svg';
+import { HomeIcon } from '../icons';
 
 export const Tab = {
   component: HomeIcon,
@@ -19,7 +20,7 @@ storiesOf('BottomTab Item', module)
     <BottomTabItem
       label={Tab.label}
       isActive={false}
-      icon={Tab.component}
+      icon={() => <Text>icon</Text>}
       onPress={actions.onPress}
     />
   ))
@@ -27,7 +28,7 @@ storiesOf('BottomTab Item', module)
     <BottomTabItem
       label={Tab.label}
       isActive={true}
-      icon={Tab.component}
+      icon={() => <Text>icon</Text>}
       onPress={actions.onPress}
     />
   ));

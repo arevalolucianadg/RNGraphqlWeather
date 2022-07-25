@@ -2,9 +2,7 @@ import React, { FunctionComponent, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View } from 'react-native';
 
-import AddSvg from '../../../assets/svg/add.svg';
-import FavoriteStar from '../../../assets/svg/favorite-star.svg';
-import BackArrow from '../../../assets/svg/left-arrow.svg';
+import { Add, BackArrow, FavoriteStar } from '../../../components/icons';
 import { AppContext } from '../../../context/app-context/app-context';
 import { ThemeContext } from '../../../core/styles';
 import { saveStorage } from '../../../core/utils/async-storage';
@@ -89,7 +87,7 @@ const HeaderDetail: FunctionComponent<{ city: CityDetail }> = ({ city }) => {
           isFavorite={isFavoriteCity}
         >
           {!isSavedCity && (
-            <AddSvg height="100%" width="100%" fill={colors.white} />
+            <Add height="100%" width="100%" fill={colors.white} />
           )}
           {isSavedCity && (
             <FavoriteStar

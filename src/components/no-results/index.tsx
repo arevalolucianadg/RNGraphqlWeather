@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useContext } from 'react';
-import CloseSvg from '../../assets/svg/close.svg';
 import { ThemeContext } from '../../core/styles';
+import { Close } from '../icons';
 
 import {
   NoResultsIcon,
@@ -15,7 +15,7 @@ const NoResults: FunctionComponent = () => {
   return (
     <NoResultsWrapper>
       <NoResultsIcon>
-        <CloseSvg height="100%" width="100%" fill={colors.text} />
+        <Close height="100%" width="100%" fill={colors.text} />
       </NoResultsIcon>
       <NoResultsTitle>No results found</NoResultsTitle>
       <NoResultsText>Check your search and try again.</NoResultsText>

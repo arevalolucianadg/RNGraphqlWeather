@@ -1,9 +1,7 @@
 import React from 'react';
 import { SvgProps } from 'react-native-svg';
 
-import HomeIcon from '../../assets/svg/bottomTabIcons/home-icon.svg';
-import SearchIcon from '../../assets/svg/bottomTabIcons/search-icon.svg';
-import SettingsIcon from '../../assets/svg/bottomTabIcons/settings-icon.svg';
+import { HomeIcon, SearchIcon, SettingsIcon } from '../icons';
 
 interface ITab {
   component: React.FC<SvgProps>;
