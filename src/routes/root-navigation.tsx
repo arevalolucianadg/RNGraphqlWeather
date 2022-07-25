@@ -11,6 +11,10 @@ interface RootNavigatorHook {
   navigatorRef: RefObject<NavigationContainerRef<Record<string, never>>>;
 }
 
+/**
+ * useRootNavigation
+ */
+
 export const useRootNavigation = (): RootNavigatorHook => {
   const navigatorRef = useNavigationContainerRef<Record<string, never>>();
 

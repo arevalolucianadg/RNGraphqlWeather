@@ -10,10 +10,11 @@ const Router: FunctionComponent = () => (
   <Stack.Navigator
     screenOptions={{
       headerMode: 'screen',
+      headerShown: false,
     }}
   >
     <Stack.Screen name="Home" component={HomeTabs} />
-    <Stack.Screen component={WeatherDetail} name="WeatherDetail" />
+    <Stack.Screen name="WeatherDetail" component={WeatherDetail} />
   </Stack.Navigator>
 );
 
