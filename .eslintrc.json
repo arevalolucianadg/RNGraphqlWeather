@@ -147,12 +147,7 @@
       {
         "case": "kebabCase"
       }
-    ],
-
-    // prettier
-    "prettier/prettier": ["error", {
-      "bracketSpacing": true
-    }]
+    ]
   },
   "settings": {
     "react": {
