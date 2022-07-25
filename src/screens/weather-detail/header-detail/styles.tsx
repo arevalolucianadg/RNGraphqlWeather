@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
-import styled from 'styled-components/native';
-import {global} from '../../../core/styles/global-styles';
-import {isLightText} from '../../../core/utils/theme';
+import { global } from '../../../core/styles/global-styles';
+import styled from '../../../core/styles/styled-components';
+import { isLightText } from '../../../core/utils/theme';
 
 export const TopBar = styled.View`
   display: flex;

@@ -1,16 +1,16 @@
-import React, {FunctionComponent, useContext} from 'react';
-import {useQuery} from '@apollo/client';
-import {RouteProp} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {Text} from 'react-native';
+import React, { FunctionComponent, useContext } from 'react';
+import { useQuery } from '@apollo/client';
+import { RouteProp } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Text } from 'react-native';
 
-import {LayoutBase, LoadingView} from '../../components';
+import { LayoutBase, LoadingView } from '../../components';
 import { AppContext } from '../../context/app-context/app-context';
-import {CityInfo, QueryVars} from '../../graphql/interfaces';
-import {GET_WEATHER_DETAIL} from '../../graphql/requests';
-import {RootStackParamList} from '../../routes/root-params';
+import { CityInfo, QueryVars } from '../../graphql/interfaces';
+import { GET_WEATHER_DETAIL } from '../../graphql/requests';
+import { RootStackParamList } from '../../routes/root-params';
 import HeaderDetail from './header-detail';
-import {Spacing} from './styles';
+import { Spacing } from './styles';
 import WeatherExtra from './weather-extra';
 import WeatherStatus from './weather-status';
 
@@ -19,9 +19,9 @@ interface WeatherDetailProps {
   route: RouteProp<RootStackParamList, 'WeatherDetail'>;
 }
 
-const WeatherDetail: FunctionComponent<WeatherDetailProps> = ({route}) => {
+const WeatherDetail: FunctionComponent<WeatherDetailProps> = ({ route }) => {
   const cityID = route.params.cityId;
-  const {temperatureUnit} = useContext(AppContext);
+  const { temperatureUnit } = useContext(AppContext);
 
   const variables = {
     id: [cityID],
@@ -30,9 +30,9 @@ const WeatherDetail: FunctionComponent<WeatherDetailProps> = ({route}) => {
     },
   };
 
-  const {data, loading, error} = useQuery<CityInfo, QueryVars>(
+  const { data, loading, error } = useQuery<CityInfo, QueryVars>(
     GET_WEATHER_DETAIL,
-    {variables},
+    { variables },
   );
 
   if (loading) return <LoadingView />;

@@ -5,7 +5,10 @@ interface StoreDataProps {
   item: string | object | string[];
 }
 
-export const saveStorage = async ({key, item}: StoreDataProps): Promise<void> => {
+export const saveStorage = async ({
+  key,
+  item,
+}: StoreDataProps): Promise<void> => {
   try {
     await AsyncStorage.setItem(key, JSON.stringify(item));
   } catch (error) {
@@ -13,7 +16,9 @@ export const saveStorage = async ({key, item}: StoreDataProps): Promise<void> =>
   }
 };
 
-export const getStorage = async (key: string): Promise<string | [] | undefined> => {
+export const getStorage = async (
+  key: string,
+): Promise<string | [] | undefined> => {
   try {
     const value: string | [] | null = await AsyncStorage.getItem(key);
     return value !== null && JSON.parse(value);
@@ -22,7 +27,9 @@ export const getStorage = async (key: string): Promise<string | [] | undefined> 
   }
 };
 
-export const getMultiple = async (key: string[]): Promise<[string, string | null][] | undefined> => {
+export const getMultiple = async (
+  key: string[],
+): Promise<[string, string | null][] | undefined> => {
   try {
     return AsyncStorage.multiGet(key);
   } catch (error) {

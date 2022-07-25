@@ -1,16 +1,19 @@
-import React, {FunctionComponent, useContext} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {View} from 'react-native';
-import {ThemeContext} from 'styled-components/native';
+import React, { FunctionComponent, useContext } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { View } from 'react-native';
 
 import AddSvg from '../../../assets/svg/add.svg';
 import FavoriteStar from '../../../assets/svg/favorite-star.svg';
 import BackArrow from '../../../assets/svg/left-arrow.svg';
-import {AppContext} from '../../../context/app-context/app-context';
-import {CityDetail} from '../../../graphql/interfaces';
-import {saveStorage} from '../../../core/utils/async-storage';
-import { KEY_FAV_CITIES_STORE, KEY_CITIES_STORE } from '../../../core/utils/constants';
-import {formatUnixToDate} from '../../../core/utils/weather-details';
+import { AppContext } from '../../../context/app-context/app-context';
+import { ThemeContext } from '../../../core/styles';
+import { saveStorage } from '../../../core/utils/async-storage';
+import {
+  KEY_FAV_CITIES_STORE,
+  KEY_CITIES_STORE,
+} from '../../../core/utils/constants';
+import { formatUnixToDate } from '../../../core/utils/weather-details';
+import { CityDetail } from '../../../graphql/interfaces';
 import {
   TopBar,
   BackButton,
@@ -20,9 +23,9 @@ import {
   ActionButton,
 } from './styles';
 
-const HeaderDetail: FunctionComponent<{city: CityDetail}> = ({city}) => {
+const HeaderDetail: FunctionComponent<{ city: CityDetail }> = ({ city }) => {
   const navigation = useNavigation();
-  const {colors} = useContext(ThemeContext);
+  const { colors } = useContext(ThemeContext);
   const {
     cities,
     favoriteCities,
@@ -83,7 +86,8 @@ const HeaderDetail: FunctionComponent<{city: CityDetail}> = ({city}) => {
         <ActionButton
           onPress={() => handleActions(city.id)}
           isSaved={isSavedCity}
-          isFavorite={isFavoriteCity}>
+          isFavorite={isFavoriteCity}
+        >
           {!isSavedCity && (
             <AddSvg height="100%" width="100%" fill={colors.white} />
           )}

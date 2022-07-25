@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 
-import {LayoutBase, Heading, Switch} from '../../components';
-import {LayoutSpacing} from '../../components/layout-base/styles';
+import { LayoutBase, Heading, Switch } from '../../components';
+import { LayoutSpacing } from '../../components/layout-base/styles';
 import useSwitchFormatTemp from '../../core/hooks/use-switch-format-temp';
 import useSwitchTheme from '../../core/hooks/use-switch-theme';
 import {
@@ -13,10 +13,9 @@ import {
   SettingItem,
 } from './styles';
 
-
 const Settings: FunctionComponent = () => {
-  const {initialTemp, tempOptions, toggleFormatTemp} = useSwitchFormatTemp();
-  const {initialTheme, themeOptions, toggleTheme} = useSwitchTheme();
+  const { initialTemp, tempOptions, toggleFormatTemp } = useSwitchFormatTemp();
+  const { initialTheme, themeOptions, toggleTheme } = useSwitchTheme();
 
   return (
     <LayoutBase>
@@ -31,14 +30,22 @@ const Settings: FunctionComponent = () => {
               <SettingTitle>Weather</SettingTitle>
               <SettingRow>
                 <SettingItem>Temperature</SettingItem>
-                <Switch initial={initialTemp} options={tempOptions} onPress={toggleFormatTemp} />
+                <Switch
+                  initial={initialTemp}
+                  options={tempOptions}
+                  onPress={toggleFormatTemp}
+                />
               </SettingRow>
             </SettingGroup>
             <SettingGroup>
               <SettingTitle>Other</SettingTitle>
               <SettingRow>
                 <SettingItem>Dark Mode</SettingItem>
-                <Switch initial={initialTheme} options={themeOptions} onPress={toggleTheme} />
+                <Switch
+                  initial={initialTheme}
+                  options={themeOptions}
+                  onPress={toggleTheme}
+                />
               </SettingRow>
             </SettingGroup>
           </View>

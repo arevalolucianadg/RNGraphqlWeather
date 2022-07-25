@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import styled, { ThemeProvider } from 'styled-components/native';
+import { styled, ThemeProvider } from '../src/core/styles';
 
-import {light} from '../src/core/styles/theme';
+import { light } from '../src/core/styles/theme';
 
 const StoryWrapper = styled.View`
   display: flex;
@@ -12,7 +12,7 @@ const StoryWrapper = styled.View`
 
 const StylesDecorator: FunctionComponent = ({ children }) => (
   <ThemeProvider theme={light}>
-    <StoryWrapper>{ children }</StoryWrapper>
+    <StoryWrapper>{children}</StoryWrapper>
   </ThemeProvider>
 );
 

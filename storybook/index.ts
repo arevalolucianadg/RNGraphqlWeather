@@ -1,7 +1,7 @@
-import {getStorybookUI, configure} from '@storybook/react-native';
+import { getStorybookUI, configure } from '@storybook/react-native';
 import { Platform } from 'react-native';
 
-import {loadStories} from './story-loader';
+import { loadStories } from './story-loader';
 import './rn-addons';
 
 /**

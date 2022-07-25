@@ -9,7 +9,4 @@ function loadStories(): void {
 
 const stories: string[] = ['../src/components/bottom-tab-item/stories'];
 
-export {
-  loadStories,
-  stories,
-};
+export { loadStories, stories };

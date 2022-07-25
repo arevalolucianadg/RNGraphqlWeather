@@ -1,9 +1,9 @@
-import React, {FunctionComponent, useContext} from 'react';
-import {TouchableOpacity} from 'react-native';
-import {SvgProps} from 'react-native-svg';
-import {ThemeContext} from 'styled-components';
+import React, { FunctionComponent, useContext } from 'react';
+import { TouchableOpacity } from 'react-native';
+import { SvgProps } from 'react-native-svg';
+import { ThemeContext } from '../../core/styles/styled-components';
 
-import {TabItem, TabIcon, TabLabel} from './styles';
+import { TabItem, TabIcon, TabLabel } from './styles';
 
 export interface BottomTabItemProps {
   icon: React.FC<SvgProps>;
@@ -18,7 +18,7 @@ const BottomTabItem: FunctionComponent<BottomTabItemProps> = ({
   label,
   onPress,
 }) => {
-  const {colors} = useContext(ThemeContext);
+  const { colors } = useContext(ThemeContext);
 
   const SvgIcon = icon;
 

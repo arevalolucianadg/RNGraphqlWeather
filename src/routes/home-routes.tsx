@@ -10,11 +10,12 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 const HomeTabs: FunctionComponent = () => (
   <Tab.Navigator
     initialRouteName="Home"
-    tabBar={(props) => <BottomTabBar {...props} />}>
+    tabBar={props => <BottomTabBar {...props} />}
+  >
     <Tab.Screen name="Home" component={Home} />
     <Tab.Screen name="Search" component={Search} />
     <Tab.Screen name="Settings" component={Settings} />
   </Tab.Navigator>
-)
+);
 
 export default HomeTabs;

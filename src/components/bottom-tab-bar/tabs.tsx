@@ -1,5 +1,5 @@
 import React from 'react';
-import {SvgProps} from 'react-native-svg';
+import { SvgProps } from 'react-native-svg';
 
 import HomeIcon from '../../assets/svg/bottomTabIcons/home-icon.svg';
 import SearchIcon from '../../assets/svg/bottomTabIcons/search-icon.svg';

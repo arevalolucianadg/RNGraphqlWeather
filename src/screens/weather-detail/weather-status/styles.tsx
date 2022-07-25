@@ -1,6 +1,5 @@
-import styled from 'styled-components/native';
-import {global} from '../../../core/styles/global-styles';
-import {isLightText} from '../../../core/utils/theme';
+import { global, styled } from '../../../core/styles';
+import { isLightText } from '../../../core/utils/theme';
 
 export const StatusWrapper = styled.View`
   margin: 24px 0;

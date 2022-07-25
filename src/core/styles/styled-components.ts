@@ -1,10 +1,19 @@
+/* eslint-disable no-restricted-imports */
 import * as styledComponents from 'styled-components/native';
+import { ReactNativeThemedStyledComponentsModule } from 'styled-components/native';
+import { Theme } from './types';
+
+/**
+ * Types
+ */
+type CustomThemeStyled = ReactNativeThemedStyledComponentsModule<Theme>;
 
 const {
-  default: styled,
   css,
-  ThemeProvider
-} = styledComponents as styledComponents.ReactNativeThemedStyledComponentsModule<any>;
+  default: styled,
+  ThemeContext,
+  ThemeProvider,
+} = styledComponents as unknown as CustomThemeStyled;
 
-export { css, ThemeProvider };
+export { css, ThemeContext, ThemeProvider };
 export default styled;

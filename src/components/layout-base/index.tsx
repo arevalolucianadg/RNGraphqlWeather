@@ -1,8 +1,8 @@
-import React, {FunctionComponent, ReactElement, useContext} from 'react';
-import {StatusBar} from 'react-native';
-import {ThemeContext} from 'styled-components/native';
+import React, { FunctionComponent, ReactElement, useContext } from 'react';
+import { StatusBar } from 'react-native';
+import { ThemeContext } from '../../core/styles';
 
-import {LayoutSafe} from './styles';
+import { LayoutSafe } from './styles';
 
 /**
  * Types
@@ -11,8 +11,8 @@ interface LayoutBaseProps {
   children: ReactElement;
 }
 
-const LayoutBase: FunctionComponent<LayoutBaseProps> = ({children}) => {
-  const {colors} = useContext(ThemeContext);
+const LayoutBase: FunctionComponent<LayoutBaseProps> = ({ children }) => {
+  const { colors } = useContext(ThemeContext);
 
   const isLightTheme = colors.background === '#FFFFFF';
 

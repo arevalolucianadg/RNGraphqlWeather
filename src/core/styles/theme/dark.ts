@@ -1,10 +1,12 @@
-export default {
+import { Theme } from '../types';
+
+const darkTheme: Theme = {
   themeTitle: 'dark',
 
   colors: {
     primary: '#504ED3',
 
-    red:    '#EB5757',
+    red: '#EB5757',
     yellow: '#F2C94C',
 
     gray1: '#333333',
@@ -16,11 +18,13 @@ export default {
     white: '#FFFFFF',
 
     background: '#131419',
-    paper:      '#1C1C24',
-    text:       '#FFFFFF',
-    
+    paper: '#1C1C24',
+    text: '#FFFFFF',
+
     inactiveIcon: '#FFFFFF',
   },
 
   boxShadow: 'rgba(0, 0, 0, 0.1)',
 };
+
+export default darkTheme;

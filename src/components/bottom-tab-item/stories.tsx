@@ -1,9 +1,8 @@
 import React from 'react';
-import {action} from '@storybook/addon-actions';
-import {storiesOf} from '@storybook/react-native';
+import { action } from '@storybook/addon-actions';
+import { storiesOf } from '@storybook/react-native';
 
 import BottomTabItem from '.';
-import StylesDecorator from '../../../storybook/decorators';
 import HomeIcon from '../../assets/svg/bottomTabIcons/home-icon.svg';
 
 export const Tab = {
@@ -16,7 +15,6 @@ export const actions = {
 };
 
 storiesOf('BottomTab Item', module)
-  .addDecorator(StylesDecorator)
   .add('inactive', () => (
     <BottomTabItem
       label={Tab.label}

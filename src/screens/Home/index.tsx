@@ -1,21 +1,31 @@
-import React, {FunctionComponent, useContext, useState} from 'react';
-import {useQuery} from '@apollo/client';
-import {FlatList, ListRenderItemInfo, RefreshControl, Text} from 'react-native';
+import React, { FunctionComponent, useContext, useState } from 'react';
+import { useQuery } from '@apollo/client';
+import {
+  FlatList,
+  ListRenderItemInfo,
+  RefreshControl,
+  Text,
+} from 'react-native';
 
-import {Heading, LayoutBase, LoadingView, WeatherCard} from '../../components';
-import {LayoutSpacing} from '../../components/layout-base/styles';
-import {AppContext} from '../../context/app-context/app-context';
-import {CitiesInfo, QueryVars, WeatherInfo} from '../../graphql/interfaces';
-import {GET_WEATHER_INFO} from '../../graphql/requests';
+import {
+  Heading,
+  LayoutBase,
+  LoadingView,
+  WeatherCard,
+} from '../../components';
+import { LayoutSpacing } from '../../components/layout-base/styles';
+import { AppContext } from '../../context/app-context/app-context';
 import { wait } from '../../core/utils/global';
-import {TitleWrapper, CitiesList} from './styles';
+import { CitiesInfo, QueryVars, WeatherInfo } from '../../graphql/interfaces';
+import { GET_WEATHER_INFO } from '../../graphql/requests';
+import { TitleWrapper, CitiesList } from './styles';
 
 /**
  * Constants
  */
 const STYLES_LIST = {
-  flex: 1
-}
+  flex: 1,
+};
 
 export interface HomeCityProps {
   id: string;
@@ -27,10 +37,11 @@ export interface HomeCityProps {
 }
 
 const Home: FunctionComponent = () => {
-  const {cities, favoriteCities, temperatureUnit} = useContext(AppContext);
+  const { cities, favoriteCities, temperatureUnit } = useContext(AppContext);
   const [refreshing, setRefreshing] = useState(false);
 
-  const isFavorite = (city: ListRenderItemInfo<WeatherInfo>): boolean => favoriteCities.includes(city.item.id);
+  const isFavorite = (city: ListRenderItemInfo<WeatherInfo>): boolean =>
+    favoriteCities.includes(city.item.id);
 
   const variables = {
     id: cities,
@@ -39,11 +50,11 @@ const Home: FunctionComponent = () => {
     },
   };
 
-  const {data, loading, error, refetch} = useQuery<CitiesInfo, QueryVars>(
+  const { data, loading, error, refetch } = useQuery<CitiesInfo, QueryVars>(
     GET_WEATHER_INFO,
     {
-      variables, 
-      fetchPolicy: 'no-cache'
+      variables,
+      fetchPolicy: 'no-cache',
     },
   );
 
@@ -65,7 +76,11 @@ const Home: FunctionComponent = () => {
             style={STYLES_LIST}
             keyExtractor={city => city.id}
             renderItem={city => (
-              <WeatherCard city={city.item} isFavorite={isFavorite(city)} />
+              <WeatherCard
+                city={city.item}
+                isFavorite={isFavorite(city)}
+                onPress={id => console.log(id)}
+              />
             )}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={

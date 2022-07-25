@@ -1,14 +1,14 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
 
-import { AppContext } from '../../../context/app-context/app-context';
 import { ISwitchSelectorOption } from '../../../../types/switch';
+import { AppContext } from '../../../context/app-context/app-context';
 import { saveStorage } from '../../utils/async-storage';
 import { KEY_TEMPERATURE_UNIT } from '../../utils/constants';
 
 /**
  * Types
  */
- interface TempOptionsProps {
+interface TempOptionsProps {
   label: string;
   value: string;
 }
@@ -21,15 +21,15 @@ interface UseSwitchFormatTempHook {
 }
 
 const useSwitchFormatTemp = (): UseSwitchFormatTempHook => {
-  const {temperatureUnit, toggleTempUnit} = useContext(AppContext);
-  
+  const { temperatureUnit, toggleTempUnit } = useContext(AppContext);
+
   const tempOptions: TempOptionsProps[] = [
     {
-      label: 'C°', 
+      label: 'C°',
       value: 'metric',
     },
     {
-      label: 'F°', 
+      label: 'F°',
       value: 'imperial',
     },
   ];
@@ -39,7 +39,7 @@ const useSwitchFormatTemp = (): UseSwitchFormatTempHook => {
     saveStorage({
       key: KEY_TEMPERATURE_UNIT,
       item: value,
-    })
+    });
   };
 
   const initialTemp = temperatureUnit === 'metric' ? 0 : 1;

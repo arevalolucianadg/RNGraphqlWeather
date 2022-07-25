@@ -1,9 +1,9 @@
-import React, {FunctionComponent, useContext} from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import SwitchSelector from 'react-native-switch-selector';
-import {ThemeContext} from 'styled-components/native';
+import { ISwitchSelectorOption } from '../../../types/switch';
+import { ThemeContext } from '../../core/styles';
 
-import {global} from '../../core/styles/global-styles';
-import {ISwitchSelectorOption} from '../../../types/switch';
+import { global } from '../../core/styles/global-styles';
 
 /**
  * Constants
@@ -11,7 +11,7 @@ import {ISwitchSelectorOption} from '../../../types/switch';
 const STYLES_SWITCH = {
   paddingRight: 3,
   width: 150,
-}
+};
 
 /**
  * Types
@@ -22,8 +22,12 @@ interface SwitchProps {
   onPress: (value: string) => void;
 }
 
-const Switch: FunctionComponent<SwitchProps> = ({initial, options, onPress}) => {
-  const {colors} = useContext(ThemeContext);
+const Switch: FunctionComponent<SwitchProps> = ({
+  initial,
+  options,
+  onPress,
+}) => {
+  const { colors } = useContext(ThemeContext);
 
   return (
     <SwitchSelector
