@@ -7,7 +7,7 @@ import { RootTabParamList } from './root-params';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
-const HomeTabs: FunctionComponent = () => (
+const MainTabs: FunctionComponent = () => (
   <Tab.Navigator
     initialRouteName="Home"
     screenOptions={{
@@ -21,4 +21,4 @@ const HomeTabs: FunctionComponent = () => (
   </Tab.Navigator>
 );
 
-export default HomeTabs;
+export default MainTabs;

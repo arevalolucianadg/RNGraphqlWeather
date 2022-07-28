@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 import useBottomTab from '../../core/hooks/use-bottom-tab';
-import BottomTabItem from '../bottom-tab-item';
+import { BottomTabItem } from '../bottom-tab-item';
 import { BottomTabBarWrapper } from './styles';
 import tabs from './tabs';
 
@@ -20,7 +20,7 @@ const BottomTabBar: FunctionComponent<BottomTabBarProps> = ({
       {tabs.map((tab, idx) => (
         <BottomTabItem
           key={`${tab.routeName}-${idx}`}
-          icon={tab.component}
+          iconName={tab.component}
           isActive={isFocused(tab.routeName)}
           label={tab.label}
           onPress={() => handlePressTab(tab.routeName, idx)}

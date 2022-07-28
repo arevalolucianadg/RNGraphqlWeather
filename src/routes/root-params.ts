@@ -1,3 +1,7 @@
+interface WeatherDetailScreenParams {
+  cityId: string;
+}
+
 export type RootTabParamList = {
   Home: undefined;
   Search: undefined;
@@ -5,8 +9,6 @@ export type RootTabParamList = {
 };
 
 export type RootStackParamList = {
-  Home: undefined;
-  WeatherDetail: {
-    cityId: string;
-  };
+  Main: undefined;
+  WeatherDetail: WeatherDetailScreenParams;
 };

@@ -1,27 +1,24 @@
-import React from 'react';
-import { SvgProps } from 'react-native-svg';
-
-import { HomeIcon, SearchIcon, SettingsIcon } from '../icons';
+import { IconName } from '../icons/types';
 
 interface ITab {
-  component: React.FC<SvgProps>;
+  component: IconName;
   label: string;
   routeName: string;
 }
 
 const tabs: ITab[] = [
   {
-    component: HomeIcon,
+    component: 'HomeIcon',
     label: 'Home',
     routeName: 'Home',
   },
   {
-    component: SearchIcon,
+    component: 'SearchIcon',
     label: 'Search',
     routeName: 'Search',
   },
   {
-    component: SettingsIcon,
+    component: 'SettingsIcon',
     label: 'Settings',
     routeName: 'Settings',
   },

@@ -11,15 +11,15 @@ export const StatusMain = styled.View`
 `;
 
 export const Temp = styled.Text`
-  color: ${props =>
-    isLightText(props) ? props.theme.colors.gray1 : props.theme.colors.white};
+  color: ${({ theme }) =>
+    isLightText(theme) ? theme.colors.gray1 : theme.colors.white};
   font-family: ${global.font.weightBold};
   font-size: 48px;
   margin-bottom: -10px;
 `;
 export const Title = styled.Text`
-  color: ${props =>
-    isLightText(props) ? props.theme.colors.gray1 : props.theme.colors.white};
+  color: ${({ theme }) =>
+    isLightText(theme) ? theme.colors.gray1 : theme.colors.white};
   font-family: ${global.font.weightLight};
   font-size: 18px;
 `;

@@ -2,9 +2,10 @@ import React, { FunctionComponent } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { WeatherDetail } from '../screens';
-import HomeTabs from './home-routes';
+import MainTabs from './home-routes';
+import { RootStackParamList } from './root-params';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const Router: FunctionComponent = () => (
   <Stack.Navigator
@@ -13,7 +14,7 @@ const Router: FunctionComponent = () => (
       headerShown: false,
     }}
   >
-    <Stack.Screen name="HomeTabs" component={HomeTabs} />
+    <Stack.Screen name="Main" component={MainTabs} />
     <Stack.Screen name="WeatherDetail" component={WeatherDetail} />
   </Stack.Navigator>
 );

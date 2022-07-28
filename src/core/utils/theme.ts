@@ -1,11 +1,7 @@
-import { RefAttributes } from 'react';
-import { Text, TextProps } from 'react-native';
-import { ThemedStyledProps } from 'styled-components';
 import { Theme } from '../styles/types';
 
-export const isLightText = (
-  props: ThemedStyledProps<TextProps & RefAttributes<Text>, Theme>,
-): boolean => props.theme.themeTitle === 'light';
+export const isLightText = (theme: Theme): boolean =>
+  theme.themeTitle === 'light';
 
 interface HandleColorProps {
   color?: 'primary' | 'secondary' | 'danger' | 'warning' | undefined;

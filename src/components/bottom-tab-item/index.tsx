@@ -1,26 +1,28 @@
+/* eslint-disable import/namespace */
 import React, { FunctionComponent, useContext } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { SvgProps } from 'react-native-svg';
 import { ThemeContext } from '../../core/styles/styled-components';
+import * as icons from '../icons';
+import { IconName } from '../icons/types';
 
 import { TabItem, TabIcon, TabLabel } from './styles';
 
 export interface BottomTabItemProps {
-  icon: React.FC<SvgProps>;
+  iconName: IconName;
   isActive: boolean;
   label: string;
   onPress: () => void;
 }
 
-const BottomTabItem: FunctionComponent<BottomTabItemProps> = ({
-  icon,
+export const BottomTabItem: FunctionComponent<BottomTabItemProps> = ({
+  iconName,
   isActive,
   label,
   onPress,
 }) => {
   const { colors } = useContext(ThemeContext);
 
-  const SvgIcon = icon;
+  const SvgIcon = icons[iconName];
 
   return (
     <TouchableOpacity onPress={onPress}>
@@ -37,5 +39,3 @@ const BottomTabItem: FunctionComponent<BottomTabItemProps> = ({
     </TouchableOpacity>
   );
 };
-
-export default BottomTabItem;
