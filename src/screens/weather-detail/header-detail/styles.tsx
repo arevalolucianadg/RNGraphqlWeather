@@ -1,11 +1,11 @@
 /* eslint-disable no-nested-ternary */
-import styled from 'styled-components/native';
-import {global} from '../../../styles/global-styles';
-import {isLightText} from '../../../utils/theme';
+import { global, styled } from '@core/styles';
+import { isLightTheme } from '@core/utils/theme';
 
 export const TopBar = styled.View`
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
   height: 60px;
 `;
 
@@ -25,15 +25,15 @@ export const TopBarContent = styled.View`
 `;
 
 export const CityName = styled.Text`
-  color: ${props =>
-    isLightText(props) ? props.theme.colors.primary : props.theme.colors.white};
+  color: ${({ theme: { colors, themeTitle } }) =>
+    isLightTheme(themeTitle) ? colors.primary : colors.white};
   font-family: ${global.font.weightSemiBold};
   font-size: 22px;
 `;
 
 export const DateInfo = styled.Text`
-  color: ${props =>
-    isLightText(props) ? props.theme.colors.gray3 : props.theme.colors.gray4};
+  color: ${({ theme: { colors, themeTitle } }) =>
+    isLightTheme(themeTitle) ? colors.gray3 : colors.gray4};
   font-family: ${global.font.weightRegular};
   font-size: 14px;
   text-transform: uppercase;

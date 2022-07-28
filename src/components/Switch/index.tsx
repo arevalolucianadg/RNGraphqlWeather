@@ -1,33 +1,42 @@
-import React, {FunctionComponent, useContext} from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import SwitchSelector from 'react-native-switch-selector';
-import {ThemeContext} from 'styled-components/native';
 
-import {global} from '../../styles/global-styles';
-import {ISwitchSelectorOption} from '../../types/switch';
-
-/**
- * Constants
- */
-const STYLES_SWITCH = {
-  paddingRight: 3,
-  width: 150,
-}
+import { global, ThemeContext } from '@core/styles';
+import { ISwitchSelectorOption } from './types';
 
 /**
  * Types
  */
+
 interface SwitchProps {
   initial?: number;
   options: ISwitchSelectorOption[];
   onPress: (value: string) => void;
 }
 
-const Switch: FunctionComponent<SwitchProps> = ({initial, options, onPress}) => {
-  const {colors} = useContext(ThemeContext);
+/**
+ * Constants
+ */
+
+const STYLES_SWITCH = {
+  paddingRight: 3,
+  width: 150,
+};
+
+/**
+ * Switch
+ */
+
+export const Switch: FunctionComponent<SwitchProps> = ({
+  initial = 0,
+  options,
+  onPress,
+}) => {
+  const { colors } = useContext(ThemeContext);
 
   return (
     <SwitchSelector
-      initial={initial ?? 0}
+      initial={initial}
       options={options}
       borderColor={colors.primary}
       buttonColor={colors.primary}
@@ -41,5 +50,3 @@ const Switch: FunctionComponent<SwitchProps> = ({initial, options, onPress}) => 
     />
   );
 };
-
-export default Switch;

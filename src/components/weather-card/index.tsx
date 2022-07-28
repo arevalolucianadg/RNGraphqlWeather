@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {View} from 'react-native';
+import { View } from 'react-native';
 
-import ICON from '../../assets/png/weatherIcons';
-import {WeatherInfo} from '../../graphql/interfaces';
+import { WeatherInfo } from '@models/types';
+import ICON from '../../../assets/png/weatherIcons';
 import {
   CityName,
   Info,
@@ -17,39 +16,36 @@ import {
  * Types
  */
 interface WeatherCardProps {
-  city: WeatherInfo | null;
-  isFavorite: boolean;
+  city: WeatherInfo;
+  isFavorite?: boolean;
+  onPress: (cityId: string) => void;
 }
 
-const WeatherCard: FunctionComponent<WeatherCardProps> = ({city, isFavorite}) => {
-  const navigation = useNavigation();
+/**
+ * WeatherCard
+ */
 
-  if (!city) {
-    return <View />
-  };
-
-  const {id, name, weather: {summary, temperature}} = city;
-
-
-  return (
-    <WeatherCardWrapper
-      isFavorite={isFavorite}
-      // TODO: remove navigation
-      onPress={() => navigation.navigate('WeatherDetail', {cityId: id})}>
-      <View>
-        <CityName isFavorite={isFavorite}>{name}</CityName>
-        <Info>
-          <CityTemp isFavorite={isFavorite}>
-            {temperature.actual.toFixed(1)}°
-          </CityTemp>
-          <CitySummaryTitle isFavorite={isFavorite}>
-            {summary.title}
-          </CitySummaryTitle>
-        </Info>
-      </View>
-      <WeatherIcon source={ICON[`icon${summary.icon}`]} />
-    </WeatherCardWrapper>
-  );
-};
-
-export default WeatherCard;
+export const WeatherCard: FunctionComponent<WeatherCardProps> = ({
+  city: {
+    id,
+    name,
+    weather: { summary, temperature },
+  },
+  isFavorite = false,
+  onPress,
+}) => (
+  <WeatherCardWrapper isFavorite={isFavorite} onPress={() => onPress(id)}>
+    <View>
+      <CityName isFavorite={isFavorite}>{name}</CityName>
+      <Info>
+        <CityTemp isFavorite={isFavorite}>
+          {temperature.actual.toFixed(1)}°
+        </CityTemp>
+        <CitySummaryTitle isFavorite={isFavorite}>
+          {summary.title}
+        </CitySummaryTitle>
+      </Info>
+    </View>
+    <WeatherIcon source={ICON[`icon${summary.icon}`]} />
+  </WeatherCardWrapper>
+);

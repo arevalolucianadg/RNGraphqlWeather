@@ -1,16 +1,19 @@
 import React, { FunctionComponent } from 'react';
-import {View} from 'react-native';
+import { CompositeScreenProps } from '@react-navigation/native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { View } from 'react-native';
 
 import {
   Heading,
   LayoutBase,
   LoadingView,
   NoResults,
+  SafeArea,
   SearchBar,
   WeatherCard,
-} from '../../components';
-import {LayoutSpacing} from '../../components/layout-base/styles';
-import useSearch from '../../core/hooks/use-search';
+} from '@components';
+import { useSearch } from '@core/hooks';
+import { RootStackParamList, RootTabParamList } from '@routes/types';
 import {
   TitleWrapper,
   ResultsView,
@@ -19,7 +22,22 @@ import {
   ResultText,
 } from './styles';
 
-const Search: FunctionComponent = () => {
+/**
+ * Types
+ */
+
+type SearchScreen = CompositeScreenProps<
+  StackScreenProps<RootTabParamList, 'Search'>,
+  StackScreenProps<RootStackParamList>
+>;
+
+/**
+ * Search
+ */
+
+const Search: FunctionComponent<SearchScreen> = ({
+  navigation: { navigate },
+}) => {
   const {
     error,
     isFocus,
@@ -35,9 +53,15 @@ const Search: FunctionComponent = () => {
 
   if (error) return <View />;
 
+  const handleDetailPress = (cityId: string): void => {
+    navigate('WeatherDetail', {
+      cityId,
+    });
+  };
+
   return (
-    <LayoutBase>
-      <LayoutSpacing>
+    <SafeArea>
+      <LayoutBase spacing>
         <View>
           <TitleWrapper>
             <Heading>Search</Heading>
@@ -58,13 +82,17 @@ const Search: FunctionComponent = () => {
                 <ResultText>Last search</ResultText>
                 <ResultValue>{getLastSearch(lastSearches)}</ResultValue>
               </ResultTitle>
-              <WeatherCard isFavorite={false} city={results.getCityByName} />
+              <WeatherCard
+                isFavorite={false}
+                city={results.getCityByName}
+                onPress={id => handleDetailPress(id)}
+              />
             </>
           )}
           {!loading && results?.getCityByName === null && <NoResults />}
         </ResultsView>
-      </LayoutSpacing>
-    </LayoutBase>
+      </LayoutBase>
+    </SafeArea>
   );
 };
 

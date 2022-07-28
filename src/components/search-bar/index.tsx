@@ -1,9 +1,9 @@
-import React, {FunctionComponent, useContext} from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-import SearchIcon from '../../assets/svg/bottomTabIcons/search-icon.svg';
-import { AppContext } from '../../context/app-context/app-context';
-import {SearchBarWrapper, SearchButton, SearchInput} from './styles';
+import { SearchIcon } from '@components/icons';
+import { AppContext } from '@core/context';
+import { SearchBarWrapper, SearchButton, SearchInput } from './styles';
 
 /**
  * Types
@@ -16,16 +16,15 @@ interface SearchBarProps {
   setIsFocus: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SearchBar: FunctionComponent<SearchBarProps> = ({
+export const SearchBar: FunctionComponent<SearchBarProps> = ({
   isFocus,
   searchValue,
   handleSearch,
   handleSubmit,
   setIsFocus,
 }) => {
-
-  const {theme} = useContext(AppContext);
-  const {colors} = useContext(ThemeContext);
+  const { theme } = useContext(AppContext);
+  const { colors } = useContext(ThemeContext);
 
   return (
     <SearchBarWrapper isFocus={isFocus}>
@@ -45,5 +44,3 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
     </SearchBarWrapper>
   );
 };
-
-export default SearchBar;

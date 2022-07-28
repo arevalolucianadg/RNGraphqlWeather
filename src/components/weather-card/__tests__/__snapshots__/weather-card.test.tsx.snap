@@ -1,11 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`weather card component should render a snapshot 1`] = `
+exports[`weather card component should render a snapshot of favorite component 1`] = `
 <View
   accessible={true}
   collapsable={false}
   focusable={true}
-  nativeID="animatedComponent"
   onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -16,7 +15,115 @@ exports[`weather card component should render a snapshot 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#F7F7F7",
+      "backgroundColor": "#504ED3",
+      "borderRadius": 8,
+      "display": "flex",
+      "flexDirection": "row",
+      "height": 100,
+      "justifyContent": "space-between",
+      "marginBottom": 16,
+      "opacity": 1,
+      "paddingBottom": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+    }
+  }
+>
+  <View>
+    <Text
+      isFavorite={true}
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontFamily": "WorkSans-Medium",
+            "fontSize": 22,
+            "marginBottom": 8,
+          },
+        ]
+      }
+    >
+      Lisbon
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        isFavorite={true}
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontFamily": "WorkSans-Bold",
+              "fontSize": 18,
+              "letterSpacing": 0.4,
+              "marginRight": 8,
+            },
+          ]
+        }
+      >
+        15.8
+        °
+      </Text>
+      <Text
+        isFavorite={true}
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontFamily": "WorkSans-Light",
+              "fontSize": 14,
+            },
+          ]
+        }
+      >
+        Clouds
+      </Text>
+    </View>
+  </View>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../assets/png/weatherIcons/night-cloudy.png",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 70,
+          "width": 70,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`weather card component should render a snapshot of non-favorite component 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#1C1C24",
       "borderRadius": 8,
       "display": "flex",
       "flexDirection": "row",
@@ -37,7 +144,7 @@ exports[`weather card component should render a snapshot 1`] = `
       style={
         Array [
           Object {
-            "color": "#333333",
+            "color": "#FFFFFF",
             "fontFamily": "WorkSans-Medium",
             "fontSize": 22,
             "marginBottom": 8,
@@ -63,7 +170,7 @@ exports[`weather card component should render a snapshot 1`] = `
         style={
           Array [
             Object {
-              "color": "#333333",
+              "color": "#FFFFFF",
               "fontFamily": "WorkSans-Bold",
               "fontSize": 18,
               "letterSpacing": 0.4,
@@ -80,7 +187,7 @@ exports[`weather card component should render a snapshot 1`] = `
         style={
           Array [
             Object {
-              "color": "#333333",
+              "color": "#FFFFFF",
               "fontFamily": "WorkSans-Light",
               "fontSize": 14,
             },
@@ -94,7 +201,7 @@ exports[`weather card component should render a snapshot 1`] = `
   <Image
     source={
       Object {
-        "testUri": "../../../src/assets/png/weatherIcons/night-cloudy.png",
+        "testUri": "../../../assets/png/weatherIcons/night-cloudy.png",
       }
     }
     style={

@@ -1,16 +1,17 @@
-import React, {FunctionComponent, useContext} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {View} from 'react-native';
-import {ThemeContext} from 'styled-components/native';
+import React, { FunctionComponent, useContext } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { View } from 'react-native';
 
-import AddSvg from '../../../assets/svg/add.svg';
-import FavoriteStar from '../../../assets/svg/favorite-star.svg';
-import BackArrow from '../../../assets/svg/left-arrow.svg';
-import {AppContext} from '../../../context/app-context/app-context';
-import {CityDetail} from '../../../graphql/interfaces';
-import {saveStorage} from '../../../utils/async-storage';
-import { KEY_FAV_CITIES_STORE, KEY_CITIES_STORE } from '../../../utils/constants';
-import {formatUnixToDate} from '../../../utils/weather-details';
+import { Add, BackArrow, FavoriteStar } from '@components/icons';
+import { AppContext } from '@core/context/app-context';
+import { ThemeContext } from '@core/styles';
+import {
+  formatUnixToDate,
+  saveStorage,
+  KEY_FAV_CITIES_STORE,
+  KEY_CITIES_STORE,
+} from '@core/utils';
+import { CityDetail } from '@models/types';
 import {
   TopBar,
   BackButton,
@@ -20,9 +21,9 @@ import {
   ActionButton,
 } from './styles';
 
-const HeaderDetail: FunctionComponent<{city: CityDetail}> = ({city}) => {
+const HeaderDetail: FunctionComponent<{ city: CityDetail }> = ({ city }) => {
   const navigation = useNavigation();
-  const {colors} = useContext(ThemeContext);
+  const { colors } = useContext(ThemeContext);
   const {
     cities,
     favoriteCities,
@@ -83,9 +84,10 @@ const HeaderDetail: FunctionComponent<{city: CityDetail}> = ({city}) => {
         <ActionButton
           onPress={() => handleActions(city.id)}
           isSaved={isSavedCity}
-          isFavorite={isFavoriteCity}>
+          isFavorite={isFavoriteCity}
+        >
           {!isSavedCity && (
-            <AddSvg height="100%" width="100%" fill={colors.white} />
+            <Add height="100%" width="100%" fill={colors.white} />
           )}
           {isSavedCity && (
             <FavoriteStar

@@ -1,38 +1,35 @@
 # OWeather
 
-App React Native para Android
+Weather app, with React Native, Typescript and GraphQL (Apollo Client)
 
-### Tabla de contenido
-- [Antes de comenzar](#antes-de-comenzar)
-  - [Configuración de entorno](#configuración-de-entorno)
-  - [Crear .env](#crear-env)
-- [Scripts disponibles](#scripts-disponibles)
-- [Tecnologías utilizadas](#tecnologías-utilizadas)
-- [API GraphQL](#api-graphql)
+### Table of content
+- [OWeather](#oweather)
+    - [Table of content](#table-of-content)
+  - [🚀 Getting started](#-getting-started)
+    - [Environment configuration](#environment-configuration)
+    - [Create .env](#create-env)
+  - [🔸 Scripts](#-scripts)
+  - [🔥 Stack + Libs](#-stack--libs)
+  - [🌐 API GraphQL](#-api-graphql)
+  - [✉️ Contact me](#️-contact-me)
 
-## Antes de comenzar
+## 🚀 Getting started
 
-### Configuración de entorno
+### Environment configuration
 
 [**React Native - Setting up the development environment**](https://reactnative.dev/docs/environment-setup)
 
-NodeJS: +14.0
+NodeJS: +16.0
 
-Yarn: +1.0
-
-### Crear .env
+### Create .env
 Ver archivo .env.example
 
 ```
-LOAD_STORYBOOK=FALSE
-/* LOAD_STORYBOOK: boolean */
-
-
 API_URL=https://graphql-weather-api.herokuapp.com/
 ```
 ***
 
-## Scripts disponibles
+## 🔸 Scripts
 
 **Ejecutar en Android**
 
@@ -46,40 +43,20 @@ API_URL=https://graphql-weather-api.herokuapp.com/
 
 > (**En Progreso**) Por el momento sólo WeatherCard tiene tests.
 
-
-**Storybook**
-
-`npm run storybook`
-
-> (**En Progreso**) Por el momento sólo TabBarIcon tiene stories.
-
-<!-- **Generar AAB release**
-
-```bash
-cd android
-./gradlew bundleRelease
-```
-
-**Generar APK release**
-
-```bash
-cd android
-./gradlew assembleRelease
-``` -->
-
-***
-
-## Tecnologías utilizadas
+## 🔥 Stack + Libs
 * React Native
 * TypeScript
 * GraphQL & Apollo Client
 * Styled Components
 * Jest
 * React Native Testing Library
-* Storybook
 * AsyncStorage
 * ESLint
 ***
 
-## API GraphQL
+## 🌐 API GraphQL
 [GraphQL Weather](https://graphql-weather-api.herokuapp.com/)
+
+## ✉️ Contact me
+
+[![Linkedin: arevalolucianadev](https://img.shields.io/badge/-arevalolucianadev-blue?style=for-the-badge&logo=Linkedin&logoColor=white&logoWidth=50&link=https://www.linkedin.com/in/arevalolucianadev/)](https://www.linkedin.com/in/arevalolucianadev/)

@@ -1,3 +1,5 @@
+// eslint-disable-next-line jest/no-jest-import
+import 'jest';
 import 'react-native-gesture-handler/jestSetup';
 import 'jest-styled-components';
 
@@ -21,3 +23,9 @@ jest.mock('@react-navigation/native', () => ({
   createStackNavigator: mockedNavigate,
   createBottomTabNavigator: mockedNavigate,
 }));
+
+// Mock react-native-safe-area-context
+jest.mock(
+  'react-native-safe-area-context',
+  () => require('react-native-safe-area-context/jest/mock').default,
+);

@@ -1,11 +1,10 @@
-import styled, {css} from 'styled-components/native';
+import { global } from '@core/styles';
+import styled, { css } from '@core/styles/styled-components';
 
-import {global} from '../../styles/global-styles';
-
-interface IsFavoriteProps {
+interface WeatherCardProps {
   isFavorite: boolean;
 }
-export const WeatherCardWrapper = styled.TouchableOpacity<IsFavoriteProps>`
+export const WeatherCardWrapper = styled.TouchableOpacity<WeatherCardProps>`
   background-color: ${props =>
     props.isFavorite ? props.theme.colors.primary : props.theme.colors.paper};
   border-radius: ${global.border.RadiusMd};
@@ -18,13 +17,13 @@ export const WeatherCardWrapper = styled.TouchableOpacity<IsFavoriteProps>`
   padding: 16px;
 `;
 
-const textColor = css<IsFavoriteProps>`
+const textColor = css<WeatherCardProps>`
   color: ${props =>
     props.isFavorite ? props.theme.colors.white : props.theme.colors.text};
   font-family: ${global.font.weightMedium};
 `;
 
-export const CityName = styled.Text<IsFavoriteProps>`
+export const CityName = styled.Text<WeatherCardProps>`
   ${textColor}
   font-family: ${global.font.weightMedium};
   font-size: 22px;
@@ -35,14 +34,14 @@ export const Info = styled.View`
   flex-direction: row;
   align-items: flex-end;
 `;
-export const CityTemp = styled.Text<IsFavoriteProps>`
+export const CityTemp = styled.Text<WeatherCardProps>`
   ${textColor}
   font-family: ${global.font.weightBold};
   font-size: 18px;
   letter-spacing: 0.4px;
   margin-right: 8px;
 `;
-export const CitySummaryTitle = styled.Text<IsFavoriteProps>`
+export const CitySummaryTitle = styled.Text<WeatherCardProps>`
   ${textColor}
   font-family: ${global.font.weightLight};
   font-size: 14px;

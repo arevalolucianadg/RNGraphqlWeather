@@ -1,36 +1,48 @@
-import React, {FunctionComponent, useContext, useState} from 'react';
-import {useQuery} from '@apollo/client';
-import {FlatList, ListRenderItemInfo, RefreshControl, Text} from 'react-native';
+import React, { FunctionComponent, useContext, useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { StackScreenProps } from '@react-navigation/stack';
+import {
+  FlatList,
+  ListRenderItemInfo,
+  RefreshControl,
+  Text,
+} from 'react-native';
 
-import {Heading, LayoutBase, LoadingView, WeatherCard} from '../../components';
-import {LayoutSpacing} from '../../components/layout-base/styles';
-import {AppContext} from '../../context/app-context/app-context';
-import {CitiesInfo, QueryVars, WeatherInfo} from '../../graphql/interfaces';
-import {GET_WEATHER_INFO} from '../../graphql/requests';
-import { wait } from '../../utils/global';
-import {TitleWrapper, CitiesList} from './styles';
+import {
+  Heading,
+  LayoutBase,
+  LoadingView,
+  SafeArea,
+  WeatherCard,
+} from '@components';
+import { AppContext } from '@core/context/app-context';
+import { wait } from '@core/utils/global';
+import { GET_WEATHER_INFO, CitiesInfo, QueryVars, WeatherInfo } from '@models';
+import { RootStackParamList } from '@routes/types';
+import { TitleWrapper, CitiesList } from './styles';
+
+/**
+ * Types
+ */
+
+type HomeScreenProps = StackScreenProps<RootStackParamList, 'Main'>;
 
 /**
  * Constants
  */
+
 const STYLES_LIST = {
-  flex: 1
-}
+  flex: 1,
+};
 
-export interface HomeCityProps {
-  id: string;
-  isFavorite: boolean;
-  name: string;
-  summaryIcon: string;
-  summaryTitle: string;
-  temperature: string;
-}
-
-const Home: FunctionComponent = () => {
-  const {cities, favoriteCities, temperatureUnit} = useContext(AppContext);
+const Home: FunctionComponent<HomeScreenProps> = ({
+  navigation: { navigate },
+}) => {
+  const { cities, favoriteCities, temperatureUnit } = useContext(AppContext);
   const [refreshing, setRefreshing] = useState(false);
 
-  const isFavorite = (city: ListRenderItemInfo<WeatherInfo>): boolean => favoriteCities.includes(city.item.id);
+  const isFavorite = (city: ListRenderItemInfo<WeatherInfo>): boolean =>
+    favoriteCities.includes(city.item.id);
 
   const variables = {
     id: cities,
@@ -39,16 +51,22 @@ const Home: FunctionComponent = () => {
     },
   };
 
-  const {data, loading, error, refetch} = useQuery<CitiesInfo, QueryVars>(
+  const { data, loading, error, refetch } = useQuery<CitiesInfo, QueryVars>(
     GET_WEATHER_INFO,
     {
-      variables, 
-      fetchPolicy: 'no-cache'
+      variables,
+      fetchPolicy: 'no-cache',
     },
   );
 
   if (loading) return <LoadingView />;
   if (error) return <Text>Ocurrió un error.</Text>;
+
+  const handleDetailPress = (cityId: string): void => {
+    navigate('WeatherDetail', {
+      cityId,
+    });
+  };
 
   const onRefresh = (): void => {
     setRefreshing(true);
@@ -57,15 +75,19 @@ const Home: FunctionComponent = () => {
   };
 
   return (
-    <LayoutBase>
-      <LayoutSpacing>
+    <SafeArea>
+      <LayoutBase spacing>
         <CitiesList>
           <FlatList
             data={data?.getCityById}
             style={STYLES_LIST}
             keyExtractor={city => city.id}
             renderItem={city => (
-              <WeatherCard city={city.item} isFavorite={isFavorite(city)} />
+              <WeatherCard
+                city={city.item}
+                isFavorite={isFavorite(city)}
+                onPress={id => handleDetailPress(id)}
+              />
             )}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={
@@ -79,8 +101,8 @@ const Home: FunctionComponent = () => {
             }
           />
         </CitiesList>
-      </LayoutSpacing>
-    </LayoutBase>
+      </LayoutBase>
+    </SafeArea>
   );
 };
 

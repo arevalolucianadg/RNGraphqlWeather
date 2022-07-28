@@ -1,24 +1,11 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
-import {ThemeProvider} from 'styled-components/native';
+import { render } from '@testing-library/react-native';
 
-import WeatherCard from '..';
-import {light} from '../../../styles/theme';
-
-const mockedDispatch = jest.fn();
-jest.mock('@react-navigation/native', () => {
-  const actualNav = jest.requireActual('@react-navigation/native');
-  return {
-    ...actualNav,
-    useNavigation: () => ({
-      navigate: jest.fn(),
-      dispatch: mockedDispatch,
-    }),
-  };
-});
+import WithTheme from '@core/styles/theme-provider';
+import { WeatherCard } from '..';
 
 describe('weather card component', () => {
-  const city = {
+  const cityMock = {
     id: '2267057',
     name: 'Lisbon',
     weather: {
@@ -32,21 +19,33 @@ describe('weather card component', () => {
     },
   };
 
-  it('should render a snapshot', () => {
-    const {toJSON} = render(
-      <ThemeProvider theme={light}>
-        <WeatherCard isFavorite={false} city={city} />
-      </ThemeProvider>,
+  it('should render a snapshot of non-favorite component', () => {
+    const result = render(
+      <WithTheme>
+        <WeatherCard city={cityMock} onPress={jest.fn()} />
+      </WithTheme>,
     );
-    expect(toJSON()).toMatchSnapshot();
+
+    expect(result.toJSON()).toMatchSnapshot();
+  });
+
+  it('should render a snapshot of favorite component', () => {
+    const result = render(
+      <WithTheme>
+        <WeatherCard isFavorite city={cityMock} onPress={jest.fn()} />
+      </WithTheme>,
+    );
+
+    expect(result.toJSON()).toMatchSnapshot();
   });
 
   it('should render the city name', () => {
-    const WeatherName = render(
-      <ThemeProvider theme={light}>
-        <WeatherCard isFavorite={false} city={city} />
-      </ThemeProvider>,
+    const result = render(
+      <WithTheme>
+        <WeatherCard isFavorite={false} city={cityMock} onPress={jest.fn()} />
+      </WithTheme>,
     );
-    expect(WeatherName.getByText(city.name)).toBe(true);
+
+    expect(result.getByText(cityMock.name)).toBeDefined();
   });
 });

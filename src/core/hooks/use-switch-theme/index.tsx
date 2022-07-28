@@ -1,12 +1,10 @@
-import React, {useContext} from 'react';
-import {ThemeContext} from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-import {AppContext} from '../../../context/app-context/app-context';
-import { ISwitchSelectorOption } from '../../../types/switch';
-import {saveStorage} from '../../../utils/async-storage';
-import { KEY_THEME_STORE } from '../../../utils/constants';
-import DarkSvg from '../assets/svg/moon.svg';
-import LightSvg from '../assets/svg/sun.svg';
+import { Dark, Light } from '@components/icons';
+import { ISwitchSelectorOption } from '@components/switch/types';
+import { AppContext } from '@core/context/app-context';
+import { saveStorage, KEY_THEME_STORE } from '@core/utils';
 
 /**
  * Types
@@ -17,16 +15,16 @@ interface UseSwitchThemeHook {
   toggleTheme: (value: string) => void;
 }
 
-const useSwitchTheme = (): UseSwitchThemeHook => {
-  const {colors} = useContext(ThemeContext);
-  const {theme, handleTheme} = useContext(AppContext);
+export const useSwitchTheme = (): UseSwitchThemeHook => {
+  const { colors } = useContext(ThemeContext);
+  const { theme, handleTheme } = useContext(AppContext);
 
   const themeOptions = [
     {
       label: '',
       value: 'light',
       customIcon: (
-        <LightSvg
+        <Light
           height="20px"
           width="20px"
           fill={theme === 'light' ? colors.white : colors.gray1}
@@ -37,7 +35,7 @@ const useSwitchTheme = (): UseSwitchThemeHook => {
       label: '',
       value: 'dark',
       customIcon: (
-        <DarkSvg
+        <Dark
           height="20px"
           width="20px"
           fill={theme === 'dark' ? colors.white : colors.gray1}
@@ -51,8 +49,8 @@ const useSwitchTheme = (): UseSwitchThemeHook => {
   const toggleTheme = (value: string): void => {
     handleTheme(value);
     saveStorage({
-      key: KEY_THEME_STORE, 
-      item: value
+      key: KEY_THEME_STORE,
+      item: value,
     });
   };
 
@@ -62,5 +60,3 @@ const useSwitchTheme = (): UseSwitchThemeHook => {
     toggleTheme,
   };
 };
-
-export default useSwitchTheme;

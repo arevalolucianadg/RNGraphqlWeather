@@ -1,30 +1,30 @@
-import React, {FunctionComponent, ReactElement, useContext} from 'react';
-import {StatusBar} from 'react-native';
-import {ThemeContext} from 'styled-components/native';
+import React, { FunctionComponent, useContext } from 'react';
+import { StatusBar } from 'react-native';
 
-import {LayoutSafe} from './styles';
+import { Theme, ThemeContext } from '@core/styles';
+import { Layout } from './styles';
 
 /**
  * Types
  */
 interface LayoutBaseProps {
-  children: ReactElement;
+  children: JSX.Element | JSX.Element[];
+  spacing?: boolean;
 }
 
-const LayoutBase: FunctionComponent<LayoutBaseProps> = ({children}) => {
-  const {colors} = useContext(ThemeContext);
-
-  const isLightTheme = colors.background === '#FFFFFF';
+export const LayoutBase: FunctionComponent<LayoutBaseProps> = ({
+  children,
+  spacing = false,
+}) => {
+  const { colors, themeTitle } = useContext(ThemeContext);
 
   return (
-    <LayoutSafe>
+    <Layout spacing={spacing}>
       <StatusBar
         backgroundColor={colors.background}
-        barStyle={isLightTheme ? 'dark-content' : 'light-content'}
+        barStyle={themeTitle === Theme.LIGHT ? 'dark-content' : 'light-content'}
       />
       {children}
-    </LayoutSafe>
+    </Layout>
   );
 };
-
-export default LayoutBase;

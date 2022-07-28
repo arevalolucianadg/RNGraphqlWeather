@@ -1,5 +1,4 @@
-import styled from 'styled-components/native';
-import {global} from '../../../styles/global-styles';
+import { global, styled } from '@core/styles';
 
 export const WeatherExtraWrapper = styled.View`
   background-color: ${props => props.theme.colors.primary};
@@ -11,7 +10,7 @@ export const WeatherExtraWrapper = styled.View`
 `;
 
 export const ExtraItems = styled.View`
-flex-direction: row;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 `;

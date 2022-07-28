@@ -1,8 +1,7 @@
-import styled from 'styled-components/native';
-import {global} from '../../styles/global-styles';
+import { global, styled } from '@core/styles';
 
 export const TitleWrapper = styled.View`
-  margin-bottom: 40px;
+  margin: 32px 0;
 `;
 
 export const SettingGroup = styled.View`

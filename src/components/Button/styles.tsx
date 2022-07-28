@@ -1,6 +1,5 @@
-import styled from 'styled-components/native';
-import {global} from '../../styles/global-styles';
-import {handleBGColor, handleTextColor} from '../../utils/theme';
+import { global, styled } from '@core/styles';
+import { handleBGColor, handleTextColor } from '@core/utils/theme';
 
 interface ButtonWrapperProps {
   themeButton?: 'primary' | 'secondary' | 'danger' | 'warning' | undefined;
@@ -9,8 +8,8 @@ interface ButtonWrapperProps {
 export const ButtonWrapper = styled.TouchableOpacity<ButtonWrapperProps>`
   background-color: ${props =>
     handleBGColor({
-      color: props.themeButton, 
-      theme: props.theme
+      color: props.themeButton,
+      theme: props.theme,
     })};
   border-radius: ${global.border.RadiusMd};
   height: 60px;
@@ -25,8 +24,8 @@ interface ButtonTextProps {
 export const ButtonText = styled.Text<ButtonTextProps>`
   color: ${props =>
     handleTextColor({
-      color: props.themeText, 
-      theme: props.theme
+      color: props.themeText,
+      theme: props.theme,
     })};
   font-family: ${global.font.weightMedium};
   font-size: 16px;
