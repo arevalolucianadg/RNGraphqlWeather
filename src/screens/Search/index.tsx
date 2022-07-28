@@ -1,4 +1,6 @@
 import React, { FunctionComponent } from 'react';
+import { CompositeScreenProps } from '@react-navigation/native';
+import { StackScreenProps } from '@react-navigation/stack';
 import { View } from 'react-native';
 
 import {
@@ -11,6 +13,7 @@ import {
 } from '../../components';
 import { LayoutSpacing } from '../../components/layout-base/styles';
 import useSearch from '../../core/hooks/use-search';
+import { RootStackParamList, RootTabParamList } from '../../routes/root-params';
 import {
   TitleWrapper,
   ResultsView,
@@ -19,7 +22,22 @@ import {
   ResultText,
 } from './styles';
 
-const Search: FunctionComponent = () => {
+/**
+ * Types
+ */
+
+type SearchScreen = CompositeScreenProps<
+  StackScreenProps<RootTabParamList, 'Search'>,
+  StackScreenProps<RootStackParamList>
+>;
+
+/**
+ * Search
+ */
+
+const Search: FunctionComponent<SearchScreen> = ({
+  navigation: { navigate },
+}) => {
   const {
     error,
     isFocus,
@@ -34,6 +52,12 @@ const Search: FunctionComponent = () => {
   } = useSearch();
 
   if (error) return <View />;
+
+  const handleDetailPress = (cityId: string): void => {
+    navigate('WeatherDetail', {
+      cityId,
+    });
+  };
 
   return (
     <LayoutBase>
@@ -61,7 +85,7 @@ const Search: FunctionComponent = () => {
               <WeatherCard
                 isFavorite={false}
                 city={results.getCityByName}
-                onPress={id => console.log(id)}
+                onPress={id => handleDetailPress(id)}
               />
             </>
           )}

@@ -22,7 +22,7 @@ describe('weather card component', () => {
   it('should render a snapshot of non-favorite component', () => {
     const result = render(
       <WithTheme>
-        <WeatherCard isFavorite={false} city={cityMock} onPress={jest.fn()} />
+        <WeatherCard city={cityMock} onPress={jest.fn()} />
       </WithTheme>,
     );
 

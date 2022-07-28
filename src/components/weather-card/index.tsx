@@ -16,42 +16,38 @@ import {
  * Types
  */
 interface WeatherCardProps {
-  city: WeatherInfo | null;
-  isFavorite: boolean;
+  city: WeatherInfo;
+  isFavorite?: boolean;
   onPress: (cityId: string) => void;
 }
 
-const WeatherCard: FunctionComponent<WeatherCardProps> = ({
-  city,
-  isFavorite,
-  onPress,
-}) => {
-  if (!city) {
-    return <View />;
-  }
+/**
+ * WeatherCard
+ */
 
-  const {
+const WeatherCard: FunctionComponent<WeatherCardProps> = ({
+  city: {
     id,
     name,
     weather: { summary, temperature },
-  } = city;
-
-  return (
-    <WeatherCardWrapper isFavorite={isFavorite} onPress={() => onPress(id)}>
-      <View>
-        <CityName isFavorite={isFavorite}>{name}</CityName>
-        <Info>
-          <CityTemp isFavorite={isFavorite}>
-            {temperature.actual.toFixed(1)}°
-          </CityTemp>
-          <CitySummaryTitle isFavorite={isFavorite}>
-            {summary.title}
-          </CitySummaryTitle>
-        </Info>
-      </View>
-      <WeatherIcon source={ICON[`icon${summary.icon}`]} />
-    </WeatherCardWrapper>
-  );
-};
+  },
+  isFavorite = false,
+  onPress,
+}) => (
+  <WeatherCardWrapper isFavorite={isFavorite} onPress={() => onPress(id)}>
+    <View>
+      <CityName isFavorite={isFavorite}>{name}</CityName>
+      <Info>
+        <CityTemp isFavorite={isFavorite}>
+          {temperature.actual.toFixed(1)}°
+        </CityTemp>
+        <CitySummaryTitle isFavorite={isFavorite}>
+          {summary.title}
+        </CitySummaryTitle>
+      </Info>
+    </View>
+    <WeatherIcon source={ICON[`icon${summary.icon}`]} />
+  </WeatherCardWrapper>
+);
 
 export default WeatherCard;

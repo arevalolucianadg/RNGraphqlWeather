@@ -1,6 +1,8 @@
+/* eslint-disable max-statements */
 import {
   Dispatch,
   SetStateAction,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -9,7 +11,6 @@ import { ApolloError, useLazyQuery } from '@apollo/client';
 import { useIsFocused } from '@react-navigation/native';
 import { Keyboard } from 'react-native';
 
-import { ISwitchSelectorOption } from '../../../../types/switch';
 import { AppContext } from '../../../context/app-context/app-context';
 import { ByNameQueryVars, CityByNameInfo } from '../../../graphql/interfaces';
 import { GET_CITY_BY_NAME } from '../../../graphql/requests';
@@ -18,6 +19,7 @@ import { getLastSearch } from '../../utils/search';
 /**
  * Types
  */
+
 interface UseSearchHook {
   isFocus: boolean;
   lastSearches: string[];
@@ -31,72 +33,48 @@ interface UseSearchHook {
   results?: CityByNameInfo;
 }
 
-interface ConfigProps {
-  units: string | number | ISwitchSelectorOption;
-}
-
-interface VariableProps {
-  name: string;
-  config: ConfigProps;
-}
-
-interface SearchProps {
-  lastSearches: string[];
-  searchValue: string;
-  variables: VariableProps;
-}
+/**
+ * useSearch
+ */
 
 const useSearch = (): UseSearchHook => {
   const { temperatureUnit } = useContext(AppContext);
   const screenFocused = useIsFocused();
 
   const [isFocus, setIsFocus] = useState<boolean>(false);
-  const [search, setSearch] = useState<SearchProps>({
-    lastSearches: [],
-    searchValue: '',
-    variables: {
-      name: '',
-      config: {
-        units: temperatureUnit,
-      },
-    },
-  });
+  const [lastSearches, setLastSearches] = useState<string[]>([]);
+  const [currentSearch, setCurrentSearch] = useState('');
+  const [search, setSearch] = useState('');
 
   const [results, setResults] = useState<CityByNameInfo | undefined>(undefined);
 
-  const handleSearch = (inputValue: string): void => {
-    setSearch({
-      ...search,
-      searchValue: inputValue,
-    });
+  const handleSearch = useCallback((inputValue: string): void => {
+    setCurrentSearch(inputValue);
     setIsFocus(true);
-  };
+  }, []);
 
   const [loadData, { data, loading, error }] = useLazyQuery<
     CityByNameInfo,
     ByNameQueryVars
   >(GET_CITY_BY_NAME, {
-    variables: search.variables,
+    variables: {
+      config: {
+        units: temperatureUnit,
+      },
+      name: search,
+    },
     fetchPolicy: 'no-cache',
   });
 
   const handleSubmit = (): void => {
-    setSearch({
-      ...search,
-      variables: {
-        ...search.variables,
-        name: search.searchValue,
-      },
-    });
+    setSearch(currentSearch);
 
     loadData();
 
     Keyboard.dismiss();
-    setSearch({
-      ...search,
-      lastSearches: [...search.lastSearches, search.searchValue],
-      searchValue: '',
-    });
+
+    setCurrentSearch('');
+    setLastSearches([...lastSearches, currentSearch]);
     setIsFocus(false);
   };
 
@@ -119,10 +97,10 @@ const useSearch = (): UseSearchHook => {
   return {
     error,
     isFocus,
-    lastSearches: search.lastSearches,
+    lastSearches,
     loading,
     results,
-    searchValue: search.searchValue,
+    searchValue: currentSearch,
     getLastSearch,
     handleSearch,
     handleSubmit,
