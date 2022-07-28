@@ -1,11 +1,11 @@
-import { Theme } from '../styles/types';
+import { Theme, ThemeProps } from '../styles/types';
 
-export const isLightText = (theme: Theme): boolean =>
-  theme.themeTitle === 'light';
+export const isLightTheme = (themeTitle: Theme): boolean =>
+  themeTitle === Theme.LIGHT;
 
 interface HandleColorProps {
   color?: 'primary' | 'secondary' | 'danger' | 'warning' | undefined;
-  theme: Theme;
+  theme: ThemeProps;
 }
 
 export const handleBGColor = ({ color, theme }: HandleColorProps): string => {

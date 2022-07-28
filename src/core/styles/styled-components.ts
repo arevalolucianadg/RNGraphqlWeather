@@ -1,12 +1,12 @@
 /* eslint-disable no-restricted-imports */
 import * as styledComponents from 'styled-components/native';
 import { ReactNativeThemedStyledComponentsModule } from 'styled-components/native';
-import { Theme } from './types';
+import { ThemeProps } from './types';
 
 /**
  * Types
  */
-type CustomThemeStyled = ReactNativeThemedStyledComponentsModule<Theme>;
+type CustomThemeStyled = ReactNativeThemedStyledComponentsModule<ThemeProps>;
 
 const {
   css,

@@ -1,7 +1,7 @@
-import { Theme } from '../types';
+import { Theme, ThemeProps } from '../types';
 
-const darkTheme: Theme = {
-  themeTitle: 'dark',
+const darkTheme: ThemeProps = {
+  themeTitle: Theme.DARK,
 
   colors: {
     primary: '#504ED3',

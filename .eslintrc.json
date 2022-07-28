@@ -78,6 +78,7 @@
       }
     ],
     "no-unused-expressions": ["error", { "allowTernary": true,  "allowShortCircuit": true }],
+    "no-shadow": "off",
 
     // React
     "react/jsx-filename-extension": ["error", {"extensions": [".tsx"]}],
