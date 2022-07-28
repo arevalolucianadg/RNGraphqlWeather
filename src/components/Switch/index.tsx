@@ -6,24 +6,30 @@ import { ThemeContext } from '../../core/styles';
 import { global } from '../../core/styles/global-styles';
 
 /**
- * Constants
- */
-const STYLES_SWITCH = {
-  paddingRight: 3,
-  width: 150,
-};
-
-/**
  * Types
  */
+
 interface SwitchProps {
   initial?: number;
   options: ISwitchSelectorOption[];
   onPress: (value: string) => void;
 }
 
+/**
+ * Constants
+ */
+
+const STYLES_SWITCH = {
+  paddingRight: 3,
+  width: 150,
+};
+
+/**
+ * Switch
+ */
+
 const Switch: FunctionComponent<SwitchProps> = ({
-  initial,
+  initial = 0,
   options,
   onPress,
 }) => {
@@ -31,7 +37,7 @@ const Switch: FunctionComponent<SwitchProps> = ({
 
   return (
     <SwitchSelector
-      initial={initial ?? 0}
+      initial={initial}
       options={options}
       borderColor={colors.primary}
       buttonColor={colors.primary}
