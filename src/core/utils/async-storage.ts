@@ -1,5 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+type KeyValuePair = [string, string | null];
+
 interface StoreDataProps {
   key: string;
   item: string | object | string[];
@@ -29,7 +31,7 @@ export const getStorage = async (
 
 export const getMultiple = async (
   key: string[],
-): Promise<[string, string | null][] | undefined> => {
+): Promise<readonly KeyValuePair[] | undefined> => {
   try {
     return AsyncStorage.multiGet(key);
   } catch (error) {

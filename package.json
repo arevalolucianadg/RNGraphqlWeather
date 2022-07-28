@@ -12,10 +12,6 @@
     "test:watch": "jest -o --watch --detectOpenHandles",
     "test:coverage": "jest --coverage --verbose --logHeapUsage --maxWorkers=2",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prestorybook": "rnstl",
-    "storybook:dev": "start-storybook -p 7007",
-    "storybook": "adb reverse tcp:7007 tcp:7007 && npm run prestorybook && npm run storybook:dev",
-    "build-storybook": "build-storybook",
     "typescript": "tsc",
     "pre-commit": "npm-run-all --parallel  test:coverage lint typescript",
     "prepare": "husky install"
@@ -32,11 +28,6 @@
     "@react-navigation/bottom-tabs": "6.3.2",
     "@react-navigation/native": "6.0.11",
     "@react-navigation/stack": "6.2.2",
-    "@storybook/addon-actions": "6.4.9",
-    "@storybook/addon-controls": "6.4.9",
-    "@storybook/addon-links": "6.4.9",
-    "@storybook/addon-ondevice-actions": "5.3.23",
-    "@storybook/react-native": "5.3.25",
     "dayjs": "1.10.7",
     "eslint-config-prettier": "8.3.0",
     "graphql": "16.5.0",
@@ -55,8 +46,6 @@
     "@babel/core": "7.16.7",
     "@babel/runtime": "7.16.7",
     "@react-native-community/eslint-config": "3.0.3",
-    "@storybook/addon-knobs": "6.4.0",
-    "@storybook/react-native-server": "5.3.23",
     "@testing-library/jest-native": "4.0.4",
     "@testing-library/react-native": "9.0.0",
     "@types/jest": "27.5.2",
@@ -88,7 +77,6 @@
     "npm-run-all": "4.1.5",
     "prettier": "2.5.1",
     "react-dom": "17.0.2",
-    "react-native-storybook-loader": "2.0.4",
     "react-native-svg-transformer": "1.0.0",
     "react-test-renderer": "18.0.0",
     "ts-jest": "27.1.5",
@@ -97,16 +85,8 @@
   "resolutions": {
     "@types/react": "^17"
   },
-  "config": {
-    "react-native-storybook-loader": {
-      "searchDir": [
-        "./src"
-      ],
-      "pattern": "**/*.stories.tsx"
-    }
-  },
   "engines": {
-    "node": ">=14.17.6",
-    "npm": ">=7.24.2"
+    "node": ">=16.13.0",
+    "npm": ">=8.5.5"
   }
 }
