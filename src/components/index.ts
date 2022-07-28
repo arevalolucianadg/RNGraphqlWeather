@@ -1,5 +1,5 @@
 export { default as BottomTabBar } from './bottom-tab-bar';
-export { default as BottomTabItem } from './bottom-tab-item';
+export * from './bottom-tab-item';
 export { default as Button } from './button';
 export { default as Heading } from './heading';
 export { default as LayoutBase } from './layout-base';

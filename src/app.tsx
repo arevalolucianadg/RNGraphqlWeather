@@ -2,9 +2,7 @@ import 'react-native-gesture-handler';
 import React, { FunctionComponent, useContext } from 'react';
 import { ApolloProvider } from '@apollo/client';
 import { NavigationContainer } from '@react-navigation/native';
-import { LOAD_STORYBOOK } from 'react-native-dotenv';
 
-import StorybookUI from '../storybook';
 import apolloConfig from './config/apollo';
 import GlobalProvider from './context';
 import { AppContext } from './context/app-context/app-context';
@@ -34,4 +32,4 @@ const App: FunctionComponent = () => (
   </GlobalProvider>
 );
 
-export default LOAD_STORYBOOK === 'true' ? StorybookUI : App;
+export default App;

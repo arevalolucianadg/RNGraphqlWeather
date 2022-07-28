@@ -2,18 +2,20 @@ import React, { FunctionComponent } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { WeatherDetail } from '../screens';
-import HomeTabs from './home-routes';
+import MainTabs from './home-routes';
+import { RootStackParamList } from './root-params';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const Router: FunctionComponent = () => (
   <Stack.Navigator
     screenOptions={{
       headerMode: 'screen',
+      headerShown: false,
     }}
   >
-    <Stack.Screen name="Home" component={HomeTabs} />
-    <Stack.Screen component={WeatherDetail} name="WeatherDetail" />
+    <Stack.Screen name="Main" component={MainTabs} />
+    <Stack.Screen name="WeatherDetail" component={WeatherDetail} />
   </Stack.Navigator>
 );
 

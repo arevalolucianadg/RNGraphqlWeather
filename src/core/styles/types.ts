@@ -19,8 +19,13 @@ export interface Colors {
   inactiveIcon: string;
 }
 
-export interface Theme {
+export enum Theme {
+  DARK = 'DARK',
+  LIGHT = 'LIGHT',
+}
+
+export interface ThemeProps {
   colors: Colors;
   boxShadow: string;
-  themeTitle: string;
+  themeTitle: Theme;
 }

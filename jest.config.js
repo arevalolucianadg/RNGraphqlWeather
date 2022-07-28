@@ -1,10 +1,12 @@
 module.exports = {
   preset: 'react-native',
   verbose: true,
+  transformIgnorePatterns: [
+    'node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)',
+  ],
   moduleDirectories: ['node_modules'],
-  roots: ['<rootDir>/src'],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '\\.[jt]sx?$': 'babel-jest',
   },
   testRegex: '(/__tests__/.*|(\\.|/)test)\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
@@ -13,7 +15,11 @@ module.exports = {
     '@testing-library/jest-native/extend-expect',
     './jest.setup.js',
   ],
-  transformIgnorePatterns: [
-    'node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)',
+  coveragePathIgnorePatterns: [
+    'node_modules',
+    '<rootDir>/assets/',
+    '<rootDir>/android/',
+    '<rootDir>/ios/',
+    '<rootDir>/types/',
   ],
 };

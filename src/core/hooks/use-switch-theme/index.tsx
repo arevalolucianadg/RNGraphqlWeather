@@ -2,11 +2,10 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { ISwitchSelectorOption } from '../../../../types/switch';
+import { Dark, Light } from '../../../components/icons';
 import { AppContext } from '../../../context/app-context/app-context';
 import { saveStorage } from '../../utils/async-storage';
 import { KEY_THEME_STORE } from '../../utils/constants';
-import DarkSvg from '../assets/svg/moon.svg';
-import LightSvg from '../assets/svg/sun.svg';
 
 /**
  * Types
@@ -26,7 +25,7 @@ const useSwitchTheme = (): UseSwitchThemeHook => {
       label: '',
       value: 'light',
       customIcon: (
-        <LightSvg
+        <Light
           height="20px"
           width="20px"
           fill={theme === 'light' ? colors.white : colors.gray1}
@@ -37,7 +36,7 @@ const useSwitchTheme = (): UseSwitchThemeHook => {
       label: '',
       value: 'dark',
       customIcon: (
-        <DarkSvg
+        <Dark
           height="20px"
           width="20px"
           fill={theme === 'dark' ? colors.white : colors.gray1}

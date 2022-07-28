@@ -1,7 +1,7 @@
-import { Theme } from '../types';
+import { Theme, ThemeProps } from '../types';
 
-const lightTheme: Theme = {
-  themeTitle: 'light',
+const lightTheme: ThemeProps = {
+  themeTitle: Theme.LIGHT,
 
   colors: {
     primary: '#504ED3',
