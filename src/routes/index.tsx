@@ -13,7 +13,7 @@ const Router: FunctionComponent = () => (
       headerShown: false,
     }}
   >
-    <Stack.Screen name="Home" component={HomeTabs} />
+    <Stack.Screen name="HomeTabs" component={HomeTabs} />
     <Stack.Screen name="WeatherDetail" component={WeatherDetail} />
   </Stack.Navigator>
 );
