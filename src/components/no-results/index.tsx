@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useContext } from 'react';
-import { ThemeContext } from '../../core/styles';
-import { Close } from '../icons';
 
+import { Close } from '@components/icons';
+import { ThemeContext } from '@core/styles';
 import {
   NoResultsIcon,
   NoResultsText,
@@ -9,7 +9,7 @@ import {
   NoResultsWrapper,
 } from './styles';
 
-const NoResults: FunctionComponent = () => {
+export const NoResults: FunctionComponent = () => {
   const { colors } = useContext(ThemeContext);
 
   return (
@@ -22,5 +22,3 @@ const NoResults: FunctionComponent = () => {
     </NoResultsWrapper>
   );
 };
-
-export default NoResults;

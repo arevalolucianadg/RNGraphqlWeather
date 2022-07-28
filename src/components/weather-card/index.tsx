@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { View } from 'react-native';
 
+import { WeatherInfo } from '@models/types';
 import ICON from '../../../assets/png/weatherIcons';
-import { WeatherInfo } from '../../graphql/interfaces';
 import {
   CityName,
   Info,
@@ -25,7 +25,7 @@ interface WeatherCardProps {
  * WeatherCard
  */
 
-const WeatherCard: FunctionComponent<WeatherCardProps> = ({
+export const WeatherCard: FunctionComponent<WeatherCardProps> = ({
   city: {
     id,
     name,
@@ -49,5 +49,3 @@ const WeatherCard: FunctionComponent<WeatherCardProps> = ({
     <WeatherIcon source={ICON[`icon${summary.icon}`]} />
   </WeatherCardWrapper>
 );
-
-export default WeatherCard;

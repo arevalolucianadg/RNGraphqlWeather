@@ -11,10 +11,9 @@ import { ApolloError, useLazyQuery } from '@apollo/client';
 import { useIsFocused } from '@react-navigation/native';
 import { Keyboard } from 'react-native';
 
-import { AppContext } from '../../../context/app-context/app-context';
-import { ByNameQueryVars, CityByNameInfo } from '../../../graphql/interfaces';
-import { GET_CITY_BY_NAME } from '../../../graphql/requests';
-import { getLastSearch } from '../../utils/search';
+import { AppContext } from '@core/context/app-context';
+import { getLastSearch } from '@core/utils/search';
+import { GET_CITY_BY_NAME, ByNameQueryVars, CityByNameInfo } from '@models';
 
 /**
  * Types
@@ -37,7 +36,7 @@ interface UseSearchHook {
  * useSearch
  */
 
-const useSearch = (): UseSearchHook => {
+export const useSearch = (): UseSearchHook => {
   const { temperatureUnit } = useContext(AppContext);
   const screenFocused = useIsFocused();
 
@@ -107,5 +106,3 @@ const useSearch = (): UseSearchHook => {
     setIsFocus,
   };
 };
-
-export default useSearch;

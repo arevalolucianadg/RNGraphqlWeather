@@ -1,11 +1,12 @@
-import styled from '../../core/styles/styled-components';
+import { styled } from '@core/styles';
 
-export const LayoutSpacing = styled.View`
-  flex: 1;
-  padding: 32px 16px 0;
-`;
+interface LayoutProps {
+  spacing: boolean;
+}
 
-export const LayoutSafe = styled.SafeAreaView`
-  background-color: ${props => props.theme.colors.background};
+export const Layout = styled.View<LayoutProps>`
+  ${({ spacing }) => spacing && 'padding: 32px 16px 0'};
+
+  background-color: ${({ theme }) => theme.colors.background};
   flex: 1;
 `;

@@ -5,3 +5,5 @@ export {
   ThemeProvider,
   css,
 } from './styled-components';
+export { dark, light } from './theme';
+export * from './types';

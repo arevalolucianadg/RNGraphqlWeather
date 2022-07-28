@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
-import { ISwitchSelectorOption } from '../../../types/switch';
+
+import { ISwitchSelectorOption } from '@components/switch/types';
 
 export interface AppContextProps {
   theme: string | number | ISwitchSelectorOption;

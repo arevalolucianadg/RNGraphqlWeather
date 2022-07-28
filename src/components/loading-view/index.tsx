@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { ActivityIndicator } from 'react-native';
-import { ThemeContext } from 'styled-components';
 
+import { ThemeContext } from '@core/styles';
 import { LoadingWrapper } from './styles';
 
-const LoadingView: FunctionComponent = () => {
+export const LoadingView: FunctionComponent = () => {
   const { colors } = useContext(ThemeContext);
 
   return (
@@ -13,5 +13,3 @@ const LoadingView: FunctionComponent = () => {
     </LoadingWrapper>
   );
 };
-
-export default LoadingView;

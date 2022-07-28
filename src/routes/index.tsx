@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { WeatherDetail } from '../screens';
-import MainTabs from './home-routes';
-import { RootStackParamList } from './root-params';
+import { WeatherDetail } from '@screens';
+import MainTabs from './tab-routes';
+import { RootStackParamList } from './types';
 
 const Stack = createStackNavigator<RootStackParamList>();
 

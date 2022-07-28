@@ -1,5 +1,5 @@
-import { global, styled } from '../../../core/styles';
-import { isLightTheme } from '../../../core/utils/theme';
+import { global, styled } from '@core/styles';
+import { isLightTheme } from '@core/utils/theme';
 
 export const StatusWrapper = styled.View`
   margin: 24px 0;

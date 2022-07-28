@@ -1,4 +1,4 @@
-import { global, styled } from '../../../core/styles';
+import { global, styled } from '@core/styles';
 
 export const WeatherExtraWrapper = styled.View`
   background-color: ${props => props.theme.colors.primary};

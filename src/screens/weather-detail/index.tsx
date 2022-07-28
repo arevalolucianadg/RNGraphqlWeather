@@ -4,11 +4,10 @@ import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Text } from 'react-native';
 
-import { LayoutBase, LoadingView } from '../../components';
-import { AppContext } from '../../context/app-context/app-context';
-import { CityInfo, QueryVars } from '../../graphql/interfaces';
-import { GET_WEATHER_DETAIL } from '../../graphql/requests';
-import { RootStackParamList } from '../../routes/root-params';
+import { LayoutBase, LoadingView } from '@components';
+import { AppContext } from '@core/context/app-context';
+import { CityInfo, QueryVars, GET_WEATHER_DETAIL } from '@models';
+import { RootStackParamList } from '@routes/types';
 import HeaderDetail from './header-detail';
 import { Spacing } from './styles';
 import WeatherExtra from './weather-extra';

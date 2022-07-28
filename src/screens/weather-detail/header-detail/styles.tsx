@@ -1,11 +1,11 @@
 /* eslint-disable no-nested-ternary */
-import { global } from '../../../core/styles/global-styles';
-import styled from '../../../core/styles/styled-components';
-import { isLightTheme } from '../../../core/utils/theme';
+import { global, styled } from '@core/styles';
+import { isLightTheme } from '@core/utils/theme';
 
 export const TopBar = styled.View`
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
   height: 60px;
 `;
 

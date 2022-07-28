@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-import { ISwitchSelectorOption } from '../../../../types/switch';
-import { Dark, Light } from '../../../components/icons';
-import { AppContext } from '../../../context/app-context/app-context';
-import { saveStorage } from '../../utils/async-storage';
-import { KEY_THEME_STORE } from '../../utils/constants';
+import { Dark, Light } from '@components/icons';
+import { ISwitchSelectorOption } from '@components/switch/types';
+import { AppContext } from '@core/context/app-context';
+import { saveStorage, KEY_THEME_STORE } from '@core/utils';
 
 /**
  * Types
@@ -16,7 +15,7 @@ interface UseSwitchThemeHook {
   toggleTheme: (value: string) => void;
 }
 
-const useSwitchTheme = (): UseSwitchThemeHook => {
+export const useSwitchTheme = (): UseSwitchThemeHook => {
   const { colors } = useContext(ThemeContext);
   const { theme, handleTheme } = useContext(AppContext);
 
@@ -61,5 +60,3 @@ const useSwitchTheme = (): UseSwitchThemeHook => {
     toggleTheme,
   };
 };
-
-export default useSwitchTheme;

@@ -1,9 +1,8 @@
 import { useContext } from 'react';
 
-import { ISwitchSelectorOption } from '../../../../types/switch';
-import { AppContext } from '../../../context/app-context/app-context';
-import { saveStorage } from '../../utils/async-storage';
-import { KEY_TEMPERATURE_UNIT } from '../../utils/constants';
+import { ISwitchSelectorOption } from '@components/switch/types';
+import { AppContext } from '@core/context/app-context';
+import { saveStorage, KEY_TEMPERATURE_UNIT } from '@core/utils';
 
 /**
  * Types
@@ -20,7 +19,7 @@ interface UseSwitchFormatTempHook {
   toggleFormatTemp: (value: string) => void;
 }
 
-const useSwitchFormatTemp = (): UseSwitchFormatTempHook => {
+export const useSwitchFormatTemp = (): UseSwitchFormatTempHook => {
   const { temperatureUnit, toggleTempUnit } = useContext(AppContext);
 
   const tempOptions: TempOptionsProps[] = [
@@ -51,5 +50,3 @@ const useSwitchFormatTemp = (): UseSwitchFormatTempHook => {
     toggleFormatTemp,
   };
 };
-
-export default useSwitchFormatTemp;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 
-import WeatherCard from '..';
-import WithTheme from '../../../core/styles/theme-provider';
+import WithTheme from '@core/styles/theme-provider';
+import { WeatherCard } from '..';
 
 describe('weather card component', () => {
   const cityMock = {

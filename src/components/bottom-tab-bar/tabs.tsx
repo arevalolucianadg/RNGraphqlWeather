@@ -1,4 +1,4 @@
-import { IconName } from '../icons/types';
+import { IconName } from '@components/icons/types';
 
 interface ITab {
   component: IconName;

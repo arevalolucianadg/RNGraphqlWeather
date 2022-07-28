@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-import { AppContext } from '../../context/app-context/app-context';
-import { SearchIcon } from '../icons';
+import { SearchIcon } from '@components/icons';
+import { AppContext } from '@core/context';
 import { SearchBarWrapper, SearchButton, SearchInput } from './styles';
 
 /**
@@ -16,7 +16,7 @@ interface SearchBarProps {
   setIsFocus: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SearchBar: FunctionComponent<SearchBarProps> = ({
+export const SearchBar: FunctionComponent<SearchBarProps> = ({
   isFocus,
   searchValue,
   handleSearch,
@@ -44,5 +44,3 @@ const SearchBar: FunctionComponent<SearchBarProps> = ({
     </SearchBarWrapper>
   );
 };
-
-export default SearchBar;

@@ -1,10 +1,9 @@
 import React, { FunctionComponent, useContext } from 'react';
 
-import { Button } from '../../../components';
-import { AppContext } from '../../../context/app-context/app-context';
-import { saveStorage } from '../../../core/utils/async-storage';
-import { KEY_CITIES_STORE } from '../../../core/utils/constants';
-import { CityDetail } from '../../../graphql/interfaces';
+import { Button } from '@components';
+import { AppContext } from '@core/context/app-context';
+import { saveStorage, KEY_CITIES_STORE } from '@core/utils';
+import { CityDetail } from '@models/types';
 import {
   ExtraItems,
   ExtraItem,

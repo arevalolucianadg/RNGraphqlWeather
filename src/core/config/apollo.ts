@@ -1,5 +1,4 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-
 import { API_URL } from 'react-native-dotenv';
 
 const cache = new InMemoryCache({

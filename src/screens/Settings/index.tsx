@@ -1,10 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { View } from 'react-native';
 
-import { LayoutBase, Heading, Switch } from '../../components';
-import { LayoutSpacing } from '../../components/layout-base/styles';
-import useSwitchFormatTemp from '../../core/hooks/use-switch-format-temp';
-import useSwitchTheme from '../../core/hooks/use-switch-theme';
+import { LayoutBase, Heading, Switch, SafeArea } from '@components';
+import { useSwitchFormatTemp, useSwitchTheme } from '@core/hooks';
 import {
   SettingGroup,
   TitleWrapper,
@@ -18,8 +16,8 @@ const Settings: FunctionComponent = () => {
   const { initialTheme, themeOptions, toggleTheme } = useSwitchTheme();
 
   return (
-    <LayoutBase>
-      <LayoutSpacing>
+    <SafeArea>
+      <LayoutBase spacing>
         <View>
           <TitleWrapper>
             <Heading>Settings</Heading>
@@ -50,8 +48,8 @@ const Settings: FunctionComponent = () => {
             </SettingGroup>
           </View>
         </View>
-      </LayoutSpacing>
-    </LayoutBase>
+      </LayoutBase>
+    </SafeArea>
   );
 };
 

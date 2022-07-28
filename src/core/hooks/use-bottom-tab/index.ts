@@ -11,7 +11,7 @@ interface UseBottomTabHook {
   handlePressTab: (activeTab: string, idx: number) => void;
 }
 
-const useBottomTab = ({
+export const useBottomTab = ({
   state,
   navigation,
 }: UseBottomTabProps): UseBottomTabHook => {
@@ -32,5 +32,3 @@ const useBottomTab = ({
     handlePressTab,
   };
 };
-
-export default useBottomTab;

@@ -1,5 +1,4 @@
-import { global } from '../../core/styles/global-styles';
-import styled from '../../core/styles/styled-components';
+import { global, styled } from '@core/styles';
 
 interface TitleTextProps {
   primary?: boolean;

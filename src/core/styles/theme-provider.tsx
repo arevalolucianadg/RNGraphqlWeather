@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useContext } from 'react';
-import { AppContext } from '../../context/app-context/app-context';
+
+import { AppContext } from '@core/context/app-context';
 import { ThemeProvider as Provider } from './styled-components';
 import { dark, light } from './theme';
 

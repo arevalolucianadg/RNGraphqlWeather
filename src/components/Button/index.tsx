@@ -10,7 +10,7 @@ interface ButtonProps {
   onPress: () => void;
 }
 
-const Button: FunctionComponent<ButtonProps> = ({
+export const Button: FunctionComponent<ButtonProps> = ({
   textButton,
   themeButton,
   themeText,
@@ -21,5 +21,3 @@ const Button: FunctionComponent<ButtonProps> = ({
     <ButtonText themeText={themeText}>{textButton}</ButtonText>
   </ButtonWrapper>
 );
-
-export default Button;

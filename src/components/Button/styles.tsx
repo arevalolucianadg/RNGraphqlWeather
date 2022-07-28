@@ -1,6 +1,5 @@
-import { global } from '../../core/styles/global-styles';
-import styled from '../../core/styles/styled-components';
-import { handleBGColor, handleTextColor } from '../../core/utils/theme';
+import { global, styled } from '@core/styles';
+import { handleBGColor, handleTextColor } from '@core/utils/theme';
 
 interface ButtonWrapperProps {
   themeButton?: 'primary' | 'secondary' | 'danger' | 'warning' | undefined;

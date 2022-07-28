@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
-import useBottomTab from '../../core/hooks/use-bottom-tab';
-import { BottomTabItem } from '../bottom-tab-item';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { BottomTabItem } from '@components/bottom-tab-item';
+import { useBottomTab } from '@core/hooks';
 import { BottomTabBarWrapper } from './styles';
 import tabs from './tabs';
 
-const BottomTabBar: FunctionComponent<BottomTabBarProps> = ({
+export const BottomTabBar: FunctionComponent<BottomTabBarProps> = ({
   state,
   navigation,
 }) => {
@@ -14,9 +15,10 @@ const BottomTabBar: FunctionComponent<BottomTabBarProps> = ({
     state,
     navigation,
   });
+  const insets = useSafeAreaInsets();
 
   return (
-    <BottomTabBarWrapper>
+    <BottomTabBarWrapper insets={insets}>
       {tabs.map((tab, idx) => (
         <BottomTabItem
           key={`${tab.routeName}-${idx}`}
@@ -29,5 +31,3 @@ const BottomTabBar: FunctionComponent<BottomTabBarProps> = ({
     </BottomTabBarWrapper>
   );
 };
-
-export default BottomTabBar;

@@ -1,4 +1,4 @@
-import { styled } from '../../core/styles';
+import { styled } from '@core/styles';
 
 export const Spacing = styled.View`
   flex: 1;

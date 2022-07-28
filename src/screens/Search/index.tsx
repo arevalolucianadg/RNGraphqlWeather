@@ -8,12 +8,12 @@ import {
   LayoutBase,
   LoadingView,
   NoResults,
+  SafeArea,
   SearchBar,
   WeatherCard,
-} from '../../components';
-import { LayoutSpacing } from '../../components/layout-base/styles';
-import useSearch from '../../core/hooks/use-search';
-import { RootStackParamList, RootTabParamList } from '../../routes/root-params';
+} from '@components';
+import { useSearch } from '@core/hooks';
+import { RootStackParamList, RootTabParamList } from '@routes/types';
 import {
   TitleWrapper,
   ResultsView,
@@ -60,8 +60,8 @@ const Search: FunctionComponent<SearchScreen> = ({
   };
 
   return (
-    <LayoutBase>
-      <LayoutSpacing>
+    <SafeArea>
+      <LayoutBase spacing>
         <View>
           <TitleWrapper>
             <Heading>Search</Heading>
@@ -91,8 +91,8 @@ const Search: FunctionComponent<SearchScreen> = ({
           )}
           {!loading && results?.getCityByName === null && <NoResults />}
         </ResultsView>
-      </LayoutSpacing>
-    </LayoutBase>
+      </LayoutBase>
+    </SafeArea>
   );
 };
 

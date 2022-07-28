@@ -10,8 +10,7 @@ interface HeadingProps {
   children: string;
 }
 
-const Heading: FunctionComponent<HeadingProps> = ({ primary, children }) => (
-  <TitleText primary={primary}>{children}</TitleText>
-);
-
-export default Heading;
+export const Heading: FunctionComponent<HeadingProps> = ({
+  primary,
+  children,
+}) => <TitleText primary={primary}>{children}</TitleText>;

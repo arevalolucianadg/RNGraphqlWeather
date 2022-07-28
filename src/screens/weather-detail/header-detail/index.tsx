@@ -2,16 +2,16 @@ import React, { FunctionComponent, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View } from 'react-native';
 
-import { Add, BackArrow, FavoriteStar } from '../../../components/icons';
-import { AppContext } from '../../../context/app-context/app-context';
-import { ThemeContext } from '../../../core/styles';
-import { saveStorage } from '../../../core/utils/async-storage';
+import { Add, BackArrow, FavoriteStar } from '@components/icons';
+import { AppContext } from '@core/context/app-context';
+import { ThemeContext } from '@core/styles';
 import {
+  formatUnixToDate,
+  saveStorage,
   KEY_FAV_CITIES_STORE,
   KEY_CITIES_STORE,
-} from '../../../core/utils/constants';
-import { formatUnixToDate } from '../../../core/utils/weather-details';
-import { CityDetail } from '../../../graphql/interfaces';
+} from '@core/utils';
+import { CityDetail } from '@models/types';
 import {
   TopBar,
   BackButton,

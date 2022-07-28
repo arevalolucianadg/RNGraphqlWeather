@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-imports */
 import * as styledComponents from 'styled-components/native';
 import { ReactNativeThemedStyledComponentsModule } from 'styled-components/native';
+
 import { ThemeProps } from './types';
 
 /**

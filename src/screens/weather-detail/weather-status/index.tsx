@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { View } from 'react-native';
 
+import { CityDetail } from '@models/types';
 import ICON from '../../../../assets/png/weatherIcons';
-import { CityDetail } from '../../../graphql/interfaces';
 import {
   Item,
   ItemTitle,

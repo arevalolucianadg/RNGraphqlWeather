@@ -1,4 +1,4 @@
-import { ISwitchSelectorOption } from '../../../types/switch';
+import { ISwitchSelectorOption } from '@components/switch/types';
 
 export type AppAction =
   | { type: 'HANDLE_THEME'; payload: string | number | ISwitchSelectorOption }

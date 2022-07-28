@@ -1,9 +1,10 @@
 /* eslint-disable import/namespace */
 import React, { FunctionComponent, useContext } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { ThemeContext } from '../../core/styles/styled-components';
-import * as icons from '../icons';
-import { IconName } from '../icons/types';
+
+import * as icons from '@components/icons';
+import { IconName } from '@components/icons/types';
+import { ThemeContext } from '@core/styles/styled-components';
 
 import { TabItem, TabIcon, TabLabel } from './styles';
 

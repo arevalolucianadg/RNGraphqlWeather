@@ -1,9 +1,8 @@
 import React, { FunctionComponent, useContext } from 'react';
 import SwitchSelector from 'react-native-switch-selector';
-import { ISwitchSelectorOption } from '../../../types/switch';
-import { ThemeContext } from '../../core/styles';
 
-import { global } from '../../core/styles/global-styles';
+import { global, ThemeContext } from '@core/styles';
+import { ISwitchSelectorOption } from './types';
 
 /**
  * Types
@@ -28,7 +27,7 @@ const STYLES_SWITCH = {
  * Switch
  */
 
-const Switch: FunctionComponent<SwitchProps> = ({
+export const Switch: FunctionComponent<SwitchProps> = ({
   initial = 0,
   options,
   onPress,
@@ -51,5 +50,3 @@ const Switch: FunctionComponent<SwitchProps> = ({
     />
   );
 };
-
-export default Switch;

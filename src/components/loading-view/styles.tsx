@@ -1,4 +1,4 @@
-import styled from '../../core/styles/styled-components';
+import { styled } from '@core/styles';
 
 export const LoadingWrapper = styled.View`
   background-color: ${props => props.theme.colors.background};

@@ -6,7 +6,7 @@ import React, {
   useCallback,
 } from 'react';
 
-import { ISwitchSelectorOption } from '../../../types/switch';
+import { ISwitchSelectorOption } from '@components/switch/types';
 import { AppReducer } from './app-reducers';
 import INITIAL_STATE from './initial-state';
 import { AppContextProps, AppProviderProps } from './interfaces';

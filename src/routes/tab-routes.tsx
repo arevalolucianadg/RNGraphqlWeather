@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { BottomTabBar } from '../components';
-import { Home, Search, Settings } from '../screens';
-import { RootTabParamList } from './root-params';
+import { BottomTabBar } from '@components';
+import { Home, Search, Settings } from '@screens';
+import { RootTabParamList } from './types';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 

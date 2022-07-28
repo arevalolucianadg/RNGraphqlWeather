@@ -12,14 +12,13 @@ import {
   Heading,
   LayoutBase,
   LoadingView,
+  SafeArea,
   WeatherCard,
-} from '../../components';
-import { LayoutSpacing } from '../../components/layout-base/styles';
-import { AppContext } from '../../context/app-context/app-context';
-import { wait } from '../../core/utils/global';
-import { CitiesInfo, QueryVars, WeatherInfo } from '../../graphql/interfaces';
-import { GET_WEATHER_INFO } from '../../graphql/requests';
-import { RootStackParamList } from '../../routes/root-params';
+} from '@components';
+import { AppContext } from '@core/context/app-context';
+import { wait } from '@core/utils/global';
+import { GET_WEATHER_INFO, CitiesInfo, QueryVars, WeatherInfo } from '@models';
+import { RootStackParamList } from '@routes/types';
 import { TitleWrapper, CitiesList } from './styles';
 
 /**
@@ -76,8 +75,8 @@ const Home: FunctionComponent<HomeScreenProps> = ({
   };
 
   return (
-    <LayoutBase>
-      <LayoutSpacing>
+    <SafeArea>
+      <LayoutBase spacing>
         <CitiesList>
           <FlatList
             data={data?.getCityById}
@@ -102,8 +101,8 @@ const Home: FunctionComponent<HomeScreenProps> = ({
             }
           />
         </CitiesList>
-      </LayoutSpacing>
-    </LayoutBase>
+      </LayoutBase>
+    </SafeArea>
   );
 };
 

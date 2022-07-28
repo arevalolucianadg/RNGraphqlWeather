@@ -1,4 +1,4 @@
-import { Theme, ThemeProps } from '../types';
+import { Theme, ThemeProps } from '@core/styles/types';
 
 const lightTheme: ThemeProps = {
   themeTitle: Theme.LIGHT,

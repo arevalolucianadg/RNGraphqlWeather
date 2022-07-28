@@ -1,4 +1,4 @@
-import { INITIAL_CITIES } from '../../core/utils/constants';
+import { INITIAL_CITIES } from '@core/utils/constants';
 import { AppStateProps } from './interfaces';
 
 const initialState: AppStateProps = {

@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react';
+import React, { ComponentType, FunctionComponent } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
 interface MockedNavigatorProps {
-  component: any;
+  component: ComponentType;
   params?: Record<string, never>;
 }
 
