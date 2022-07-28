@@ -42,7 +42,6 @@
         "tsx": "never"
       }
     ],
-    "import/no-unresolved": [2, { "ignore": [".svg$"] }],
     "no-restricted-imports": [
       "error",
       {
